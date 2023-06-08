@@ -1,28 +1,24 @@
-import { Layout } from '@/components';
 import React from 'react';
 import { BalanceMoney } from './components/BalanceMoney';
 import { Movements } from './components/Movements';
-import { UserInfo } from './components/UserInfo';
-import SideBarDashboard from './components/SideBar/SideBarMenu';
+import { LayoutV2 } from '@/layout/LayoutV2';
+import { Typography } from '@/components';
 
 const Dashboard: React.FC = () => {
   return (
-    <Layout
-      sideBar={
-        <SideBarDashboard display titleSideBar="Tablero Persona Fisica" />
-      }
-      width="320px"
-    >
-      <div className="flex h-screen w-full px-[20px] gap-[20px] py-[20px] ">
-        <div className="w-full h-full flex flex-col gap-[20px]">
-          <BalanceMoney />
-          <Movements />
+    <LayoutV2>
+      <>
+        <Typography className="px-[20px] xl:!text-[20px] font-semibold mt-[20px]">
+          Inicio
+        </Typography>
+        <div className="flex w-full px-[20px] gap-[20px] py-[20px] ">
+          <div className="w-full h-full flex flex-col gap-[20px]">
+            <BalanceMoney />
+            <Movements />
+          </div>
         </div>
-        <div className="w-[35%] h-full">
-          <UserInfo />
-        </div>
-      </div>
-    </Layout>
+      </>
+    </LayoutV2>
   );
 };
 

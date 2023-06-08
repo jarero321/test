@@ -67,7 +67,18 @@ const InputForm: React.FC<InputFormProps> = ({
             inputMode={inputMode}
             placeholder={placeholder}
             type={type === 'password' ? validateTypePassword() : type}
-            {...register(name, inputValidation(inputMode, required))}
+            {...register('password', {
+              required: 'Password is required',
+              minLength: {
+                value: 8,
+                message: 'Password must be at least 8 characters long',
+              },
+              pattern: {
+                value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
+                message:
+                  'Password must contain at least one uppercase letter, one lowercase letter, and one number',
+              },
+            })}
             formNoValidate
           />
           {type === 'password' ? (

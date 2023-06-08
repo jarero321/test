@@ -1,0 +1,31 @@
+@import '../../../../../scss/global.scss';
+
+.banner {
+  background: $color-primary;
+  height: 100%;
+  overflow: hidden;
+  padding: 14% 17%;
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .banner {
+    .banner__img {
+      bottom: -38px;
+      position: absolute;
+      right: -59px;
+      width: 53%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    .banner__img {
+      bottom: -26px;
+      position: absolute;
+      right: -55px;
+      width: 60%;
+    }
+  }
+}

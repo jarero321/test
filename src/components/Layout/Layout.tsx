@@ -8,7 +8,7 @@ const Layout: React.FC<LayoutInterface> = ({
   isAContainer = false,
 }) => {
   return (
-    <main className="w-full min-h-screen flex bg-primary-gray">
+    <main className="w-full min-h-screen flex flex items-center justify-center">
       {sideBar ? (
         <header
           className="hidden lg:block min-h-screen flex"
@@ -19,7 +19,7 @@ const Layout: React.FC<LayoutInterface> = ({
       ) : null}
       {isAContainer ? (
         <section
-          className="h-full py-[50px] px-[20px] flex items-center justify-center"
+          className="h-full py-[50px] px-[20px] flex items-center  justify-center"
           style={
             width
               ? { width: `calc(100% - ${width})` }
@@ -32,7 +32,7 @@ const Layout: React.FC<LayoutInterface> = ({
         </section>
       ) : (
         <section
-          className="h-full flex items-center justify-center"
+          className="h-full flex items-center justify-center bg-primary-gray"
           style={
             width
               ? { width: `calc(100% - ${width})` }

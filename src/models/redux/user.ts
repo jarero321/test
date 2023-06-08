@@ -14,7 +14,6 @@ interface AccountInfo {
 }
 
 interface UserInfo extends Tokens, AccountInfo {}
-
 interface UserRoles {
   rol: {
     id: number;

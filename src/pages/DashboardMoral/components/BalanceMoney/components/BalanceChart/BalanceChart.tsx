@@ -23,10 +23,11 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
+      display: false,
       position: 'top' as const,
     },
     title: {
-      display: true,
+      display: false,
       text: 'Saldo de la cuenta',
     },
   },

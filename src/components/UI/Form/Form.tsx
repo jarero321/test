@@ -1,4 +1,4 @@
-import { TypeWithKey } from '@/models/type-with-key';
+import { TypeWithKey } from '@/models';
 import React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 
