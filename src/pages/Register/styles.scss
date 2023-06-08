@@ -1,0 +1,168 @@
+@import '../../../src/scss/global.scss';
+
+.head-primary {
+  color: $color-primary !important;
+}
+
+.login {
+  display: flex;
+
+  width: 100%;
+  height: 100vh;
+
+  position: relative;
+
+  .login__logo {
+    width: 9.8%;
+
+    position: absolute;
+    top: 69px;
+    left: 54px;
+  }
+
+  .login__box {
+    background-color: #fff;
+    width: 60%;
+  }
+
+  .login__banner {
+    height: 100vh;
+    width: 50%;
+  }
+}
+
+.login__box-wrap {
+  margin: 0 auto;
+  margin-top: 26.5%;
+  width: 60%;
+
+  h2 {
+    color: #1d1e1c;
+    font-family: 'Poppins';
+    font-size: 18.41pt;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  p {
+    color: #000;
+    font-family: 'Open Sans';
+    font-size: 11.73pt;
+    margin-bottom: 20px;
+  }
+
+  .err-login {
+    display: block;
+    text-align: center;
+  }
+
+  form {
+    .form__input {
+      margin-top: 26px;
+      margin-bottom: 3px;
+
+      &:first-child {
+        margin-top: 7px;
+      }
+    }
+
+    .form__forgetpassword {
+      color: $color-primary;
+      display: block;
+      font-size: 10.69pt;
+      font-family: 'Open Sans';
+      margin: 28px 0;
+      padding: 0 15px;
+      text-align: right;
+      text-decoration: none;
+    }
+
+    .form__btn {
+      background: $color-green;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-family: 'Open Sans';
+      font-size: 11.13pt;
+      padding: 10px 14px;
+      margin-top: 50px;
+      width: 100%;
+    }
+  }
+}
+
+// Medias queries
+@media screen and (max-width: 1024px) {
+  .login {
+    .login__logo {
+      width: 15.8%;
+
+      position: absolute;
+      top: 40px;
+      left: 25px;
+    }
+
+    .login__box {
+      padding: 23.5% 1.5%;
+    }
+  }
+  .login__box-wrap {
+    margin: 0 auto;
+    width: 50%;
+
+    form {
+      .form__btn {
+        padding: 9px 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login {
+    .login__logo {
+      position: absolute;
+      top: 35px;
+      left: 20px;
+    }
+
+    .login__box {
+      padding: 25% 1%;
+
+      .login__box-wrap {
+        width: 78.5%;
+
+        form {
+          .form__btn {
+            padding: 8px 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login {
+    .login__logo {
+      width: 30.5%;
+
+      position: absolute;
+      top: 33px;
+      left: 30px;
+    }
+
+    .login__box {
+      padding: 50% 1%;
+      width: 100%;
+
+      .login__box-wrap {
+        width: 77%;
+      }
+    }
+
+    .login__banner {
+      display: none;
+    }
+  }
+}

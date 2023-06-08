@@ -1,0 +1,61 @@
+import { Loader } from '../Loader';
+import { TypeWithKey } from '@/models/type-with-key';
+import React from 'react';
+
+export interface ButtonInterface {
+  text: string;
+  type: 'submit' | 'button';
+  onClick?(): void;
+  width?: string;
+  height?: string;
+  loader?: boolean;
+  variant?: string;
+  className?: string;
+}
+
+const Button: React.FC<ButtonInterface> = ({
+  text,
+  type,
+  onClick,
+  width,
+  height,
+  loader,
+  variant = 'primary',
+  className,
+}) => {
+  const getVariant = (variant: string): string => {
+    const options: TypeWithKey<string> = {
+      primary: 'w-full bg-primary-color text-white font-semibold rounded-[6px]',
+      secondary:
+        'w-full bg-secondary text-primary-color font-semibold rounded-[6px]',
+      grey: 'w-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded flex justify-center items-center',
+      default:
+        'w-full  flex items-center justify-center rounded-[6px] bg-primary-color px-6 pt-2.5 pb-2 font-semibold text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg',
+      green:
+        'w-full  flex items-center justify-center rounded-[6px] bg-secondary px-6 pt-2.5 pb-2 font-semibold text-primary-color shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg',
+      link: 'w-full  inline-block rounded-[6px] text-primary-color transition duration-150 ease-in-out  focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700',
+    };
+
+    return options[variant] || options.primary;
+  };
+  return (
+    <button
+      className={`${getVariant(variant)}  ${width ?? ''} ${
+        height ?? 'h-[40px]'
+      } ${className ?? ''} `}
+      disabled={loader}
+      onClick={() => (onClick ? onClick() : () => null)}
+      type={type}
+    >
+      {loader ? (
+        <div className="w-full h-full flex items-center justify-center">
+          <Loader />
+        </div>
+      ) : (
+        <> {text} </>
+      )}
+    </button>
+  );
+};
+
+export default Button;

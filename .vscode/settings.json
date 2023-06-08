@@ -1,0 +1,7 @@
+{
+    "files.eol": "\n",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "prettier.singleQuote": true,
+    "editor.fontFamily": "'Cascadia Code', 'Fira Code'", 3, "editor.fontLigatures": true,
+}

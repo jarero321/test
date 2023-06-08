@@ -1,0 +1,74 @@
+.container {
+  align-items: center;
+  height: 48px;
+  display: flex;
+  padding: 0 8px;
+  width: calc(100% - 16px);
+
+  &.active {
+    background-color: rgba(85, 214, 150, 0.05);
+  }
+}
+
+.wrapper {
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px;
+  transition: 0.2s ease all;
+  width: 100%;
+}
+
+.right {
+  align-items: center;
+  display: flex;
+}
+
+.text {
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+
+  &.active {
+    margin-left: 8px;
+  }
+}
+
+.completeCounter {
+  font-size: 14px;
+  opacity: 0.6;
+  color: white;
+  margin-right: 8px;
+}
+
+.checkmark {
+  color: #c2d500;
+  position: absolute;
+  right: 16px;
+}
+
+.indicator {
+  background-color: #c2d500;
+  border-radius: 0px 8px 8px 0px;
+  height: 48px;
+  left: -5px;
+  position: absolute;
+  transition: 0.2s ease all;
+  width: 4px;
+
+  &.active {
+    left: 0px;
+  }
+}
+
+.iconWrapper {
+  align-items: center;
+  color: #c2d500;
+  display: flex;
+  font-size: 16px;
+  height: 24px;
+  justify-content: center;
+  transition: 0.2s ease all;
+  width: 24px;
+}

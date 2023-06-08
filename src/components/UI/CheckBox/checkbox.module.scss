@@ -1,0 +1,42 @@
+.container {
+  align-items: center;
+  display: flex;
+  border: 1px solid rgba(118, 118, 128, 0.6);
+  border-radius: 4px;
+  height: 24px;
+  justify-content: center;
+  position: relative;
+  width: 24px;
+
+  &.checked {
+    border-color: #38144f;
+  }
+}
+
+.inner {
+  background-color: #38144f;
+  border-radius: 32px;
+  height: 0px;
+  position: absolute;
+  transition: 0.125s ease all;
+  width: 0px;
+
+  &.checked {
+    border-radius: 0px;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.icon {
+  align-items: center;
+  color: transparent;
+  height: 24px;
+  justify-content: center;
+  width: 24px;
+  z-index: 1;
+
+  &.checked {
+    color: #fff;
+  }
+}

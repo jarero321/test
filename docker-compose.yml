@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  app:
+    image: mi-app-react
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 80:3000

@@ -1,0 +1,256 @@
+table.transaction,
+table.branches,
+table.products,
+table.payment-links,
+table.clients,
+table.reminders,
+table.sells,
+table.conciliations,
+table.regions,
+table.zones,
+table.massive-clients,
+table.clientsPayments,
+table.profiles,
+table.conciliations-detail,
+table.invoices {
+    min-width: 100%;
+
+    thead {
+
+        tr {
+            background: $color-primary;
+            margin-bottom: 20px;
+
+            th {
+                font-weight: 500;
+                font-size: 14px;
+                color: #fff;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+
+                &:first-child {
+                    border-radius: 9px 0 0 9px;
+                }
+                &:last-child {
+                    border-radius: 0 9px 9px 0;
+                }
+            }
+        }
+    }
+
+    tbody {
+        background: #fff;
+
+        &:first-child {
+            border-radius: 9px 0 0 9px;
+        }
+
+        &:last-child {
+            border-radius: 0 9px 9px 0;
+        }
+
+        tr {
+            
+            td {
+                font-size: 12px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+                vertical-align: middle;
+
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                text-align: left;
+
+                svg {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+table.productsPaymentLinks {
+    min-width: 100%;
+
+    thead {
+
+        tr {
+            background: $color-primary;
+            margin-bottom: 20px;
+
+            th{
+                font-weight: 500;
+                color: #fff;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+
+                &:first-child {
+                    border-radius: 6px 0 0 0;
+                }
+                &:last-child {
+                    border-radius: 0 6px 0 0;
+                }
+            }
+        }
+    }
+
+    tbody {
+        background: transparent;
+
+        &:first-child {
+            border-radius: 9px 0 0 9px;
+        }
+
+        &:last-child {
+            border-radius: 0 9px 9px 0;
+        }
+
+        tr {
+            
+            td{
+                font-size: 12px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                text-align: left;
+
+                svg {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+table.clientsPayments {
+    min-width: 100%;
+
+    thead {
+
+        tr {
+            th {
+                padding: 4px 8px;
+
+                &:first-child {
+                    border-radius: 6px 0 0 0;
+                }
+
+                &:last-child {
+                    border-radius: 0 6px 0 0 ;
+                }
+            }
+        }
+    }
+
+    tbody {
+        background: #fff;
+
+        &:first-child,
+        &:last-child {
+            border-radius: 0;
+        }
+
+        tr {
+            
+            td{
+                font-size: 12px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                text-align: left;
+
+                svg {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.icon-options-tables {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+
+    &:hover {
+        border: 1px solid #dadadd;
+        background: #f5f5fa;
+        cursor: pointer;
+    }
+}
+
+.popover-table {
+    padding: 10px;
+
+    li {
+        margin-bottom: 10px;
+        cursor: pointer;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        button {
+            svg {
+                color: $color-primary;
+                margin-right: 5px;
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    table {
+        min-width: 100%;
+        
+        thead {
+            border-bottom: 10px solid transparent;
+        
+            tr {
+                margin-bottom: 20px;
+        
+                th{
+                    color: #fff;
+        
+                    &:first-child {
+                        border-radius: 9px 0 0 9px;
+                    }
+                    &:last-child {
+                        border-radius: 0 9px 9px 0;
+                    }
+                }
+            }
+        }
+        tbody {
+        
+            &:first-child {
+                border-radius: 9px 0 0 9px;
+            }
+            &:last-child {
+                border-radius: 0 9px 9px 0;
+            }
+            tr {
+                
+                td{
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                }
+            }
+        }
+    }
+}

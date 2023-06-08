@@ -1,0 +1,49 @@
+.button {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 32px;
+  width: calc(100% - 32px);
+  margin: 0 16px;
+  margin-bottom: 16px;
+
+  &.short {
+    align-self: center;
+    width: 32px;
+  }
+}
+
+.iconWrapper {
+  background-color: rgba(194, 213, 0, 0.2);
+  border-radius: 16px;
+  color: #767680;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: 0.2s ease all;
+  width: 32px;
+
+  &.active {
+    background-color: rgba(194, 213, 0, 0.2);
+    border-radius: 8px;
+    color: rgba(194, 213, 0, 0.3);
+  }
+}
+
+.iconWrapper:hover {
+  background-color: rgba(194, 213, 0, 0.3);
+  border-radius: 8px;
+}
+
+.icon {
+  color: rgb(194, 213, 0);
+  font-size: 16px;
+}
+
+.text {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 8px;
+}
