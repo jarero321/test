@@ -1,0 +1,198 @@
+@import '@/scss/include-media';
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.topText {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.title {
+  color: #38144f;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.contactWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.contactQuestion {
+  font-weight: 600;
+}
+
+.contactLink {
+  color: #55d696;
+  font-weight: 600;
+}
+
+.note {
+  align-self: flex-start;
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 24px;
+}
+
+.termsConditions {
+  align-items: center;
+  align-self: center;
+  display: flex;
+  font-size: 12px;
+}
+
+.checkBox {
+  margin-right: 8px;
+  height: 16px;
+  width: 16px;
+}
+
+.textWrapper {
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.termsButton {
+  background-color: transparent;
+  color: #38144f;
+  font-size: 12px;
+}
+
+.footer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.primaryButton {
+  background-color: #c7d439;
+  border-radius: 8px;
+  color: #38144f;
+  font-size: 18px;
+  font-weight: 600;
+  height: 48px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  padding: 0 32px;
+
+  &.active {
+    margin-top: 32px;
+  }
+}
+
+.switchButton {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.switchHighlight {
+  color: #38144f;
+}
+
+.featureTitle {
+  color: #55d696;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.features {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.feature {
+  align-items: center;
+  display: flex;
+  flex-basis: 30%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featureIcon {
+  align-items: center;
+  background-color: rgba(85, 214, 150, 0.2);
+  border-radius: 40px;
+  display: flex;
+  font-size: 32px;
+  height: 80px;
+  justify-content: center;
+  margin-bottom: 16px;
+  width: 80px;
+}
+
+.iconWrapper {
+  align-items: center;
+  color: #55d696;
+  display: flex;
+  justify-content: center;
+}
+
+.featureDescription {
+  font-weight: 300;
+  text-align: center;
+}
+
+.inputSpacer {
+  margin: 8px 0;
+}
+
+.logo {
+  width: 250px;
+}
+
+@include media('<=tablet') {
+  .content {
+    width: 60%;
+  }
+
+  .logo {
+    left: 0;
+    min-height: 65px;
+    position: relative;
+    top: 0;
+    width: 160px;
+  }
+}
+
+@include media('<=phone') {
+  .content {
+    width: 80%;
+  }
+}
+
+@include media('<=smallPhone') {
+  .content {
+    width: 90%;
+  }
+}
