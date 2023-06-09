@@ -1,0 +1,165 @@
+import { DataGrid } from '@mui/x-data-grid';
+import EditIcon from '@mui/icons-material/Edit';
+import CloseIcon from '@mui/icons-material/Close';
+import Switch from '@mui/material/Switch';
+const columns = [
+  {
+    headerClassName: 'text-[15px] text-primary-color',
+    field: 'id',
+    headerName: 'Cuenta',
+    width: 100,
+    type: 'number',
+  },
+  {
+    headerClassName: 'text-[15px] text-primary-color',
+    field: 'alias',
+    headerName: 'Alias',
+    flex: 1,
+    minWidth: 60,
+    type: 'string',
+  },
+  {
+    headerClassName: 'text-[15px] text-primary-color',
+    field: 'receivers',
+    headerName: 'Destinatarios',
+    flex: 1,
+    minWidth: 60,
+    type: 'string',
+  },
+  {
+    headerClassName: 'text-[15px] text-primary-color',
+    field: 'bank',
+    headerName: 'Institución Bancaria',
+    flex: 1,
+    minWidth: 60,
+    type: 'string',
+  },
+  {
+    headerClassName: 'text-[15px] text-primary-color',
+    field: 'account',
+    headerName: 'Cuenta',
+    flex: 1,
+    minWidth: 60,
+    type: 'string',
+  },
+  {
+    headerClassName: 'text-[15px] text-primary-color',
+    field: 'operation',
+    headerName: 'Límite de Operación',
+    flex: 1,
+    minWidth: 60,
+    type: 'string',
+  },
+  {
+    headerClassName: 'text-[15px] text-primary-color',
+    field: 'rfc',
+    headerName: 'RFC',
+    flex: 1,
+    minWidth: 60,
+    type: 'string',
+  },
+  {
+    headerClassName: 'text-[15px] text-primary-color',
+    field: 'curp',
+    headerName: 'CURP',
+    flex: 1,
+    minWidth: 60,
+    type: 'string',
+  },
+  {
+    headerClassName: 'text-[15px] text-primary-color',
+    field: 'status',
+    headerName: 'Estatus',
+    flex: 1,
+    minWidth: 60,
+    type: 'string',
+  },
+  {
+    headerClassName: 'text-[15px] text-primary-color',
+    field: 'edition',
+    headerName: 'Edición',
+    flex: 1,
+    minWidth: 60,
+    type: 'string',
+    renderCell: (params: any) => (
+      <div className="W-full flex gap-[10px] items-center">
+        <EditIcon
+          style={{ cursor: 'pointer', color: '#3D1152', opacity: '0.7' }}
+        />
+        <CloseIcon
+          style={{ cursor: 'pointer', color: '#3D1152', opacity: '0.7' }}
+        />
+
+        <Switch
+          checked={params.value}
+          sx={{
+            '& .MuiSwitch-thumb': {
+              backgroundColor: params.value ? '#3D1152' : 'white',
+            },
+            '.MuiSwitch-track': {
+              backgroundColor: params.value
+                ? 'rgba(61, 17, 82, 0.3) !important'
+                : 'rgba(61, 17, 82, 0.3) !important',
+            },
+          }}
+        />
+      </div>
+    ),
+  },
+];
+
+const rows = [
+  {
+    id: 3467,
+    alias: 'Gris',
+    receivers: 'Griselda Juarez Lopez',
+    bank: 'BBVA Bancomer',
+    account: 'Cuenta CLABE',
+    operation: '********954385347',
+    rfc: 'GELJ3213213123MV2',
+    curp: 'CRSAD403498FDSFS',
+    status: 'Activo',
+    edition: 'Edición 1',
+  },
+  {
+    id: 3465,
+    alias: 'Gris',
+    receivers: 'Griselda Juarez Lopez',
+    bank: 'BBVA Bancomer',
+    account: 'Cuenta CLABE',
+    operation: '********954385347',
+    rfc: 'GELJ3213213123MV2',
+    curp: 'CRSAD403498FDSFS',
+    status: 'Activo',
+    edition: 'Edición 1',
+  },
+  // ... agregar más filas de datos aquí ...
+];
+
+function TableGrid() {
+  return (
+    <div
+      className="border-t border-gray-300"
+      style={{ height: 500, width: '100%' }}
+    >
+      <DataGrid
+        autoPageSize
+        checkboxSelection={false}
+        className="border-l border-r border-b"
+        columns={columns}
+        rowHeight={52}
+        rows={rows}
+        style={{
+          borderLeft: 'none',
+          borderRight: 'none',
+          borderBottom: 'none',
+          borderTop: 'none',
+        }}
+        // Elimina los bordes de las row
+        sx={{ '&, [class^=MuiDataGrid]': { border: 'none' } }}
+      />
+    </div>
+  );
+}
+
+export default TableGrid;

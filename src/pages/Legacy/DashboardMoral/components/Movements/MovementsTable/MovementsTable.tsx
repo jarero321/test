@@ -1,11 +1,11 @@
-import Box from '@mui/material/Box';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 const columns: GridColDef[] = [
   {
     field: 'id',
     headerName: 'Clave',
-    width: 90,
+    flex: 1,
+    minWidth: 90,
     renderCell: (params) => {
       return (
         <div className="flex gap-[5px] items-center">
@@ -21,20 +21,23 @@ const columns: GridColDef[] = [
   {
     field: 'date-elaboration',
     headerName: 'Fecha elaboracion',
-    width: 150,
+    flex: 1,
+    minWidth: 150,
     editable: true,
   },
   {
     field: 'date-payment',
     headerName: 'Fecha Pago',
-    width: 100,
+    flex: 1,
+    minWidth: 100,
     editable: true,
   },
   {
     field: 'disperse',
     headerName: 'Dispersa',
     type: 'number',
-    width: 100,
+    flex: 1,
+    minWidth: 100,
     editable: true,
     renderCell: (params) => {
       return (
@@ -50,7 +53,8 @@ const columns: GridColDef[] = [
     field: 'info',
     headerName: 'Info',
     type: 'number',
-    width: 100,
+    flex: 1,
+    minWidth: 100,
     editable: true,
     renderCell: (params) => {
       return (
@@ -66,35 +70,40 @@ const columns: GridColDef[] = [
     field: 'beneficiary',
     headerName: 'Beneficiario',
     type: 'number',
-    width: 100,
+    flex: 1,
+    minWidth: 100,
     editable: true,
   },
   {
     field: 'concept',
     headerName: 'Concepto',
     type: 'number',
-    width: 100,
+    flex: 1,
+    minWidth: 100,
     editable: true,
   },
   {
     field: 'bank-account',
     headerName: 'Cuenta bancaria',
     type: 'number',
-    width: 100,
+    flex: 1,
+    minWidth: 100,
     editable: true,
   },
   {
     field: 'reference',
     headerName: 'Ingreso',
     type: 'number',
-    width: 100,
+    flex: 1,
+    minWidth: 100,
     editable: true,
   },
   {
     field: 'payment',
     headerName: 'Pago',
     type: 'number',
-    width: 100,
+    flex: 1,
+    minWidth: 100,
     editable: true,
   },
 ];
@@ -140,20 +149,26 @@ const rows = [
 
 export default function MovementsTable() {
   return (
-    <Box sx={{ height: 300, width: '100%' }}>
+    <div
+      className="border-t border-gray-300"
+      style={{ height: 500, width: '100%' }}
+    >
       <DataGrid
+        autoPageSize
+        checkboxSelection={false}
+        className="border-l border-r border-b"
         columns={columns}
-        disableRowSelectionOnClick
-        initialState={{
-          pagination: {
-            paginationModel: {
-              pageSize: 5,
-            },
-          },
-        }}
-        pageSizeOptions={[5]}
+        rowHeight={52}
         rows={rows}
+        style={{
+          borderLeft: 'none',
+          borderRight: 'none',
+          borderBottom: 'none',
+          borderTop: 'none',
+        }}
+        // Elimina los bordes de las row
+        sx={{ '&, [class^=MuiDataGrid]': { border: 'none' } }}
       />
-    </Box>
+    </div>
   );
 }

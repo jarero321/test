@@ -1,11 +1,11 @@
-import { Grid } from '@mui/material';
-import Box from '@mui/material/Box';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
+
 const columns: GridColDef[] = [
   {
     field: 'id',
-    headerName: 'Clave de rastreo',
-    headerClassName: 'text-[13px] text-primary-color',
+    headerName: 'Clave',
+    flex: 1,
+    minWidth: 90,
     renderCell: (params) => {
       return (
         <div className="flex gap-[5px] items-center">
@@ -21,20 +21,23 @@ const columns: GridColDef[] = [
   {
     field: 'date-elaboration',
     headerName: 'Fecha elaboracion',
-    headerClassName: 'text-[13px] text-primary-color',
+    flex: 1,
+    minWidth: 150,
     editable: true,
   },
   {
     field: 'date-payment',
     headerName: 'Fecha Pago',
-    headerClassName: 'text-[13px] text-primary-color',
+    flex: 1,
+    minWidth: 100,
     editable: true,
   },
   {
     field: 'disperse',
     headerName: 'Dispersa',
     type: 'number',
-    headerClassName: 'text-[13px] text-primary-color',
+    flex: 1,
+    minWidth: 100,
     editable: true,
     renderCell: (params) => {
       return (
@@ -50,7 +53,8 @@ const columns: GridColDef[] = [
     field: 'info',
     headerName: 'Info',
     type: 'number',
-    headerClassName: 'text-[13px] text-primary-color',
+    flex: 1,
+    minWidth: 100,
     editable: true,
     renderCell: (params) => {
       return (
@@ -66,57 +70,102 @@ const columns: GridColDef[] = [
     field: 'beneficiary',
     headerName: 'Beneficiario',
     type: 'number',
-    headerClassName: 'text-[13px] text-primary-color',
+    flex: 1,
+    minWidth: 100,
     editable: true,
   },
   {
     field: 'concept',
     headerName: 'Concepto',
     type: 'number',
-    headerClassName: 'text-[13px] text-primary-color',
+    flex: 1,
+    minWidth: 100,
     editable: true,
   },
   {
     field: 'bank-account',
     headerName: 'Cuenta bancaria',
     type: 'number',
-    headerClassName: 'text-[13px] text-primary-color',
+    flex: 1,
+    minWidth: 100,
     editable: true,
   },
   {
     field: 'reference',
     headerName: 'Ingreso',
     type: 'number',
-    headerClassName: 'text-[13px] text-primary-color',
+    flex: 1,
+    minWidth: 100,
     editable: true,
   },
   {
     field: 'payment',
     headerName: 'Pago',
     type: 'number',
-    headerClassName: 'text-[13px] text-primary-color',
+    flex: 1,
+    minWidth: 100,
     editable: true,
+  },
+];
+
+const rows = [
+  {
+    id: 'SP0003',
+    'date-elaboration': '30-mar-2021',
+    'date-payment': '30-mar-2021 12:00',
+    disperse: '0000001',
+    info: 'CEP',
+    beneficiary: '0000001',
+    concept: '0000001',
+    'bank-account': '0000001',
+    reference: '0000001',
+    payment: '0000001',
+  },
+  {
+    id: 'SP0003',
+    'date-elaboration': '30-mar-2021',
+    'date-payment': '30-mar-2021 12:00',
+    disperse: '0000001',
+    info: 'CEP',
+    beneficiary: '0000001',
+    concept: '0000001',
+    'bank-account': '0000001',
+    reference: '0000001',
+    payment: '0000001',
+  },
+  {
+    id: 'SP0003',
+    'date-elaboration': '30-mar-2021',
+    'date-payment': '30-mar-2021 12:00',
+    disperse: '0000001',
+    info: 'CEP',
+    beneficiary: '0000001',
+    concept: '0000001',
+    'bank-account': '0000001',
+    reference: '0000001',
+    payment: '0000001',
   },
 ];
 
 export default function MovementsTable() {
   return (
-    <Grid>
-      <Box sx={{ height: 300, width: '100%' }}>
-        <DataGrid
-          columns={columns}
-          disableRowSelectionOnClick
-          initialState={{
-            pagination: {
-              paginationModel: {
-                pageSize: 5,
-              },
-            },
-          }}
-          pageSizeOptions={[5]}
-          rows={rows}
-        />
-      </Box>
-    </Grid>
+    <div style={{ height: 300, width: '100%' }}>
+      <DataGrid
+        autoPageSize
+        checkboxSelection={false}
+        className="border-l border-r border-b"
+        columns={columns}
+        rowHeight={52}
+        rows={rows}
+        style={{
+          borderLeft: 'none',
+          borderRight: 'none',
+          borderBottom: 'none',
+          borderTop: 'none',
+        }}
+        // Elimina los bordes de las row
+        sx={{ '&, [class^=MuiDataGrid]': { border: 'none' } }}
+      />
+    </div>
   );
 }

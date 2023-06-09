@@ -53,7 +53,9 @@ const InputForm: React.FC<InputFormProps> = ({
     <>
       <label className={`${styles.container} ${className}`}>
         <div
-          className={`${styles.wrapper} ${isError(errors) ? styles.error : ''}`}
+          className={`${styles.wrapper} ${className} ${
+            isError(errors) ? styles.error : ''
+          }`}
         >
           <span
             className={`${styles.inputTitle} ${
