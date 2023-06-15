@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom';
 import AddressForm from './components/Form/AdressForm/AdressForm';
-import { OtherPersonDataForm } from './components/Form/OtherPersonDataForm';
 import PersonalDataForm from './components/Form/PersonalDataForm/PersonalDataForm';
 import { TransactionalPerfil } from './components/Form/TransactionalPerfil';
 import { Layout } from '@/components';
 import SwitchedComponent from '@/components/UI/SwitchedComponent';
 import React, { useEffect, useState } from 'react';
 import { PhysicPersonStepper } from '@/pages/Actual/OnBoarding/PhysicPersonStepper';
+import { Documents } from './components/Form/Documents';
 
 const PyshicPerson: React.FC = () => {
   const { step } = useParams();
@@ -35,7 +35,7 @@ const PyshicPerson: React.FC = () => {
               <TransactionalPerfil />
             </div>
             <div className="w-full" id="documentacion">
-              <OtherPersonDataForm />
+              <Documents />
             </div>
           </SwitchedComponent>
         </div>
