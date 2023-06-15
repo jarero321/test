@@ -1,7 +1,8 @@
-import styles from './styles.module.scss';
 import React from 'react';
-import { useFormContext } from 'react-hook-form';
+import { Controller, useFormContext } from 'react-hook-form';
 import { MessageError } from '../InputForm/MessageError';
+import Select from 'react-select';
+import styles from './styles.module.scss';
 
 interface SelectOption {
   value: string;
@@ -27,51 +28,55 @@ const SelectForm: React.FC<SelectFormProps> = ({
 }) => {
   const methods = useFormContext();
   const {
-    register,
+    control,
     formState: { errors },
-    getValues,
   } = methods;
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const isError = (errors: any): boolean => {
     return Boolean(errors && errors[name]);
   };
 
-  const valueInput = (name: string) => {
-    return getValues(name);
+  const customStyles = {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    control: (provided: any, state: any) => ({
+      ...provided,
+      borderRadius: '8px',
+      backgroundColor: state.isFocused ? 'white' : ' rgba(0, 0, 0, 0.05)',
+      height: '56px',
+      boxShadow: state.isFocused
+        ? '0 0 0 2px #fff, 0 0 0 0px #38144f'
+        : provided.boxShadow,
+      outline: 'none',
+      border: !isError(errors)
+        ? state.isFocused
+          ? ' 2px solid #38144f'
+          : 'none'
+        : '1px solid red',
+    }),
+    indicatorSeparator: () => ({
+      display: 'none',
+    }),
   };
-
   return (
     <>
       <label className={`${styles.container} ${className}`}>
-        <div
-          className={`${styles.wrapper} ${isError(errors) ? styles.error : ''}`}
-        >
-          <span
-            className={`${styles.inputTitle} ${
-              valueInput(name) ? styles.withValue : ''
-            }`}
-          >
-            {label}
-          </span>
-          <select className={styles.input} {...register(name, { required })}>
-            {placeholder && (
-              <option
-                className="color-[#BDBDBD]"
-                disabled
-                hidden
-                selected
-                value=""
-              >
-                {placeholder}
-              </option>
-            )}
-            {options?.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
+        <span className={`${styles.inputTitle}`}>{label}</span>
+        <Controller
+          control={control}
+          name={name}
+          render={({ field }) => (
+            <Select
+              options={options}
+              placeholder={placeholder}
+              {...field}
+              styles={customStyles}
+            />
+          )}
+          rules={{
+            required: { value: required, message: 'Campo obligatorio' },
+          }}
+        />
       </label>
       {isError(errors) && (
         <MessageError message={errors[name]?.message as string} />

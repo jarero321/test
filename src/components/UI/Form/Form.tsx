@@ -7,14 +7,20 @@ export interface FormInterface {
   children: React.ReactNode;
   // eslint-disable-next-line no-unused-vars
   onSubmit(data: TypeWithKey<string>): void;
+  id?: string;
 }
 
-const Form: React.FC<FormInterface> = ({ className, children, onSubmit }) => {
+const Form: React.FC<FormInterface> = ({
+  className,
+  children,
+  onSubmit,
+  id,
+}) => {
   const methods = useForm({ mode: 'onBlur' });
   const { handleSubmit } = methods;
   return (
     <FormProvider {...methods}>
-      <form className={className} onSubmit={handleSubmit(onSubmit)}>
+      <form className={className} id={id} onSubmit={handleSubmit(onSubmit)}>
         {children}
       </form>
     </FormProvider>

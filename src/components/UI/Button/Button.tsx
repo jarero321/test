@@ -11,6 +11,7 @@ export interface ButtonInterface {
   loader?: boolean;
   variant?: string;
   className?: string;
+  id?: string;
 }
 
 const Button: React.FC<ButtonInterface> = ({
@@ -22,6 +23,7 @@ const Button: React.FC<ButtonInterface> = ({
   loader,
   variant = 'primary',
   className,
+  id,
 }) => {
   const getVariant = (variant: string): string => {
     const options: TypeWithKey<string> = {
@@ -44,6 +46,7 @@ const Button: React.FC<ButtonInterface> = ({
         height ?? 'h-[40px]'
       } ${className ?? ''} `}
       disabled={loader}
+      form={id ?? ''}
       onClick={() => (onClick ? onClick() : () => null)}
       type={type}
     >

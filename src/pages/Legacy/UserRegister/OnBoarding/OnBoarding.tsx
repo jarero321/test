@@ -6,12 +6,11 @@ import useStep from '@/hooks/useStep';
 import React from 'react';
 
 const OnBoarding: React.FC = () => {
-  const { step } = useStep('person', 'personalStepper');
-
+  const { step } = useStep('person');
   return (
     <div className="w-full">
-      <SwitchedComponent active={step} target="id">
-        <div className="w-full" id="personalStepper">
+      <SwitchedComponent active={step ?? ''} target="id">
+        <div className="w-full" id="seleccion-tipo-de-persona">
           <PersonalStepper />
         </div>
         <div className="w-full" id="persona-fisica">

@@ -13,6 +13,9 @@ interface InputFormProps {
   type?: 'text' | 'password' | 'email';
   required?: boolean;
   inputMode?: 'email' | 'text';
+  rules?: string;
+  min?: number;
+  max?: number;
 }
 
 const InputForm: React.FC<InputFormProps> = ({
@@ -23,6 +26,9 @@ const InputForm: React.FC<InputFormProps> = ({
   required = false,
   inputMode = 'text',
   className = '',
+  rules = inputMode,
+  min,
+  max,
 }) => {
   const methods = useFormContext();
   const [showVisibility, setShowVisibility] = useState(true);
@@ -53,9 +59,7 @@ const InputForm: React.FC<InputFormProps> = ({
     <>
       <label className={`${styles.container} ${className}`}>
         <div
-          className={`${styles.wrapper} ${className} ${
-            isError(errors) ? styles.error : ''
-          }`}
+          className={`${styles.wrapper} ${isError(errors) ? styles.error : ''}`}
         >
           <span
             className={`${styles.inputTitle} ${
@@ -67,20 +71,11 @@ const InputForm: React.FC<InputFormProps> = ({
           <input
             className={styles.input}
             inputMode={inputMode}
+            maxLength={max}
+            minLength={min}
             placeholder={placeholder}
             type={type === 'password' ? validateTypePassword() : type}
-            {...register('password', {
-              required: 'Password is required',
-              minLength: {
-                value: 8,
-                message: 'Password must be at least 8 characters long',
-              },
-              pattern: {
-                value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
-                message:
-                  'Password must contain at least one uppercase letter, one lowercase letter, and one number',
-              },
-            })}
+            {...register(name, inputValidation(rules, required))}
             formNoValidate
           />
           {type === 'password' ? (
