@@ -2,7 +2,7 @@ import React from 'react';
 import { Typography } from '@/components/UI/Typography';
 import { OperationInfo } from './components/OperationInfo';
 import { Button, Layout } from '@/components';
-import SideBarDashboard from '@/pages/Actual/DashBoard/DashboardMoral/components/SideBar/SideBarMenu';
+import SideBarDashboard from '../DashboardMoral/components/SideBar/SideBarMenu';
 
 const OperationConfirm: React.FC = () => {
   return (

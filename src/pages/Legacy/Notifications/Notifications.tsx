@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '@/components/UI/Typography';
 import { Layout } from '@/components';
-import SideBarDashboard from '@/pages/Actual/DashBoard/DashboardMoral/components/SideBar/SideBarMenu';
+import SideBarDashboard from '../DashboardMoral/components/SideBar/SideBarMenu';
 
 const Notifications: React.FC = () => {
   return (

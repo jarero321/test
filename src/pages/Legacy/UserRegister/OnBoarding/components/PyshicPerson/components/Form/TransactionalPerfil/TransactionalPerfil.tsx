@@ -1,4 +1,5 @@
 import { Button, Form, InputForm, Typography } from '@/components';
+import { GridTextForm } from '@/components/UI/GridTextForm';
 import { SelectForm } from '@/components/UI/SelectForm';
 import React from 'react';
 
@@ -22,198 +23,166 @@ const TransactionalPerfil: React.FC = () => {
       <div className="w-full flex">
         <Form
           className="w-full mt-[20px]"
+          id="transactional"
           onSubmit={(data) => {
             return data;
           }}
         >
           <div className="w-full gap-[40px] grid grid-cols-2 items-center">
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Ocupación
-              </Typography>
-              <InputForm label="" name="name" placeholder="Software Engineer" />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Giro
-              </Typography>
+            <GridTextForm
+              text="
+                Ocupación"
+            >
+              <InputForm
+                label=""
+                name="ocupation"
+                placeholder="Software Engineer"
+                required
+              />
+            </GridTextForm>
+            <GridTextForm
+              text="
+                Giro"
+            >
               <SelectForm
                 className="mt-[20px]"
                 label=""
-                name="giro"
+                name="gire"
                 options={[]}
                 placeholder="Tech"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Actividad económica
-              </Typography>
+            </GridTextForm>
+            <GridTextForm
+              text="
+                Actividad económica"
+            >
               <SelectForm
                 className="mt-[20px]"
                 label=""
-                name="lastName"
+                name="economicActivity"
                 options={[]}
                 placeholder="Desarrollar"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Ingreso mensual neto
-              </Typography>
+            </GridTextForm>
+            <GridTextForm
+              text="
+                Ingreso mensual neto"
+            >
               <SelectForm
                 className="mt-[20px]"
                 label=""
-                name="birthDay"
+                name="salary"
                 options={[]}
                 placeholder="Elige una opción"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Fuente de Ingresos
-              </Typography>
+            </GridTextForm>
+            <GridTextForm
+              text="
+                Fuente de Ingresos"
+            >
               <SelectForm
                 className="mt-[20px]"
                 label=""
-                name="birthDay"
+                name="fuente"
                 options={[]}
                 placeholder="Elige una opción"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Procedencia del recurso
-              </Typography>
+            </GridTextForm>
+            <GridTextForm
+              text="
+                Procedencia del recurso"
+            >
               <SelectForm
                 className="mt-[20px]"
                 label=""
-                name="birthDay"
+                name="recurse"
                 options={[]}
                 placeholder="Elige una opción"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                ¿Cuánto estimas que vas a transaccionar al mes?
-              </Typography>
+            </GridTextForm>
+            <GridTextForm
+              text="
+                ¿Cuánto estimas que vas a transaccionar al mes?"
+            >
               <SelectForm
                 className="mt-[20px]"
                 label=""
-                name="birthDay"
+                name="transaction"
                 options={[]}
                 placeholder="Elige una opción"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                ¿Cuántas Operaciones vas a realizar por mes?
-              </Typography>
+            </GridTextForm>
+            <GridTextForm
+              text="
+                ¿Cuántas Operaciones vas a realizar por mes?"
+            >
               <SelectForm
                 className="mt-[20px]"
                 label=""
-                name="birthDay"
+                name="operationNumber"
                 options={[]}
                 placeholder="Elige una opción"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
+            </GridTextForm>
+            <GridTextForm
+              text="
                 ¿A quiénes piensas transferir? Puedes seleccionar más de una
-                respuesta
-              </Typography>
+                respuesta"
+            >
               <SelectForm
                 className="mt-[20px]"
                 label=""
-                name="birthDay"
+                name="operationName"
                 options={[]}
                 placeholder="Elige una opción"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                ¿Para qué utilizarás la transferencia de los recursos?
-              </Typography>
+            </GridTextForm>
+            <GridTextForm
+              text="
+                ¿Para qué utilizarás la transferencia de los recursos?"
+            >
               <SelectForm
                 className="mt-[20px]"
                 label=""
-                name="birthDay"
+                name="ocupationRecurse"
                 options={[]}
                 placeholder="Elige una opción"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                ¿Actúas por cuenta propia?
-              </Typography>
+            </GridTextForm>
+            <GridTextForm
+              text="
+                ¿Actúas por cuenta propia?"
+            >
               <div className="w-full flex gap-[20px]">
                 <Button height="h-[60px]" text="Si" type="submit" />
                 <Button
                   height="h-[60px]"
-                  text="Mo"
+                  text="No"
                   type="submit"
                   variant="grey"
                 />
               </div>
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Nombre comercial y marcas bajo las que opera
-              </Typography>
+            </GridTextForm>
+            <GridTextForm
+              text="
+                Nombre comercial y marcas bajo las que opera"
+            >
               <InputForm
                 label=""
-                name="name"
+                name="comercialName"
                 placeholder="Pueden ser varias marcas"
+                required
               />
-            </div>
+            </GridTextForm>
           </div>
           <div className="w-full flex justify-end mt-[80px] ">
             <div className="w-[40%] flex gap-[50px] ">
@@ -225,6 +194,7 @@ const TransactionalPerfil: React.FC = () => {
               />
               <Button
                 height="h-[60px]"
+                id="transactional"
                 text="Siguiente"
                 type="submit"
                 variant="secondary"
