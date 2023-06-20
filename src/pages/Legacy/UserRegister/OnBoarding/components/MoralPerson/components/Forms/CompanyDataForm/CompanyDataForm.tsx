@@ -1,4 +1,5 @@
 import { Button, DatePicker, Form, InputForm, Typography } from '@/components';
+import { GridTextForm } from '@/components/UI/GridTextForm';
 import { SelectForm } from '@/components/UI/SelectForm';
 import React, { useState } from 'react';
 
@@ -38,126 +39,77 @@ const CompanyDataForm: React.FC = () => {
           }}
         >
           <div className="w-full gap-[40px] grid grid-cols-2 items-center">
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Denominación o Razón social
-              </Typography>
-              <InputForm label="" name="name" placeholder="XPIDR SAPI de CV" />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Nacionalidad
-              </Typography>
+            <GridTextForm text="Denominación o Razón social">
+              <InputForm
+                className="mt-[20px]"
+                name="businessName"
+                placeholder="XPIDR SAPI de CV"
+                required
+                rules="rfc"
+              />
+            </GridTextForm>
+            <GridTextForm text="Nacionalidad">
               <InputForm
                 className="mt-[20px]"
                 label=""
-                name="firstName"
-                placeholder="502"
+                name="nacionality"
+                placeholder="Mexicana"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                RFC con homoclave
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="RFC con homoclave">
               <InputForm
                 className="mt-[20px]"
-                label=""
-                name="lastName"
-                placeholder="13 caracteres"
+                name="rfc"
+                placeholder="13 dígitos"
+                required
+                rules="rfc"
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Giro
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="Giro">
               <SelectForm
                 className="mt-[20px]"
                 label=""
-                name="birthDay"
+                name="role"
                 options={[]}
                 placeholder="Elige una opción"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Fecha de constitución
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="Fecha de constitución">
               <DatePicker
                 handleDateChange={handleDateChange}
                 selectedDate={formValues.birthDate}
                 withPortal
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Número de teléfono
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="Número de teléfono">
               <InputForm
                 className="mt-[20px]"
-                label=""
-                name="birthDay"
+                name="phoneNumber"
                 placeholder="10 dígitos"
+                required
               />
-            </div>
+            </GridTextForm>
             <div className="w-full">
               <Typography size="xs">Información Bancaria</Typography>
             </div>
             <div className="w-full" />
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Cuenta CLABE (opcional)
-              </Typography>
+            <GridTextForm text="Cuenta CLABE (opcional)">
               <InputForm
                 className="mt-[20px]"
-                label=""
-                name="name"
+                name="clabe"
                 placeholder="18 dígitos"
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Banco o Institucion (Opcional)
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="Banco o Institucion (Opcional)">
               <SelectForm
                 className="mt-[20px]"
-                label=""
-                name="name"
+                name="bank"
                 options={[]}
                 placeholder="Elige una opción"
               />
-            </div>
+            </GridTextForm>
           </div>
           <div className="w-full flex justify-end mt-[80px] ">
             <div className="w-[40%] flex gap-[50px] ">
