@@ -3,7 +3,12 @@ import styles from './styles.module.scss';
 import { inputValidation } from '@/utils';
 import IonIcon from '@reacticons/ionicons';
 import React, { useState } from 'react';
-import { useFormContext } from 'react-hook-form';
+import {
+  useFormContext,
+  RegisterOptions,
+  UseFormRegister,
+  FieldError,
+} from 'react-hook-form';
 
 interface InputFormProps {
   name: string;
@@ -12,10 +17,11 @@ interface InputFormProps {
   label?: string;
   type?: 'text' | 'password' | 'email';
   required?: boolean;
-  inputMode?: 'email' | 'text';
-  rules?: string;
-  min?: number;
-  max?: number;
+  register?: UseFormRegister<any>;
+  id: string;
+  error?: FieldError;
+  inputMode?: 'email' | 'text' | 'password';
+  validate?: RegisterOptions['validate'];
 }
 
 const InputForm: React.FC<InputFormProps> = ({
@@ -23,12 +29,13 @@ const InputForm: React.FC<InputFormProps> = ({
   label,
   placeholder,
   type = 'text',
+  // register,
   required = false,
   inputMode = 'text',
+  id,
   className = '',
-  rules = inputMode,
-  min,
-  max,
+  // validate,
+  // error,
 }) => {
   const methods = useFormContext();
   const [showVisibility, setShowVisibility] = useState(true);
@@ -41,9 +48,9 @@ const InputForm: React.FC<InputFormProps> = ({
     return !showVisibility ? 'text' : 'password';
   };
   const {
-    register,
     formState: { errors },
     getValues,
+    register,
   } = methods;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -66,23 +73,22 @@ const InputForm: React.FC<InputFormProps> = ({
               valueInput(name) ? styles.withValue : ''
             }`}
           >
-            {label}
+            <label htmlFor={id}>{label}</label>
           </span>
           <input
             className={styles.input}
+            id={id}
             inputMode={inputMode}
-            maxLength={max}
-            minLength={min}
             placeholder={placeholder}
             type={type === 'password' ? validateTypePassword() : type}
-            {...register(name, inputValidation(rules, required))}
+            {...register(id, inputValidation(name, required))}
             formNoValidate
           />
           {type === 'password' ? (
             <button
               className={styles.visibilityButton}
               onClick={toggleVisibility}
-              type="button"
+              type="submit"
             >
               {showVisibility ? (
                 <IonIcon name="eye" />

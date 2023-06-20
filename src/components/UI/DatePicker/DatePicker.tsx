@@ -1,11 +1,10 @@
 import styles from './styles.module.scss';
-import React from 'react';
+import React, { forwardRef, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 interface Props {
   selectedDate: Date;
-  // eslint-disable-next-line no-unused-vars
   handleDateChange: (date: Date) => void;
   withPortal: boolean;
 }
@@ -14,9 +13,16 @@ const DatePickerComponent: React.FC<Props> = ({
   selectedDate,
   handleDateChange,
 }) => {
+  const [startDate, setStartDate] = useState(selectedDate);
+
+  const handleChange = (date: Date) => {
+    setStartDate(date);
+    handleDateChange(date);
+  };
+
   const CustomDatePickerInput = React.forwardRef<HTMLInputElement, any>(
-    ({ value, onClick }) => (
-      <button className={`${styles.input}`} onClick={onClick}>
+    ({ value, onClick }, ref) => (
+      <button className={`${styles.input}`} onClick={onClick} ref={ref}>
         {value}
       </button>
     )
