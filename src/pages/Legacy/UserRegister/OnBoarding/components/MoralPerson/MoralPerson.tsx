@@ -8,6 +8,7 @@ import { Layout } from '@/components';
 import SwitchedComponent from '@/components/UI/SwitchedComponent';
 import React, { useEffect, useState } from 'react';
 import { MoralPersonStepper } from '@/pages/Actual/OnBoarding/MoralPersonStepper';
+import { Documents } from './components/Forms/Documents';
 
 const MoralPerson: React.FC = () => {
   const { step } = useParams();
@@ -40,6 +41,9 @@ const MoralPerson: React.FC = () => {
             </div>
             <div className="w-full" id="perfil-transaccional">
               <TransactionalPerfil />
+            </div>
+            <div className="w-full" id="documentacion">
+              <Documents />
             </div>
           </SwitchedComponent>
         </div>
