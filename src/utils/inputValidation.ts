@@ -35,6 +35,14 @@ export const inputValidation = (
     },
     password: {
       required: { value: required, message: 'Campo obligatorio' },
+      validate: (value: string) => {
+        if (
+          !value.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/)
+        ) {
+          return 'La contraseña debe contener al menos una letra en mayúscula, una letra en minúscula y un número';
+        }
+        return true;
+      },
     },
   };
   return optionsType[type] || optionsType.default;

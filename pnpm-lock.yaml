@@ -71,6 +71,7 @@ specifiers:
   typescript: ^4.8.2
   vite: ^4.0.4
   vitest: ^0.27.2
+  zustand: ^4.3.8
 
 dependencies:
   '@babel/core': 7.20.12
@@ -99,6 +100,7 @@ dependencies:
   redux-devtools-extension: 2.13.9_redux@4.2.1
   redux-persist: 6.0.0_react@18.2.0+redux@4.2.1
   redux-thunk: 2.4.2_redux@4.2.1
+  zustand: 4.3.8_react@18.2.0
 
 devDependencies:
   '@faker-js/faker': 7.6.0
@@ -14998,6 +15000,22 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zustand/4.3.8_react@18.2.0:
+    resolution: {integrity: sha512-4h28KCkHg5ii/wcFFJ5Fp+k1J3gJoasaIbppdgZFO4BPJnsNxL0mQXBSFgOgAdCdBj35aDTPvdAJReTMntFPGg==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      immer: '>=9.0'
+      react: '>=16.8'
+    peerDependenciesMeta:
+      immer:
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      use-sync-external-store: 1.2.0_react@18.2.0
+    dev: false
 
   /zwitch/1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}

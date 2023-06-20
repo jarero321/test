@@ -3,11 +3,31 @@ import './styles.scss';
 import { Button, Form, InputForm, Typography } from '@/components';
 
 import Logo from '@/resources/img/logo/logo.png';
+import { loginRequest, profileRequest } from '@/api/auth';
+import { useAuthStore } from '@/store/auth';
+import { useNavigate } from 'react-router-dom';
 import BannerAuth from '../components/BannerAuth';
 
+interface FormData {
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
 const Auth: React.FC = () => {
-  const onSubmit = () => {
-    return 'hi';
+  const setToken = useAuthStore((state) => state.setToken);
+  const setProfile = useAuthStore((state) => state.setProfile);
+
+  const navigate = useNavigate();
+
+  const onSubmit = async (data: FormData) => {
+    const resAuth = await loginRequest(data.email, data.password);
+    setToken(resAuth.data.token);
+
+    const resProfile = await profileRequest();
+    setProfile(resProfile.data.profile);
+
+    navigate('/dashboard');
   };
 
   return (
@@ -15,7 +35,11 @@ const Auth: React.FC = () => {
       <img alt="logo paycode" className="login__logo" src={Logo} />
       <div className="login__box">
         <div className="login__box-wrap">
-          <Form className=" flex flex-col" onSubmit={onSubmit}>
+          <Form
+            className=" flex flex-col"
+            id="register-form"
+            onSubmit={(data) => onSubmit(data as any)}
+          >
             <Typography colors="primary-color" size="base">
               ¡Regístrate ahora!
             </Typography>
@@ -58,6 +82,7 @@ const Auth: React.FC = () => {
               <div className="mt-[20px]">
                 <Button
                   height="h-[50px]"
+                  id="register-form"
                   text="Ingresar cuenta"
                   type="submit"
                   variant="secondary"
