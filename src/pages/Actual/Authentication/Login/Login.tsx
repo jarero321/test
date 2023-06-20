@@ -5,12 +5,12 @@ import SwitchedComponent from '@/components/UI/SwitchedComponent';
 import { useState } from 'react';
 
 const Login = () => {
-  const [active] = useState('loginUser');
+  const [active, setActive] = useState('loginUser');
 
   return (
     <SwitchedComponent active={active} target="id">
       <div id="loginUser">
-        <LoginUser />
+        <LoginUser setState={(value: string) => setActive(value)} />
       </div>
       <div id="loginPassword">
         <LoginPassword />

@@ -3,7 +3,6 @@ import './styles.scss';
 import { Button, Form, InputForm, Typography } from '@/components';
 
 import Logo from '@/resources/img/logo/logo.png';
-import { loginRequest, profileRequest } from '@/api/auth';
 import { useAuthStore } from '@/store/auth';
 import { useNavigate } from 'react-router-dom';
 import BannerAuth from '../components/BannerAuth';
@@ -16,16 +15,11 @@ interface FormData {
 
 const Auth: React.FC = () => {
   const setToken = useAuthStore((state) => state.setToken);
-  const setProfile = useAuthStore((state) => state.setProfile);
 
   const navigate = useNavigate();
 
-  const onSubmit = async (data: FormData) => {
-    const resAuth = await loginRequest(data.email, data.password);
-    setToken(resAuth.data.token);
-
-    const resProfile = await profileRequest();
-    setProfile(resProfile.data.profile);
+  const onSubmit = async (_data: FormData) => {
+    setToken('test');
 
     navigate('/dashboard');
   };

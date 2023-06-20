@@ -4,10 +4,14 @@ import Logo from '@/resources/img/logo/logo.png';
 import { Link } from 'react-router-dom';
 import BannerAuth from '../../../components/BannerAuth';
 
-const LoginUser = () => {
+interface LoginProps {
+  // eslint-disable-next-line no-unused-vars
+  setState: (value: string) => void;
+}
+const LoginUser = ({ setState }: LoginProps) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onSubmit = (data: any) => {
-    return data;
+  const onSubmit = (_data: any) => {
+    setState('loginPassword');
   };
 
   return (

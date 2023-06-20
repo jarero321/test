@@ -14,11 +14,15 @@ const NavOptions: React.FC = () => {
   return (
     <div className="w-full h-full py-[20px] flex flex-col gap-[10px] px-[15px] justify-between ">
       <div className="flex flex-col gap-[8px]">
-        <Options img={Inicio} text="Inicio" />
+        <Options href="/dashboard" img={Inicio} text="Inicio" />
         <Options img={SPEI} text="Pagos SPEI" />
         <Options img={Services} text="Pago de Servicios" />
         <Options img={Impuestos} text="Pago de Impuestos" />
-        <Options img={Destinatarios} text="Destinatarios" />
+        <Options
+          href="/dashboard/destinatarios"
+          img={Destinatarios}
+          text="Destinatarios"
+        />
         <Options img={Reportes} text="Reportes" />
         <Options img={Configuracion} text="Configuración" />
         <Options img={Ayuda} text="Ayuda" />

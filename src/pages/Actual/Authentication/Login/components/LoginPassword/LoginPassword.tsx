@@ -2,12 +2,17 @@ import '../../styles.scss';
 import { Button, InputForm, Typography } from '@/components';
 import { Form } from '@/components/UI/Form';
 import Logo from '@/resources/img/logo/logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BannerAuth from '../../../components/BannerAuth';
+import { useAuthStore } from '@/store/auth';
 
 const LoginUser = () => {
+  const setToken = useAuthStore((state) => state.setToken);
+  const navigate = useNavigate();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => {
+    setToken('test');
+    navigate('/dashboard');
     return data;
   };
 
@@ -30,20 +35,10 @@ const LoginUser = () => {
               Bienvenido {name}
             </Typography>
             <Form onSubmit={onSubmit}>
-              <div className="pt-[15px]">
-                <InputForm
-                  inputMode="email"
-                  label="Correo electrónico"
-                  name="email"
-                  required
-                  type="password"
-                />
-              </div>
               <div className="pt-[25px]">
                 <InputForm
-                  inputMode="email"
-                  label="Correo electrónico"
-                  name="email"
+                  label="Contraseña"
+                  name="password"
                   required
                   type="password"
                 />
@@ -60,6 +55,7 @@ const LoginUser = () => {
               <div className="mt-[30px] flex gap-[20px] ">
                 <Button
                   height="h-[60px]"
+                  onClick={() => navigate('/autentication/iniciar-sesion')}
                   text="No soy yo"
                   type="submit"
                   variant="grey"

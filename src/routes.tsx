@@ -26,7 +26,7 @@ const Router = () => {
               <Dashboard />
             </ProtectedRoute>
           }
-          path="dashboard"
+          path="dashboard/:step?"
         />
       </Routes>
     </BrowserRouter>

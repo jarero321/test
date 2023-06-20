@@ -1,7 +1,9 @@
 import { Button, Form, InputForm, SelectForm, Typography } from '@/components';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const UploadReceiversForm: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div className="w-full h-full bg-white shadow-lg rounded-[12px] px-[20px] py-[20px]">
       <Form
@@ -95,6 +97,7 @@ const UploadReceiversForm: React.FC = () => {
             />
             <Button
               height="h-[60px]"
+              onClick={() => navigate('/dashboard/destinatarios')}
               text="Continuar"
               type="submit"
               variant="secondary"
