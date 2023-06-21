@@ -9,7 +9,7 @@ const Title: React.FC = () => {
       </Typography>
       <Typography size="lg">|</Typography>
       <Typography className="font-semibold" colors="secondary-color" size="lg">
-        Persona Física
+        Persona Moral
       </Typography>
     </div>
   );

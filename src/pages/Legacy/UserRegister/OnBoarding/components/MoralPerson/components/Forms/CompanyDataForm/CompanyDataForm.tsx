@@ -34,6 +34,7 @@ const CompanyDataForm: React.FC = () => {
       <div className="w-full flex">
         <Form
           className="w-full mt-[40px]"
+          id="company-data"
           onSubmit={(data) => {
             return data;
           }}
@@ -41,6 +42,7 @@ const CompanyDataForm: React.FC = () => {
           <div className="w-full gap-[40px] grid grid-cols-2 items-center">
             <GridTextForm text="Denominación o Razón social">
               <InputForm
+                label=""
                 className="mt-[20px]"
                 name="businessName"
                 placeholder="XPIDR SAPI de CV"
@@ -121,6 +123,7 @@ const CompanyDataForm: React.FC = () => {
               />
               <Button
                 height="h-[60px]"
+                id="company-data"
                 text="Siguiente"
                 type="submit"
                 variant="secondary"

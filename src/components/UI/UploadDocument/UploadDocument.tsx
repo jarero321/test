@@ -54,9 +54,9 @@ const DocumentUploader: React.FC<DocumentUploaderProps> = ({
           <span>Examinar</span>
           <input
             type="file"
-            {...register(`document_${index}`, {
-              required: { value: true, message: 'Campo obligatorio' },
-            })}
+            // {...register(`document_${index}`, {
+            //   required: { value: true, message: 'Campo obligatorio' },
+            // })}
             className="hidden"
             onChange={handleFileChange}
           />
