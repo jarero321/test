@@ -1,4 +1,5 @@
 import { Button, Form, InputForm, Typography } from '@/components';
+import { GridTextForm } from '@/components/UI/GridTextForm';
 import React from 'react';
 
 const LegalDataForm: React.FC = () => {
@@ -21,112 +22,47 @@ const LegalDataForm: React.FC = () => {
       <div className="w-full flex">
         <Form
           className="w-full mt-[40px]"
+          id="legal-person"
           onSubmit={(data) => {
             return data;
           }}
         >
           <div className="w-full gap-[40px] grid grid-cols-2 items-center">
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Nombre (s)
-              </Typography>
-              <InputForm label="" name="name" placeholder="Luis Carlos" />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Primer apellido
-              </Typography>
+            <GridTextForm text="Nombre (s)">
+              <InputForm name="firstName" placeholder="Luis Carlos" required />
+            </GridTextForm>
+            <GridTextForm text="Primer Apellido">
+              <InputForm name="lastName" placeholder="Hernandez" required />
+            </GridTextForm>
+            <GridTextForm text="Segundo apellido (opcional)">
+              <InputForm name="secondName" placeholder="Saavedra" />
+            </GridTextForm>
+            <GridTextForm text="RFC con Homoclave">
               <InputForm
-                className="mt-[20px]"
-                label=""
-                name="firstName"
-                placeholder="Jarero"
-              />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Segundo apellido
-              </Typography>
-              <InputForm
-                className="mt-[20px]"
-                label=""
-                name="lastName"
-                placeholder="Saavedra"
-              />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                RFC con Homoclave
-              </Typography>
-              <InputForm
-                className="mt-[20px]"
-                label=""
-                name="birthDay"
+                name="rfc"
                 placeholder="13 caracteres"
+                required
+                rules="rfc"
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                CURP
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="CURP">
               <InputForm
-                className="mt-[20px]"
-                label=""
-                name="birthDay"
-                placeholder="México"
+                name="curp"
+                placeholder="18 caracteres"
+                required
+                rules="curp"
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Correo electrónico
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="Correo electrónico">
               <InputForm
-                className="mt-[20px]"
-                label=""
-                name="birthDay"
+                name="email"
                 placeholder="correo@dominio.com"
+                required
               />
-            </div>
-
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Número de teléfono
-              </Typography>
-              <InputForm
-                className="mt-[20px]"
-                label=""
-                name="birthDay"
-                placeholder="México"
-              />
-            </div>
+            </GridTextForm>
+            <GridTextForm text="Número de teléfono">
+              <InputForm name="phoneNumber" placeholder="10 digitos" required />
+            </GridTextForm>
           </div>
           <div className="w-full flex justify-end mt-[80px] ">
             <div className="w-[40%] flex gap-[50px] ">
@@ -138,6 +74,7 @@ const LegalDataForm: React.FC = () => {
               />
               <Button
                 height="h-[60px]"
+                id="legal-person"
                 text="Siguiente"
                 type="submit"
                 variant="secondary"
