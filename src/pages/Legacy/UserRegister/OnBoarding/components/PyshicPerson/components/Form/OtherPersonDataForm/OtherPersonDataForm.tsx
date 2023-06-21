@@ -1,4 +1,5 @@
 import { Button, DatePicker, Form, InputForm, Typography } from '@/components';
+import { GridTextForm } from '@/components/UI/GridTextForm';
 import { SelectForm } from '@/components/UI/SelectForm';
 import React, { useState } from 'react';
 
@@ -39,104 +40,40 @@ const OtherPersonDataForm: React.FC = () => {
       <div className="w-full flex">
         <Form
           className="w-full mt-[40px]"
+          id="other-person"
           onSubmit={(data) => {
             return data;
           }}
         >
           <div className="w-full gap-[40px] grid grid-cols-2 items-center">
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                CURP
-              </Typography>
-              <InputForm label="" name="curp" placeholder="18 caracteres" />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Nombre (s)
-              </Typography>
+            <GridTextForm text="CURP">
               <InputForm
-                className="mt-[20px]"
-                label=""
-                name="firstName"
-                placeholder="Luis Carlos"
+                name="curp"
+                placeholder="18 caracteres"
+                required
+                rules="curp"
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Primer apellido
-              </Typography>
-              <InputForm
-                className="mt-[20px]"
-                label=""
-                name="lastName"
-                placeholder="Hernandez"
-              />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Segundo apellido (Opcional)
-              </Typography>
-
-              <InputForm
-                className="mt-[20px]"
-                label=""
-                name="secondName"
-                placeholder="Saavedra"
-              />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Fecha de nacimiento
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="Nombre (s)">
+              <InputForm name="firstName" placeholder="Luis Carlos" required />
+            </GridTextForm>
+            <GridTextForm text="Primer apellido">
+              <InputForm name="lastName" placeholder="Hernandez" required />
+            </GridTextForm>
+            <GridTextForm text="Segundo apellido (Opcional)">
+              <InputForm name="secondName" placeholder="Saavedra" required />
+            </GridTextForm>
+            <GridTextForm text="Fecha de nacimiento">
               <DatePicker
                 handleDateChange={handleDateChange}
                 selectedDate={formValues.birthDate}
                 withPortal
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                País de nacimiento
-              </Typography>
-              <InputForm
-                className="mt-[20px]"
-                label=""
-                name="country"
-                placeholder="México"
-              />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Estado
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="País de nacimiento">
+              <InputForm name="country" placeholder="México" required />
+            </GridTextForm>
+            <GridTextForm text="Estado">
               <SelectForm
                 className="mt-[20px]"
                 label=""
@@ -144,261 +81,160 @@ const OtherPersonDataForm: React.FC = () => {
                 options={[]}
                 placeholder="Elige una opción"
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Género
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="Género">
               <SelectForm
                 className="mt-[20px]"
                 label=""
-                name="stateOfBirth"
+                name="gender"
                 options={[]}
                 placeholder="Elige una opción"
               />
-            </div>
-
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Nacionalidad
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="Nacionalidad">
               <InputForm
                 className="mt-[20px]"
                 label=""
                 name="nacionality"
                 placeholder="Mexicana"
+                required
               />
-            </div>
+            </GridTextForm>
             <div className="h-[70px]" />
             <div className="w-full">
               <Typography size="xs">Actividad</Typography>
             </div>
             <div className="w-full" />
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Ocupación
-              </Typography>
-              <InputForm label="" name="name" placeholder="Software Engineer" />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Giro
-              </Typography>
+            <GridTextForm text="Ocupación">
+              <InputForm
+                className="mt-[20px]"
+                label=""
+                name="ocupation"
+                placeholder="Software Engineer"
+                required
+              />
+            </GridTextForm>
+            <GridTextForm text="Giro">
               <SelectForm
                 className="mt-[20px]"
                 label=""
-                name="giro"
+                name="role"
                 options={[]}
                 placeholder="Tech"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Actividad
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="Actividad">
               <SelectForm
                 className="mt-[20px]"
                 label=""
-                name="lastName"
+                name="activity"
                 options={[]}
                 placeholder="Desarrollar"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                RFC con homoclave
-              </Typography>
-              <InputForm label="" name="name" placeholder="13 caracteres" />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Firma electrónica avanzada
-              </Typography>
-              <InputForm label="" name="name" placeholder="13 caracteres" />
-            </div>
+            </GridTextForm>
+
+            <GridTextForm text="RFC con homoclave">
+              <InputForm
+                className="mt-[20px]"
+                label=""
+                name="rfc"
+                placeholder="13 dígitos"
+                required
+                rules="rfc"
+              />
+            </GridTextForm>
+            <GridTextForm text="Firma electrónica avanzada">
+              <InputForm
+                className="mt-[20px]"
+                label=""
+                name="signature"
+                placeholder="13 caracteres"
+                required
+              />
+            </GridTextForm>
             <div className="h-[70px]" />
             <div className="w-full">
-              <Typography size="xs">Actividad</Typography>
+              <Typography size="xs">Dirección</Typography>
             </div>
             <div className="w-full" />
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Código Postal
-              </Typography>
-              <InputForm label="" name="name" placeholder="0390" />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Calle
-              </Typography>
+            <GridTextForm text="Código Postal">
+              <InputForm max={4} name="zipCode" placeholder="03900" required />
+            </GridTextForm>
+            <GridTextForm text="Calle">
               <InputForm
-                className="mt-[20px]"
-                label=""
-                name="firstName"
+                name="street"
                 placeholder="Avenida Manuel Camacho"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Número exterior
-              </Typography>
-              <InputForm
-                className="mt-[20px]"
-                label=""
-                name="lastName"
-                placeholder="502"
-              />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Número interior
-              </Typography>
-              <InputForm
-                className="mt-[20px]"
-                label=""
-                name="birthDay"
-                placeholder="203"
-              />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                País
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="Número exterior">
+              <InputForm name="externalNumber" placeholder="502" required />
+            </GridTextForm>
+            <GridTextForm text="Número interior">
+              <InputForm name="internalNumber" placeholder="205" required />
+            </GridTextForm>
+
+            <GridTextForm text="País">
               <InputForm
                 className="mt-[20px]"
                 label=""
                 name="country"
                 placeholder="México"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Estado o Entidad Federativa
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="Estado o Entidad Federativa">
               <InputForm
                 className="mt-[20px]"
                 label=""
                 name="nacionality"
                 placeholder="Ciudad de México"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Alcaldía o municipio
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="Alcaldía o municipio">
               <InputForm
                 className="mt-[20px]"
                 label=""
                 name="stateOfBirth"
                 placeholder="Las lomas"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Colonia
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="Colonia">
               <SelectForm
                 className="mt-[20px]"
                 label=""
-                name="genre"
+                name="entity"
                 options={[]}
                 placeholder="San Pedro de los Pinos"
+                required
               />
-            </div>
+            </GridTextForm>
             <div className="w-full">
               <Typography size="xs">Contacto</Typography>
             </div>
             <div className="w-full" />
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Número de telefóno celular
-              </Typography>
+            <GridTextForm text="Número de télefono celular">
               <InputForm
                 className="mt-[20px]"
                 label=""
-                name="stateOfBirth"
+                name="telephone"
                 placeholder="10 dígitos"
+                required
               />
-            </div>
-            <div className="h-[70px]">
-              <Typography
-                className="pb-[5px]"
-                colors="secondary-gray"
-                size="xs"
-              >
-                Correo electrónico
-              </Typography>
+            </GridTextForm>
+            <GridTextForm text="Correo electrónico">
               <InputForm
                 className="mt-[20px]"
                 label=""
-                name="stateOfBirth"
-                placeholder="correo@dominio.com"
+                name="email"
+                placeholder="prueba@mail.es"
+                required
               />
-            </div>
+            </GridTextForm>
           </div>
         </Form>
       </div>
@@ -412,6 +248,7 @@ const OtherPersonDataForm: React.FC = () => {
           />
           <Button
             height="h-[60px]"
+            id="other-person"
             text="Siguiente"
             type="submit"
             variant="secondary"
