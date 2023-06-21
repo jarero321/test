@@ -38,10 +38,20 @@ const LegalDataForm: React.FC = () => {
               <InputForm name="secondName" placeholder="Saavedra" />
             </GridTextForm>
             <GridTextForm text="RFC con Homoclave">
-              <InputForm name="rfc" placeholder="13 caracteres" required />
+              <InputForm
+                name="rfc"
+                placeholder="13 caracteres"
+                required
+                rules="rfc"
+              />
             </GridTextForm>
             <GridTextForm text="CURP">
-              <InputForm name="curp" placeholder="18 caracteres" required />
+              <InputForm
+                name="curp"
+                placeholder="18 caracteres"
+                required
+                rules="curp"
+              />
             </GridTextForm>
             <GridTextForm text="Correo electrónico">
               <InputForm
