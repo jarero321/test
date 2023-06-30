@@ -1,9 +1,20 @@
 import { Button, Form, InputForm, SelectForm, Typography } from '@/components';
-import React from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ModalBeneficier } from '../ModalBeneficier';
 
 const UploadReceiversForm: React.FC = () => {
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="w-full h-full bg-white shadow-lg rounded-[12px] px-[20px] py-[20px]">
       <Form
@@ -57,13 +68,14 @@ const UploadReceiversForm: React.FC = () => {
             />
             <Button
               height="h-[60px]"
-              onClick={() => navigate('/dashboard/destinatarios')}
+              onClick={openModal}
               text="Guardar"
               type="submit"
               variant="secondary"
             />
           </div>
         </div>
+        <ModalBeneficier isOpen={isModalOpen} onClose={closeModal} />
       </Form>
     </div>
   );
