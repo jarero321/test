@@ -5,7 +5,7 @@ const BannerAuth = () => {
   return (
     <div className="banner">
       <Typography
-        className="text-left py-[20px] 2xl:!text-[72px] xl:!text-[60px] lg:!text-[42px]"
+        className="text-left py-[20px] 2xl:!text-[72px] xl:!text-[50px] 2xl:!text-[60px] lg:!text-[42px]"
         colors="text-white"
         size="xl"
       >
