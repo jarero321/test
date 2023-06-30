@@ -24,7 +24,11 @@ const NavOptions: React.FC = () => {
           text="Destinatarios"
         />
         <Options img={Reportes} text="Reportes" />
-        <Options img={Configuracion} text="Configuración" />
+        <Options
+          href="/dashboard/configuracion"
+          img={Configuracion}
+          text="Configuración"
+        />
         <Options img={Ayuda} text="Ayuda" />
         <div className="mt-[20px]">
           <Options img={Salir} text="Salir" />
