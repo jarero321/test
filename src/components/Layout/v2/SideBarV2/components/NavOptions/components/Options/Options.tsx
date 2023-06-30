@@ -1,23 +1,30 @@
 import { Typography } from '@/components';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export type OptionsProps = {
   text?: string;
-  img?: string;
+  children?: JSX.Element;
   href?: string;
 };
 
 const Options: React.FC<OptionsProps> = ({
   text,
-  img,
-  href = '/dashboard',
+  children,
+  href = '/dashboard/inicio',
 }) => {
+  const router = useLocation();
+
+  const isActive = href === router.pathname;
   return (
     <Link to={href}>
-      <div className="cursor-pointer w-full flex items-center gap-[10px] ">
-        <img height={40} src={img} width={40} />
-        <Typography className="xl:!text-[12px]" colors="white" size="xs">
+      <div className="cursor-pointer items-center w-full flex gap-[10px] ">
+        {children}
+        <Typography
+          className="xl:!text-[16px]"
+          colors={isActive ? 'secondary' : 'white'}
+          size="xs"
+        >
           {text}
         </Typography>
       </div>

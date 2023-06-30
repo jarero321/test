@@ -7,6 +7,11 @@ import { useAuthStore } from '@/store/auth';
 import { useNavigate } from 'react-router-dom';
 import BannerAuth from '../components/BannerAuth';
 
+import { createUser } from '@/api/Authentication/Authentication.api';
+import { RegisterUser } from '@/models/authentication/authentication.models';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
+
 interface FormData {
   email: string;
   password: string;
@@ -14,14 +19,32 @@ interface FormData {
 }
 
 const Auth: React.FC = () => {
+  const [loading, setLoading] = useState(false);
   const setToken = useAuthStore((state) => state.setToken);
 
   const navigate = useNavigate();
 
-  const onSubmit = async (_data: FormData) => {
-    setToken('test');
-
-    navigate('/dashboard');
+  const onSubmit = async (data: FormData) => {
+    const userInfo: RegisterUser = {
+      email: data.email,
+      password: data.password,
+      id: 1,
+      username: data.email,
+      is_staff: false,
+      is_customer: false,
+      is_persona_fisica: false,
+      is_persona_moral: false,
+    };
+    try {
+      setLoading(true);
+      await createUser(userInfo);
+      setToken('test');
+      navigate('/dashboard');
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -77,6 +100,7 @@ const Auth: React.FC = () => {
                 <Button
                   height="h-[50px]"
                   id="register-form"
+                  loader={loading}
                   text="Ingresar cuenta"
                   type="submit"
                   variant="secondary"

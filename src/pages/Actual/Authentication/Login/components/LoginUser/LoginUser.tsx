@@ -31,7 +31,7 @@ const LoginUser = ({ setState }: LoginProps) => {
             >
               Bienvenido
             </Typography>
-            <Form onSubmit={onSubmit}>
+            <Form id="form-email" onSubmit={onSubmit}>
               <div className="pt-[15px]">
                 <InputForm
                   inputMode="email"
@@ -44,6 +44,7 @@ const LoginUser = ({ setState }: LoginProps) => {
               <div className="mt-[30px]">
                 <Button
                   height="h-[60px]"
+                  id="form-email"
                   text="Iniciar sesion"
                   type="submit"
                   variant="secondary"
