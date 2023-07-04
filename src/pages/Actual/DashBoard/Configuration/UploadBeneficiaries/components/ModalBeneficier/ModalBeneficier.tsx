@@ -22,51 +22,74 @@ const ModalBeneficier: React.FC<ModalBeneficierProps> = ({
     onClose();
   };
   return (
+    // Main modal
     <div
-      className={`fixed inset-0 left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50 py-10 ${
+      className={`fixed -inset-0 left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50 py-10 ${
         isOpen ? '' : 'hidden'
       }`}
     >
-      <div className="max-h-full w-full max-w-xl overflow-y-auto sm:rounded-2xl bg-white">
-        {!showContent ? (
-          <div className="w-full">
-            <div className="m-8 my-20 max-w-[400px] mx-auto">
-              <div className="mb-8 text-left">
+      <div className="relative w-full max-w-2xl max-h-full">
+        {/* Modal content */}
+        <div className="relative bg-white rounded-lg shadow">
+          {!showContent ? (
+            <>
+              {/* Modal Header */}
+              <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                <Typography>Alta Nuevo Beneficiario</Typography>
+              </div>
+              {/* Modal Body */}
+              <div className="p-6">
+                <Typography size="xs" colors="black" className="text-gray-600">
+                  Ingrese tú 2FA para confirmar el alta del beneficiario:
+                </Typography>
+              </div>
+              <div className="p-6 space-y-6 text-center">
+                <Typography className="text-center">Token 2fa</Typography>
                 <div>
-                  <Typography>Alta Nuevo Benefici ario</Typography>
+                  <InputForm label="" name="name" placeholder="000000" />
                 </div>
-                <h1 className="mb-4 text-3xl font-extrabold">
-                  Alta nuevo beneficiario
-                </h1>
-                <p className="text-gray-600">
-                  Ingrese tú 2FA para confirmar el alta del beneficiario
-                </p>
+                <div className="flex flex-row mt-6 space-x-2 justify-evenly">
+                  <Button
+                    height="h-[60px]"
+                    text="Cancelar"
+                    type="submit"
+                    onClick={onClose}
+                    variant="grey"
+                  />
+                  <Button
+                    height="h-[60px]"
+                    onClick={handleContinueClick}
+                    text="Agregar Beneficiario"
+                    type="submit"
+                    variant="secondary"
+                  />
+                </div>
               </div>
-              <div>
-                <InputForm label="" name="name" placeholder="" />
+            </>
+          ) : (
+            <>
+              {/* Modal Body */}
+              <div className="p-6 space-y-6 text-center">
+                <Typography className="text-center">
+                  El beneficiario ha sido dado de alta exitosamente
+                </Typography>
+
+                <div className="flex flex-row mt-6 space-x-2 justify-evenly">
+                  <Button
+                    width="w-2/5"
+                    height="h-[60px]"
+                    onClick={onClose}
+                    text="Aceptar"
+                    type="submit"
+                    variant="secondary"
+                  />
+                </div>
               </div>
-              <div className="flex flex-row mt-6 space-x-2 justify-evenly">
-                <Button
-                  height="h-[60px]"
-                  text="Cancelar"
-                  type="submit"
-                  onClick={onClose}
-                  variant="grey"
-                />
-                <Button
-                  height="h-[60px]"
-                  onClick={handleContinueClick}
-                  text="Agregar Beneficiario"
-                  type="submit"
-                  variant="secondary"
-                />
-              </div>
-            </div>
-          </div>
-        ) : (
-          <>New content</>
-        )}
+            </>
+          )}
+        </div>
       </div>
+      {/* Modal Content */}
     </div>
   );
 };
