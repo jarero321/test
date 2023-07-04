@@ -5,7 +5,7 @@ import { LayoutV2 } from '@/components';
 import { Receivers } from './Receivers';
 import { UploadReceivers } from './UploadReceivers';
 import Configuration from './Configuration/Configuration';
-import { UploadBeneficiaries } from './Configuration/UploadBeneficiaries';
+import { UploadBeneficiaries } from './Configuration/Beneficiaries/UploadBeneficiaries';
 
 const Dashboard = () => {
   const { step } = useStep('step', 'inicio');

@@ -1,7 +1,6 @@
 import { Button, Options } from '@/components';
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { TableReceivers } from '../../Receivers/components/TableReceivers';
+import { TableBeneficiaries } from './TableBeneficiaries';
 
 function Beneficiaries() {
   const navigate = useNavigate();
@@ -20,7 +19,7 @@ function Beneficiaries() {
         </div>
       </div>
       <div>
-        <TableReceivers />
+        <TableBeneficiaries />
       </div>
     </>
   );

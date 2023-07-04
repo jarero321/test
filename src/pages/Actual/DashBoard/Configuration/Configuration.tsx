@@ -8,7 +8,8 @@ import Beneficiaries from './Beneficiaries/Beneficiaries';
 import useStep from '@/hooks/useStep';
 
 import SwitchedComponent from '@/components/UI/SwitchedComponent/SwitchedComponent';
-import { UploadBeneficiaries } from './UploadBeneficiaries';
+import { UploadBeneficiaries } from './Beneficiaries/UploadBeneficiaries';
+import { Security } from './Security/Security';
 
 function Configuration() {
   const [selectedButton, setSelectedButton] = useState('Button 1');
@@ -27,6 +28,7 @@ function Configuration() {
         onButtonSelect={handleButtonSelect}
       />
       {selectedButton === 'Beneficiarios' && <Beneficiaries />}
+      {selectedButton === 'Seguridad' && <Security />}
       <SwitchedComponent active={step} target="id">
         <div className="w-full" id="alta-nuevo-benefiario">
           <UploadBeneficiaries />

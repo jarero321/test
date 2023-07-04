@@ -1,0 +1,22 @@
+import { Form, InputForm } from '@/components';
+import React from 'react';
+import { TableGrid } from '../../../Receivers/components/TableReceivers/components/TableGrid';
+
+const TableBeneficiaries: React.FC = () => {
+  return (
+    <div className="w-full h-full bg-white shadow-lg rounded-[12px] px-[20px] py-[20px]">
+      <Form onSubmit={() => null}>
+        <div className="w-[220px] pb-[10px] ">
+          <InputForm
+            className="!pt-[10px] !pb-[10px]"
+            name="search"
+            placeholder="Buscar"
+          />
+        </div>
+      </Form>
+      <TableGrid />
+    </div>
+  );
+};
+
+export default TableBeneficiaries;
