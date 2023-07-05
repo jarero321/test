@@ -2,6 +2,7 @@ import { Button, Form, InputForm, Typography } from '@/components';
 import React, { useState } from 'react';
 import { ModalBeneficier } from '../Beneficiaries/UploadBeneficiaries/components/ModalBeneficier';
 import { useNavigate } from 'react-router-dom';
+import { ModalSecurity } from './components/ModalSecurity';
 
 export const Security = () => {
   const navigate = useNavigate();
@@ -54,7 +55,7 @@ export const Security = () => {
             />
           </div>
         </div>
-        <ModalBeneficier isOpen={isModalOpen} onClose={closeModal} />
+        <ModalSecurity isOpen={isModalOpen} onClose={closeModal} />
       </Form>
     </div>
   );
