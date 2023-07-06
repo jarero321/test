@@ -10,6 +10,7 @@ import useStep from '@/hooks/useStep';
 import SwitchedComponent from '@/components/UI/SwitchedComponent/SwitchedComponent';
 import { UploadBeneficiaries } from './Beneficiaries/UploadBeneficiaries';
 import { Security } from './Security/Security';
+import { MyAccount } from './MyAccount/MyAccount';
 
 function Configuration() {
   const [selectedButton, setSelectedButton] = useState('Button 1');
@@ -27,6 +28,7 @@ function Configuration() {
         selectedButton={selectedButton}
         onButtonSelect={handleButtonSelect}
       />
+      {selectedButton === 'Mi cuenta' && <MyAccount />}
       {selectedButton === 'Beneficiarios' && <Beneficiaries />}
       {selectedButton === 'Seguridad' && <Security />}
       <SwitchedComponent active={step} target="id">
