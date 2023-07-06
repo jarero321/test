@@ -41,7 +41,7 @@ const Auth: React.FC = () => {
       setToken('test');
       navigate('/dashboard');
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error?.message);
     } finally {
       setLoading(false);
     }
