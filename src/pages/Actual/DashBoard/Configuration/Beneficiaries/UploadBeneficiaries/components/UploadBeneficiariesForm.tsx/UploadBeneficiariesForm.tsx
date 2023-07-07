@@ -1,11 +1,9 @@
-import { Button, Form, InputForm, SelectForm, Typography } from '@/components';
+import { Button, Form, InputForm, Typography } from '@/components';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { ModalBeneficier } from '../ModalBeneficier';
 import { UploadDocument } from '@/components/UI/UploadDocument';
 
 const UploadReceiversForm: React.FC = () => {
-  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {

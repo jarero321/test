@@ -12,7 +12,7 @@ const Header: React.FC = () => {
       <div className="flex gap-[20px]">
         <Button
           onClick={() => navigate('/dashboard/alta-nuevo-destinatario')}
-          text="Agregar Nuevo Destinatario"
+          text="Agregar Nuevo Destinatario +"
           type="button"
           variant="secondary"
           width="w-[250px]"

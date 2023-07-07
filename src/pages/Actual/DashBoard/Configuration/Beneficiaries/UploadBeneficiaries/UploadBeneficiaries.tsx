@@ -1,5 +1,4 @@
 import React from 'react';
-import { UploadReceiversForm } from '../../UploadReceivers/components/UploadReceiversForm';
 import { Header } from './components/Header';
 import { UploadBeneficiariesForm } from './components/UploadBeneficiariesForm.tsx';
 

@@ -1,4 +1,4 @@
-import { Button, Options } from '@/components';
+import { Button } from '@/components';
 import { useNavigate } from 'react-router-dom';
 import { TableBeneficiaries } from './TableBeneficiaries';
 

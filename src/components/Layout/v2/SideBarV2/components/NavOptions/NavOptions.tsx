@@ -16,7 +16,7 @@ const NavOptions: React.FC = () => {
   return (
     <div className="w-full h-full py-[20px] flex flex-col gap-[10px] px-[15px] justify-between ">
       <div className="flex flex-col mt-[80px] h-full justify-between">
-        <div className="w-[80%] h-full flex flex-col gap-[30px]">
+        <div className="w-full h-full flex flex-col gap-[30px]">
           <Options href="/dashboard/inicio" text="Inicio">
             <Home
               color={

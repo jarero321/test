@@ -31,17 +31,17 @@ const Router = () => {
           <Route element={<Authentication />} path="autenticacion/:step?" />
           <Route
             element={
-              <ProtectedRoute isAllowed={isAuth}>
-                <OnBoarding />
-              </ProtectedRoute>
+              // <ProtectedRoute isAllowed={isAuth}>
+              <OnBoarding />
+              // </ProtectedRoute>
             }
             path="onboarding/:person?/:step?"
           />
           <Route
             element={
-              <ProtectedRoute isAllowed={isAuth}>
-                <Dashboard />
-              </ProtectedRoute>
+              // <ProtectedRoute isAllowed={isAuth}>
+              <Dashboard />
+              // </ProtectedRoute>
             }
             path="dashboard/:step?"
           />

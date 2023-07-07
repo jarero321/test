@@ -1,14 +1,15 @@
 /* eslint-disable react/prop-types */
-import { Button, InputForm, Typography } from '@/components';
+import { Button, Form, InputForm, Typography } from '@/components';
 import SuccessIcon from '@/resources/icons/SuccessIcon';
 import { useState } from 'react';
+import { ListItem } from './components/ListItem';
 
-interface ModalBeneficierProps {
+interface UploadModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-const ModalBeneficier: React.FC<ModalBeneficierProps> = ({
+const UploadModal: React.FC<UploadModalProps> = ({
   isOpen = false,
   onClose = () => null,
 }) => {
@@ -21,31 +22,46 @@ const ModalBeneficier: React.FC<ModalBeneficierProps> = ({
   return (
     // Main modal
     <div
-      className={`fixed -inset-0 left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50 py-10 ${
+      className={`fixed -inset-0 left-0 top-0 flex h-full items-center justify-center bg-black bg-opacity-50 py-10 ${
         isOpen ? '' : 'hidden'
       }`}
     >
-      <div className="relative w-full max-w-2xl max-h-full">
+      <div className="relative max-h-full">
         {/* Modal content */}
         <div className="relative bg-white rounded-lg shadow">
           {!showContent ? (
             <>
               {/* Modal Header */}
               <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-                <Typography>Alta Nuevo Beneficiario</Typography>
+                <Typography className="font-bold" size="sm">
+                  Alta nuevo destinatario
+                </Typography>
               </div>
               {/* Modal Body */}
-              <div className="p-6">
-                <Typography className="text-gray-600" colors="black" size="xs">
-                  Ingrese tú 2FA para confirmar el alta del beneficiario:
-                </Typography>
+              <div className="py-[24px] px-6 flex flex-col gap-[12px]">
+                <ListItem
+                  text="Gastón Ghietto"
+                  title="Nombre del Destinatario"
+                />
+                <ListItem text="Número de celular" title="Tipo de cuenta" />
+                <ListItem text="**** **** **** 6709" title="Número de cuenta" />
+                <ListItem text="BBVA Bancomer" title="Institución Bancaria" />
+                <ListItem text="Gastón 32" title="Alias" />
+                <ListItem
+                  text="Número de celular"
+                  title="Límite de operación"
+                />
+                <ListItem text="GRJL20031485MV2" title="RFC" />
+                <ListItem text="GRKL20031485MV2" title="CURP" />
               </div>
               <div className="p-6 space-y-6 text-center">
                 <Typography className="text-center" size="lg">
                   Token 2fa
                 </Typography>
                 <div>
-                  <InputForm label="" name="name" placeholder="000000" />
+                  <Form onSubmit={() => null}>
+                    <InputForm label="" name="name" placeholder="000000" />
+                  </Form>
                 </div>
                 <div className="flex flex-row mt-6 space-x-2 justify-evenly">
                   <Button
@@ -58,7 +74,7 @@ const ModalBeneficier: React.FC<ModalBeneficierProps> = ({
                   <Button
                     height="h-[60px]"
                     onClick={handleContinueClick}
-                    text="Agregar Beneficiario"
+                    text="Agregar Destinatario"
                     type="submit"
                     variant="secondary"
                   />
@@ -73,7 +89,7 @@ const ModalBeneficier: React.FC<ModalBeneficierProps> = ({
                   <SuccessIcon />
                 </div>
                 <Typography className="text-center" colors="black" size="sm">
-                  El beneficiario ha sido dado de alta exitosamente
+                  El destinatario ha sido dado de alta exitosamente
                 </Typography>
 
                 <div className="flex flex-row mt-6 space-x-2 justify-evenly">
@@ -96,13 +112,4 @@ const ModalBeneficier: React.FC<ModalBeneficierProps> = ({
   );
 };
 
-export default ModalBeneficier;
-
-// <h2 className="text-xl font-bold mb-2">Modal Title</h2>
-//         <p className="text-gray-600">Modal Content</p>
-//         <button
-//           className="bg-blue-500 text-white px-4 py-2 mt-4"
-//           onClick={onClose}
-//         >
-//           Close
-//         </button>
+export default UploadModal;
