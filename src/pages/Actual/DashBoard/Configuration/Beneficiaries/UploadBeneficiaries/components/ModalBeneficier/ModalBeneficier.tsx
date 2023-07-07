@@ -45,7 +45,9 @@ const ModalBeneficier: React.FC<ModalBeneficierProps> = ({
                 </Typography>
               </div>
               <div className="p-6 space-y-6 text-center">
-                <Typography className="text-center">Token 2fa</Typography>
+                <Typography className="text-center" size="lg">
+                  Token 2fa
+                </Typography>
                 <div>
                   <InputForm label="" name="name" placeholder="000000" />
                 </div>
@@ -74,7 +76,7 @@ const ModalBeneficier: React.FC<ModalBeneficierProps> = ({
                 <div className="m-auto w-40 h-40">
                   <SuccessIcon />
                 </div>
-                <Typography className="text-center">
+                <Typography className="text-center" size="sm" colors="black">
                   El beneficiario ha sido dado de alta exitosamente
                 </Typography>
 
