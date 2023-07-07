@@ -1,4 +1,4 @@
-import { Button, Typography } from '@/components';
+import { Button } from '@/components';
 import React from 'react';
 
 interface ButtonGroupProps {
@@ -16,17 +16,17 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
     <div className="flex gap-[20px]">
       {buttons.map((button) => (
         <Button
-          width="w-[150px]"
-          height="h-[30px]"
-          type="button"
-          text={button}
-          key={button}
-          onClick={() => onButtonSelect(button)}
           className={
             selectedButton === button ? 'primary' : 'bg-gray-500 font-medium'
           }
+          height="h-[30px]"
+          key={button}
+          onClick={() => onButtonSelect(button)}
+          text={button}
+          type="button"
+          width="w-[150px]"
         >
-          {button}
+          <>{button}</>
         </Button>
       ))}
     </div>

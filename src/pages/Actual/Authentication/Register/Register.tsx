@@ -44,8 +44,8 @@ const Auth: React.FC = () => {
       await createUser(userInfo);
       setToken('test');
       navigate('/dashboard');
-    } catch (error) {
-      toast.error(error?.message);
+    } catch (error: any) {
+      toast.error(error?.message ?? '');
     } finally {
       setLoading(false);
     }

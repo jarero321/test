@@ -12,6 +12,7 @@ export interface ButtonInterface {
   variant?: string;
   className?: string;
   id?: string;
+  children?: JSX.Element;
 }
 
 const Button: React.FC<ButtonInterface> = ({

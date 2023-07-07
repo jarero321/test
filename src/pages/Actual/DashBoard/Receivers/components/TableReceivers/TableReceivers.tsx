@@ -1,6 +1,6 @@
 import { Form, InputForm } from '@/components';
 import React from 'react';
-import { TableGrid } from './components/TableGrid';
+import { TableGridV2 } from './components/TableGridV2';
 
 const TableReceivers: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ const TableReceivers: React.FC = () => {
           />
         </div>
       </Form>
-      <TableGrid />
+      <TableGridV2 />
     </div>
   );
 };

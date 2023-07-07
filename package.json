@@ -16,7 +16,8 @@
     "storybook": "start-storybook -p 600",
     "build-storybook": "build-storybook",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "start":"vite"
   },
   "dependencies": {
     "@babel/core": "^7.20.12",
