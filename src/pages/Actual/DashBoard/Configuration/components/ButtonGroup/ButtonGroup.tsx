@@ -23,9 +23,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
           key={button}
           onClick={() => onButtonSelect(button)}
           className={
-            selectedButton === button
-              ? 'bg-purple-700 text-white font-medium'
-              : 'bg-gray-500 font-medium'
+            selectedButton === button ? 'primary' : 'bg-gray-500 font-medium'
           }
         >
           {button}

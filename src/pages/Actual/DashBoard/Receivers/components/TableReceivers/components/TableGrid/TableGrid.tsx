@@ -5,71 +5,40 @@ import Switch from '@mui/material/Switch';
 const columns = [
   {
     headerClassName: 'text-[15px] text-primary-color',
-    field: 'id',
-    headerName: 'Cuenta',
-    width: 100,
-    type: 'number',
-  },
-  {
-    headerClassName: 'text-[15px] text-primary-color',
-    field: 'alias',
-    headerName: 'Alias',
-    flex: 1,
-    minWidth: 60,
-    type: 'string',
-  },
-  {
-    headerClassName: 'text-[15px] text-primary-color',
     field: 'receivers',
-    headerName: 'Destinatarios',
+    headerName: 'Beneficiario',
     flex: 1,
     minWidth: 60,
     type: 'string',
   },
   {
     headerClassName: 'text-[15px] text-primary-color',
-    field: 'bank',
-    headerName: 'Institución Bancaria',
+    field: 'relationship',
+    headerName: 'Parentesco',
     flex: 1,
     minWidth: 60,
     type: 'string',
   },
   {
     headerClassName: 'text-[15px] text-primary-color',
-    field: 'account',
-    headerName: 'Cuenta',
+    field: 'percentage',
+    headerName: 'Porcentaje',
     flex: 1,
     minWidth: 60,
     type: 'string',
   },
   {
     headerClassName: 'text-[15px] text-primary-color',
-    field: 'operation',
-    headerName: 'Límite de Operación',
+    field: 'officialIdentification',
+    headerName: 'Identificación Oficial',
     flex: 1,
     minWidth: 60,
     type: 'string',
   },
   {
     headerClassName: 'text-[15px] text-primary-color',
-    field: 'rfc',
-    headerName: 'RFC',
-    flex: 1,
-    minWidth: 60,
-    type: 'string',
-  },
-  {
-    headerClassName: 'text-[15px] text-primary-color',
-    field: 'curp',
-    headerName: 'CURP',
-    flex: 1,
-    minWidth: 60,
-    type: 'string',
-  },
-  {
-    headerClassName: 'text-[15px] text-primary-color',
-    field: 'status',
-    headerName: 'Estatus',
+    field: 'addressProof',
+    headerName: 'Comprobante de domicilio',
     flex: 1,
     minWidth: 60,
     type: 'string',
@@ -89,20 +58,6 @@ const columns = [
         <CloseIcon
           style={{ cursor: 'pointer', color: '#3D1152', opacity: '0.7' }}
         />
-
-        <Switch
-          checked={params.value}
-          sx={{
-            '& .MuiSwitch-thumb': {
-              backgroundColor: params.value ? '#3D1152' : 'white',
-            },
-            '.MuiSwitch-track': {
-              backgroundColor: params.value
-                ? 'rgba(61, 17, 82, 0.3) !important'
-                : 'rgba(61, 17, 82, 0.3) !important',
-            },
-          }}
-        />
       </div>
     ),
   },
@@ -111,26 +66,20 @@ const columns = [
 const rows = [
   {
     id: 3467,
-    alias: 'Gris',
-    receivers: 'Griselda Juarez Lopez',
-    bank: 'BBVA Bancomer',
-    account: 'Cuenta CLABE',
-    operation: '********954385347',
-    rfc: 'GELJ3213213123MV2',
-    curp: 'CRSAD403498FDSFS',
-    status: 'Activo',
+    receivers: 'Luis Miguel Saavedra Hernández',
+    relationship: 'Padre',
+    percentage: '50%',
+    officialIdentification: 'MiiIne_frent.jpeg',
+    addressProof: 'Recibo_Luz.JPG',
     edition: 'Edición 1',
   },
   {
     id: 3465,
-    alias: 'Gris',
-    receivers: 'Griselda Juarez Lopez',
-    bank: 'BBVA Bancomer',
-    account: 'Cuenta CLABE',
-    operation: '********954385347',
-    rfc: 'GELJ3213213123MV2',
-    curp: 'CRSAD403498FDSFS',
-    status: 'Activo',
+    receivers: 'Christopher U. Mariscal Alcauter',
+    relationship: 'Hijo',
+    percentage: '50%',
+    officialIdentification: 'Credencialparavotar_completa.jpeg',
+    addressProof: 'Comprobante_Teléfono.jpeg',
     edition: 'Edición 1',
   },
   // ... agregar más filas de datos aquí ...

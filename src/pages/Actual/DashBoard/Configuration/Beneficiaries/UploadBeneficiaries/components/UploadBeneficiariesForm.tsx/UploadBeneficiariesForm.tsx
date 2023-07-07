@@ -2,6 +2,7 @@ import { Button, Form, InputForm, SelectForm, Typography } from '@/components';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ModalBeneficier } from '../ModalBeneficier';
+import { UploadDocument } from '@/components/UI/UploadDocument';
 
 const UploadReceiversForm: React.FC = () => {
   const navigate = useNavigate();
@@ -52,10 +53,18 @@ const UploadReceiversForm: React.FC = () => {
             />
           </div>
           <div>
-            <Typography colors="secondary-gray" size="xs">
-              Curp (Opcional)
-            </Typography>
-            <InputForm label="" name="name" placeholder="18 caracteres" />
+            <UploadDocument
+              description="Identificación vigente (Solo INE)"
+              index={1}
+              title="Identificación oficial"
+            />
+          </div>
+          <div>
+            <UploadDocument
+              description="No mayor a 3 meses"
+              index={2}
+              title="Comprobante de domicilio"
+            />
           </div>
         </div>
         <div className="w-full flex justify-end mt-[40px] ">

@@ -1,4 +1,5 @@
 import { Button, InputForm, Typography } from '@/components';
+import SuccessIcon from '@/resources/icons/SuccessIcon';
 import { useState } from 'react';
 
 interface ModalBeneficierProps {
@@ -70,6 +71,9 @@ const ModalBeneficier: React.FC<ModalBeneficierProps> = ({
             <>
               {/* Modal Body */}
               <div className="p-6 space-y-6 text-center">
+                <div className="m-auto w-40 h-40">
+                  <SuccessIcon />
+                </div>
                 <Typography className="text-center">
                   El beneficiario ha sido dado de alta exitosamente
                 </Typography>
