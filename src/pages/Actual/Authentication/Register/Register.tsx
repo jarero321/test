@@ -11,6 +11,7 @@ import { createUser } from '@/api/Authentication/Authentication.api';
 import { RegisterUser } from '@/models/authentication/authentication.models';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { geolocalizationStore } from '@/store/geolocalization';
 
 interface FormData {
   email: string;
@@ -20,12 +21,15 @@ interface FormData {
 
 const Auth: React.FC = () => {
   const [loading, setLoading] = useState(false);
+  const { position } = geolocalizationStore();
   const setToken = useAuthStore((state) => state.setToken);
 
   const navigate = useNavigate();
 
   const onSubmit = async (data: FormData) => {
     const userInfo: RegisterUser = {
+      location: position,
+      location_date: new Date(),
       email: data.email,
       password: data.password,
       id: 1,

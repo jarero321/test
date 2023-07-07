@@ -1,4 +1,6 @@
-interface RegisterUser {
+import Geolocalization from '../geolocalization/geolocalization.models';
+
+interface RegisterUser extends Geolocalization {
   id: number;
   password: string;
   username: string;
