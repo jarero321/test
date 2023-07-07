@@ -1,9 +1,11 @@
 import { Button, Form, InputForm, SelectForm, Typography } from '@/components';
+import { ModalV2 } from '@/components/UI/Modal/ModalV2';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const UploadReceiversForm: React.FC = () => {
   const navigate = useNavigate();
+  const [activeModal, setActiveModal] = React.useState(false);
   return (
     <div className="w-full h-full bg-white shadow-lg rounded-[12px] px-[20px] py-[20px]">
       <Form
@@ -97,7 +99,9 @@ const UploadReceiversForm: React.FC = () => {
             />
             <Button
               height="h-[60px]"
-              onClick={() => navigate('/dashboard/destinatarios')}
+              onClick={() => {
+                navigate('/dashboard/destinatarios');
+              }}
               text="Continuar"
               type="submit"
               variant="secondary"
@@ -105,6 +109,7 @@ const UploadReceiversForm: React.FC = () => {
           </div>
         </div>
       </Form>
+      <ModalV2 />
     </div>
   );
 };

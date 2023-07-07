@@ -3,11 +3,14 @@ import { Form } from '@/components/UI/Form';
 import Logo from '@/resources/img/logo/logo.png';
 import { useState } from 'react';
 import OtpInput from 'react-otp-input';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BannerAuth from '../../../components/BannerAuth';
+
 const OtpForm = () => {
+  const navigate = useNavigate();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => {
+    navigate('/autenticacion/iniciar-sesion');
     return data;
   };
 

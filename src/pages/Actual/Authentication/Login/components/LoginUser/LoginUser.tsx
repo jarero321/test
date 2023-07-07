@@ -50,7 +50,7 @@ const LoginUser = ({ setState }: LoginProps) => {
                   variant="secondary"
                 />
               </div>
-              <Link to="/register">
+              <Link to="/autenticacion/registrar-usuario">
                 <Typography
                   className="w-full flex justify-center xl:!text-[16px] mt-[12px] cursor-pointer lg:!text-[12px]"
                   colors="secondary-color"

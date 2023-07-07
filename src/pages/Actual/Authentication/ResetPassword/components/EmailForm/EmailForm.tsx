@@ -3,9 +3,14 @@ import { Form } from '@/components/UI/Form';
 import Logo from '@/resources/img/logo/logo.png';
 import BannerAuth from '../../../components/BannerAuth';
 
-const EmailForm = () => {
+interface EmailProp {
+  handleClick: () => void;
+}
+
+const EmailForm = ({ handleClick }: EmailProp) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => {
+    handleClick();
     return data;
   };
 

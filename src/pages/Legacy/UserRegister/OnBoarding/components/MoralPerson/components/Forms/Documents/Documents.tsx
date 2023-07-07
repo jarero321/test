@@ -39,9 +39,9 @@ const OtherPersonDataForm: React.FC = () => {
             title="Estado de cuenta bancario"
           />
           <UploadDocument
+            description="Este documento ya viene incluido en acta constituiva"
             index={3}
             title="Boleta de inscripción en el RPPC"
-            description="Este documento ya viene incluido en acta constituiva"
           />
 
           <UploadDocument
@@ -87,6 +87,7 @@ const OtherPersonDataForm: React.FC = () => {
           <Button
             height="h-[60px]"
             id="documents"
+            onClick={() => navigate('/dashboard')}
             text="Siguiente"
             type="submit"
             variant="secondary"

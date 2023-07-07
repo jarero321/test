@@ -20,7 +20,7 @@ const columns: GridColDef[] = [
   },
   {
     field: 'date-elaboration',
-    headerName: 'Fecha elaboracion',
+    headerName: 'Fecha elaboración',
     flex: 1,
     minWidth: 150,
     editable: true,

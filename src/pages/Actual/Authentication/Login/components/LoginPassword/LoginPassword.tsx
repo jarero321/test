@@ -43,7 +43,7 @@ const LoginUser = () => {
                   type="password"
                 />
               </div>
-              <Link to="/recuperar-contraseña">
+              <Link to="/autenticacion/reestablecer-credenciales">
                 <Typography
                   className="w-full flex justify-end xl:!text-[16px] mt-[12px] cursor-pointer lg:!text-[12px]"
                   colors="secondary-color"

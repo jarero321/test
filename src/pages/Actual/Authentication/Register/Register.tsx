@@ -4,7 +4,7 @@ import { Button, Form, InputForm, Typography } from '@/components';
 
 import Logo from '@/resources/img/logo/logo.png';
 import { useAuthStore } from '@/store/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BannerAuth from '../components/BannerAuth';
 
 import { createUser } from '@/api/Authentication/Authentication.api';
@@ -115,9 +115,11 @@ const Auth: React.FC = () => {
               <span className="text-[16px] opacity-[0.8]">
                 ¿Deseas continuar con tu registro?
               </span>
-              <span className="text-[14px] text-secondary cursor-pointer underline ">
-                Continuar ahora
-              </span>
+              <Link to="/autenticacion/iniciar-sesion">
+                <span className="text-[14px] text-secondary cursor-pointer underline ">
+                  Continuar ahora
+                </span>
+              </Link>
             </div>
           </Form>
         </div>

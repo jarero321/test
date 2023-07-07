@@ -4,12 +4,12 @@ import { EmailForm } from './components/EmailForm';
 import { OtpForm } from './components/OtpForm';
 
 const Login = () => {
-  const [active] = useState('otpForm');
+  const [active, setActive] = useState('emailForm');
 
   return (
     <SwitchedComponent active={active} target="id">
       <div id="emailForm">
-        <EmailForm />
+        <EmailForm handleClick={() => setActive('otpForm')} />
       </div>
       <div id="otpForm">
         <OtpForm />
