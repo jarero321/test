@@ -2,6 +2,8 @@ import { Button, Form, InputForm, Typography } from '@/components';
 import { useState } from 'react';
 import { ModalBeneficier } from '../ModalBeneficier';
 import { UploadDocument } from '@/components/UI/UploadDocument';
+import { ModalToken } from '@/components/UI/Modal/ModalToken';
+import SuccessIcon from '@/resources/icons/SuccessIcon';
 
 const UploadReceiversForm: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -82,7 +84,36 @@ const UploadReceiversForm: React.FC = () => {
             />
           </div>
         </div>
-        <ModalBeneficier isOpen={isModalOpen} onClose={closeModal} />
+        <ModalToken
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          title="Alta Nuevo Beneficiario"
+          content={
+            <>
+              <Typography className="text-gray-600" colors="black" size="xs">
+                Ingrese tú 2FA para confirmar el alta del beneficiario:
+              </Typography>
+              <div className="p-6 space-y-6 text-center">
+                <Typography className="text-center" size="lg">
+                  Token 2fa
+                </Typography>
+                <div>
+                  <InputForm label="" name="name" placeholder="000000" />
+                </div>
+              </div>
+            </>
+          }
+          contentNext={
+            <>
+              <div className="m-auto w-40 h-40">
+                <SuccessIcon />
+              </div>
+              <Typography className="text-center" colors="black" size="sm">
+                El beneficiario ha sido dado de alta exitosamente
+              </Typography>
+            </>
+          }
+        />
       </Form>
     </div>
   );
