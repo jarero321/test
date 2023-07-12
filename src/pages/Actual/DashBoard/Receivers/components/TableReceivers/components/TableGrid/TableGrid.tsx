@@ -2,6 +2,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import EditIcon from '@mui/icons-material/Edit';
 import CloseIcon from '@mui/icons-material/Close';
 import Switch from '@mui/material/Switch';
+import { useState } from 'react';
 const columns = [
   {
     headerClassName: 'text-[15px] text-primary-color',
@@ -50,16 +51,20 @@ const columns = [
     flex: 1,
     minWidth: 60,
     type: 'string',
-    renderCell: (params: any) => (
-      <div className="W-full flex gap-[10px] items-center">
-        <EditIcon
-          style={{ cursor: 'pointer', color: '#3D1152', opacity: '0.7' }}
-        />
-        <CloseIcon
-          style={{ cursor: 'pointer', color: '#3D1152', opacity: '0.7' }}
-        />
-      </div>
-    ),
+    renderCell: (params: any) => {
+      const [example, setExample] = useState(false);
+
+      return (
+        <div className="W-full flex gap-[10px] items-center">
+          <EditIcon
+            style={{ cursor: 'pointer', color: '#3D1152', opacity: '0.7' }}
+          />
+          <CloseIcon
+            style={{ cursor: 'pointer', color: '#3D1152', opacity: '0.7' }}
+          />
+        </div>
+      );
+    },
   },
 ];
 

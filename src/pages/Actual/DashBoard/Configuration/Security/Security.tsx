@@ -16,7 +16,7 @@ export const Security = () => {
     setIsModalOpen(false);
   };
   return (
-    <div className="w-full h-full bg-white shadow-lg rounded-[12px] px-[20px] py-[20px]">
+    <div className="mt-5 w-full h-full bg-white shadow-lg rounded-[12px] px-[20px] py-[20px]">
       <Form
         className="w-full mt-[20px]"
         onSubmit={(data) => {
