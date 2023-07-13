@@ -1,6 +1,6 @@
 import { Form, InputForm } from '@/components';
 import React from 'react';
-import { TableGrid } from '../../../Receivers/components/TableReceivers/components/TableGrid';
+import { TableGrid } from './components/TableGrid';
 
 const TableBeneficiaries: React.FC = () => {
   return (
