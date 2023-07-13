@@ -42,7 +42,7 @@ const ModalBeneficier: React.FC<ModalBeneficierProps> = ({
               </div>
               <div className="p-6 space-y-6 text-center">
                 <Typography className="text-center" size="lg">
-                  Token 2fa
+                  token
                 </Typography>
                 <div>
                   <InputForm label="" name="name" placeholder="000000" />

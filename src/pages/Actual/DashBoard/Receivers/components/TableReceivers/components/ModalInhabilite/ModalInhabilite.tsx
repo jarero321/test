@@ -51,7 +51,7 @@ const ModalInhabilite: React.FC<ModalInhabiliteProps> = ({
                   </Form>
                 </div>
                 <Typography className="text-center" size="sm">
-                  Token 2fa
+                  token
                 </Typography>
                 <div>
                   <Form onSubmit={() => null}>

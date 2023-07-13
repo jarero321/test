@@ -11,11 +11,12 @@ const Header: React.FC = () => {
       </Typography>
       <div className="flex gap-[20px]">
         <Button
+          className="px-[5px]"
           onClick={() => navigate('/dashboard/alta-nuevo-destinatario')}
           text="Agregar Nuevo Destinatario +"
           type="button"
           variant="secondary"
-          width="w-[250px]"
+          width="w-[270px]"
         />
         <Button text="Regresar" type="button" width="w-[100px]" />
       </div>

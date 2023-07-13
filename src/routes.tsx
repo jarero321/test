@@ -3,7 +3,7 @@ import { Authentication } from './pages/Actual/Authentication';
 import { Home } from './pages/Actual/Home';
 import { OnBoarding } from './pages/Legacy/UserRegister/OnBoarding';
 import Dashboard from '@/pages/Actual/DashBoard/Dashboard';
-import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute';
+// import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute';
 import { useAuthStore } from './store/auth';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

@@ -51,7 +51,7 @@ const ModalDelete: React.FC<ModalDeleteProps> = ({
                   </Form>
                 </div>
                 <Typography className="text-center" size="sm">
-                  Token 2fa
+                  token
                 </Typography>
                 <div>
                   <Form onSubmit={() => null}>

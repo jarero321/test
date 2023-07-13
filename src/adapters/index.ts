@@ -1,1 +1,1 @@
-export * from './user.adapter';
+export * from './authentication.adapter';

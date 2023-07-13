@@ -56,7 +56,7 @@ const UploadModal: React.FC<UploadModalProps> = ({
               </div>
               <div className="p-6 space-y-6 text-center">
                 <Typography className="text-center" size="sm">
-                  Token 2fa
+                  token
                 </Typography>
                 <div>
                   <Form onSubmit={() => null}>

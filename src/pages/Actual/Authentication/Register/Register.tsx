@@ -8,42 +8,27 @@ import { Link, useNavigate } from 'react-router-dom';
 import BannerAuth from '../components/BannerAuth';
 
 import { createUser } from '@/api/Authentication/Authentication.api';
-import { RegisterUser } from '@/models/authentication/authentication.models';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { FormDataRegister } from '@/models/authentication/forms/forms.models';
+import { createUserAdapter } from '@/adapters';
 import { geolocalizationStore } from '@/store/geolocalization';
-
-interface FormData {
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
 
 const Auth: React.FC = () => {
   const [loading, setLoading] = useState(false);
-  const { position } = geolocalizationStore();
   const setToken = useAuthStore((state) => state.setToken);
+  const { position } = geolocalizationStore();
 
   const navigate = useNavigate();
 
-  const onSubmit = async (data: FormData) => {
-    const userInfo: RegisterUser = {
-      location: position,
-      location_date: new Date(),
-      email: data.email,
-      password: data.password,
-      id: 1,
-      username: data.email,
-      is_staff: false,
-      is_customer: false,
-      is_persona_fisica: false,
-      is_persona_moral: false,
-    };
+  const onSubmit = async (data: FormDataRegister) => {
+    const userInfo = createUserAdapter(data, position);
     try {
       setLoading(true);
       await createUser(userInfo);
       setToken('test');
       navigate('/dashboard');
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       toast.error(error?.message ?? '');
     } finally {
@@ -57,11 +42,15 @@ const Auth: React.FC = () => {
       <div className="login__box">
         <div className="login__box-wrap">
           <Form
-            className=" flex flex-col"
+            className=" flex flex-col gap-[8px]"
             id="register-form"
-            onSubmit={(data) => onSubmit(data as any)}
+            onSubmit={(data) => onSubmit(data as unknown as FormDataRegister)}
           >
-            <Typography colors="primary-color" size="base">
+            <Typography
+              className="font-semibold"
+              colors="primary-color"
+              size="base"
+            >
               ¡Regístrate ahora!
             </Typography>
             <div className="pt-[24px]">
@@ -91,7 +80,7 @@ const Auth: React.FC = () => {
                 type="password"
               />
             </div>
-            <div className="w-full h-full pt-[20px] flex items-center">
+            <div className="w-full h-full pt-[20px] flex items-center cursor-pointer">
               <div className="pr-[15px]">
                 <CheckBox />
               </div>
@@ -100,7 +89,7 @@ const Auth: React.FC = () => {
               </span>
             </div>
             <div>
-              <div className="mt-[20px]">
+              <div className="mt-[12px]">
                 <Button
                   height="h-[50px]"
                   id="register-form"

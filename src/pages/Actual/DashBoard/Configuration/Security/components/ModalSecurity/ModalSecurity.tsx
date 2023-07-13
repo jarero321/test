@@ -42,9 +42,7 @@ const ModalSecurity: React.FC<ModalBeneficierProps> = ({ isOpen, onClose }) => {
                 </Typography>
               </div>
               <div className="p-6 space-y-6 text-center">
-                <Typography className="text-center" size="lg">
-                  Token 2fa
-                </Typography>
+                <Typography className="text-center">token</Typography>
                 <div>
                   <InputForm label="" name="name" placeholder="000000" />
                 </div>

@@ -64,12 +64,4 @@ const CheckBox = ({
   );
 };
 
-CheckBox.defaultProps = {
-  checked: undefined,
-  className: '',
-  onChange: undefined,
-  bubbleClickToParent: false,
-  name: '',
-};
-
 export default CheckBox;

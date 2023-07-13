@@ -31,7 +31,7 @@ const Button: React.FC<ButtonInterface> = ({
       primary: 'w-full bg-primary-color text-white font-semibold rounded-[6px]',
       secondary:
         'w-full bg-secondary text-primary-color font-semibold rounded-[6px]',
-      grey: 'w-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded flex justify-center items-center',
+      grey: 'w-full !text-white bg-[#6B7280] hover:bg-gray-400 font-bold py-2 px-4 rounded flex justify-center items-center',
       default:
         'w-full  flex items-center justify-center rounded-[6px] bg-primary-color px-6 pt-2.5 pb-2 font-semibold text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg',
       green:

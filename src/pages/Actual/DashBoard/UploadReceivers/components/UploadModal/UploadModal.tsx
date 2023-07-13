@@ -26,7 +26,7 @@ const UploadModal: React.FC<UploadModalProps> = ({
         isOpen ? '' : 'hidden'
       }`}
     >
-      <div className="relative max-h-full">
+      <div className="relative max-h-full w-[800px]">
         {/* Modal content */}
         <div className="relative bg-white rounded-lg shadow">
           {!showContent ? (
@@ -56,7 +56,7 @@ const UploadModal: React.FC<UploadModalProps> = ({
               </div>
               <div className="p-6 space-y-6 text-center">
                 <Typography className="text-center" size="lg">
-                  Token 2fa
+                  Token
                 </Typography>
                 <div>
                   <Form onSubmit={() => null}>
