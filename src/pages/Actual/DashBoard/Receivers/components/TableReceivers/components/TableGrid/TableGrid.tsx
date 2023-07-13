@@ -3,6 +3,9 @@ import EditIcon from '@mui/icons-material/Edit';
 import CloseIcon from '@mui/icons-material/Close';
 import Switch from '@mui/material/Switch';
 import { useState } from 'react';
+import { ModalToken } from '@/components/UI/Modal/ModalToken';
+import { InputForm, Typography } from '@/components';
+import SuccessIcon from '@/resources/icons/SuccessIcon';
 const columns = [
   {
     headerClassName: 'text-[15px] text-primary-color',
@@ -52,12 +55,47 @@ const columns = [
     minWidth: 60,
     type: 'string',
     renderCell: (params: any) => {
-      const [example, setExample] = useState(false);
+      const [isModalOpen, setIsModalOpen] = useState(false);
+
+      const closeModal = () => {
+        setIsModalOpen(false);
+      };
 
       return (
         <div className="W-full flex gap-[10px] items-center">
           <EditIcon
             style={{ cursor: 'pointer', color: '#3D1152', opacity: '0.7' }}
+            onClick={() => setIsModalOpen(true)}
+          />
+          <ModalToken
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            title="Alta Nuevo Beneficiario"
+            content={
+              <>
+                <Typography className="text-gray-600" colors="black" size="xs">
+                  Ingrese tú 2FA para confirmar el alta del beneficiario:
+                </Typography>
+                <div className="p-6 space-y-6 text-center">
+                  <Typography className="text-center" size="lg">
+                    Token 2fa
+                  </Typography>
+                  <div>
+                    {/* <InputForm label="" name="name" placeholder="000000" /> */}
+                  </div>
+                </div>
+              </>
+            }
+            contentNext={
+              <>
+                <div className="m-auto w-40 h-40">
+                  <SuccessIcon />
+                </div>
+                <Typography className="text-center" colors="black" size="sm">
+                  El beneficiario ha sido dado de alta exitosamente
+                </Typography>
+              </>
+            }
           />
           <CloseIcon
             style={{ cursor: 'pointer', color: '#3D1152', opacity: '0.7' }}
