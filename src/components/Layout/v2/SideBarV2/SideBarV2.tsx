@@ -9,10 +9,10 @@ export type SideBarV2Props = {
 const SideBarV2: React.FC<SideBarV2Props> = () => {
   return (
     <nav className="w-full h-full min-h-screen bg-primary-color">
-      <div className="bg-white w-full h-[100px] flex items-center justify-center py-[20px] px-[20px]">
+      <div className="bg-white w-full h-[90px] flex items-center justify-center py-[20px] px-[20px]">
         <img alt="" height={150} src={LogoDyP} width={150} />
       </div>
-      <article className="w-full h-full bg-primary-color">
+      <article className="w-full h-full max-h-screen bg-primary-color">
         <NavOptions />
       </article>
     </nav>

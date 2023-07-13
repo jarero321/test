@@ -25,7 +25,7 @@ export const options = {
       position: 'top' as const,
     },
     title: {
-      display: true,
+      display: false,
       text: 'Saldo de la cuenta',
     },
   },
@@ -50,5 +50,5 @@ export const data = {
 };
 
 export default function BalanceChart() {
-  return <Bar data={data} height={100} options={options} />;
+  return <Bar data={data} height={80} options={options} />;
 }

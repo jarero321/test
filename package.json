@@ -17,7 +17,7 @@
     "build-storybook": "build-storybook",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "start":"vite"
+    "start": "vite"
   },
   "dependencies": {
     "@babel/core": "^7.20.12",
@@ -32,6 +32,7 @@
     "axios": "^1.2.2",
     "chart.js": "^4.2.1",
     "faker": "^6.6.6",
+    "framer-motion": "^10.12.20",
     "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
