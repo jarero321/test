@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { ModalToken } from '@/components/UI/Modal/ModalToken';
 import { InputForm, Typography } from '@/components';
 import SuccessIcon from '@/resources/icons/SuccessIcon';
+import { ModalUpdate } from '../ModalUpdate';
 
 const rows = [
   {
@@ -120,36 +121,7 @@ function TableGrid() {
         // Elimina los bordes de las row
         sx={{ '&, [class^=MuiDataGrid]': { border: 'none' } }}
       />
-      <ModalToken
-        isOpen={openEdit}
-        onClose={() => setOpenEdit(false)}
-        title="Alta Nuevo Beneficiario"
-        content={
-          <>
-            <Typography className="text-gray-600" colors="black" size="xs">
-              Ingrese tú 2FA para confirmar el alta del beneficiario:
-            </Typography>
-            <div className="p-6 space-y-6 text-center">
-              <Typography className="text-center" size="lg">
-                Token 2fa
-              </Typography>
-              <div>
-                {/* <InputForm label="" name="name" placeholder="000000" /> */}
-              </div>
-            </div>
-          </>
-        }
-        contentNext={
-          <>
-            <div className="m-auto w-40 h-40">
-              <SuccessIcon />
-            </div>
-            <Typography className="text-center" colors="black" size="sm">
-              El beneficiario ha sido dado de alta exitosamente
-            </Typography>
-          </>
-        }
-      />
+      <ModalUpdate isOpen={openEdit} onClose={() => setOpenEdit(false)} />
     </div>
   );
 }
