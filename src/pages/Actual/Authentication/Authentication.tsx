@@ -1,10 +1,9 @@
 import { Login } from './Login';
 import { Logout } from './Logout';
-
 import { Register } from './Register';
+import { ResetPassword } from './ResetPassword';
 import SwitchedComponent from '@/components/UI/SwitchedComponent/SwitchedComponent';
 import useStep from '@/hooks/useStep';
-import { ResetPassword } from './ResetPassword';
 
 const Authentication = () => {
   const { step } = useStep('step', 'iniciar-sesion');
