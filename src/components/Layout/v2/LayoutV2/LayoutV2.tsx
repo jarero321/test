@@ -11,12 +11,12 @@ export type LayoutV2Props = {
 const LayoutV2: React.FC<LayoutV2Props> = ({ children }) => {
   return (
     <main className="w-full min-h-screen relative flex bg-[#F3F3F8]">
-      <div className="w-[250px] min-h-screen max-h-screen fixed h-full shadow-2xl z-[10]">
+      <div className="w-[220px] min-h-screen max-h-screen fixed h-full shadow-2xl z-[10]">
         <SideBarV2 />
       </div>
       <article className="w-full h-full shadow-xl flex flex-col items-end">
         <HeaderV2 />
-        <div className=" h-full" style={{ width: 'calc(100% - 250px)' }}>
+        <div className=" h-full" style={{ width: 'calc(100% - 220px)' }}>
           {children}
         </div>
       </article>

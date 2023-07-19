@@ -53,7 +53,7 @@ const Auth: React.FC = () => {
             >
               ¡Regístrate ahora!
             </Typography>
-            <div className="pt-[24px]">
+            <div className="xl:pt-[10px] 2xl:pt-[24px]">
               <InputForm
                 inputMode="email"
                 label="Correo electrónico"
@@ -62,7 +62,7 @@ const Auth: React.FC = () => {
                 type="email"
               />
             </div>
-            <div className="pt-[24px]">
+            <div className="xl:pt-[10px] 2xl:pt-[24px]">
               <InputForm
                 inputMode="text"
                 label="Contraseña"
@@ -71,7 +71,7 @@ const Auth: React.FC = () => {
                 type="password"
               />
             </div>
-            <div className="pt-[24px]">
+            <div className="xl:pt-[10px] 2xl:pt-[24px]">
               <InputForm
                 inputMode="text"
                 label="Confirmar Contraseña"

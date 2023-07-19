@@ -11,6 +11,8 @@
   "rules": {
     // Posibles errores
     "no-console": "warn",
+    // Desactivado las proptypes
+    "react/prop-types": "off",
     // Mejores Practicas
     "dot-notation": "error",
     "no-else-return": "error",

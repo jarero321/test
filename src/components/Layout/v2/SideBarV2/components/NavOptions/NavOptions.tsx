@@ -14,9 +14,9 @@ import { Close } from '@/components/UI/Icons/Close';
 const NavOptions: React.FC = () => {
   const router = useLocation();
   return (
-    <div className="w-full h-full py-[20px] flex flex-col gap-[10px] px-[15px] justify-between ">
-      <div className="flex flex-col mt-[80px] h-full justify-between">
-        <div className="w-full h-full flex flex-col gap-[40px]">
+    <div className="w-full h-full flex flex-col gap-[10px] px-[20px] justify-between ">
+      <div className="flex flex-col xl:mt-[30px] h-full justify-between">
+        <div className="w-full h-full flex flex-col xl:gap-[20px] 2xl:gap-[40px]">
           <Options href="/dashboard/inicio" text="Inicio">
             <Home
               color={
@@ -81,15 +81,15 @@ const NavOptions: React.FC = () => {
               }
             />
           </Options>
-        </div>
-        <div className="h-[20%]">
-          <Options href="/dashboard/salir" text="Salir">
-            <Close
-              color={
-                router.pathname === '/dashboard/salir' ? '#C2D500' : 'white'
-              }
-            />
-          </Options>
+          <div>
+            <Options href="/dashboard/salir" text="Salir">
+              <Close
+                color={
+                  router.pathname === '/dashboard/salir' ? '#C2D500' : 'white'
+                }
+              />
+            </Options>
+          </div>
         </div>
       </div>
     </div>

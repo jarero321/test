@@ -18,12 +18,12 @@ const Options: React.FC<OptionsProps> = ({
   const isActive = href === router.pathname;
   return (
     <Link to={href}>
-      <div className="cursor-pointer items-center w-full flex gap-[20px] ">
+      <div className="cursor-pointer items-center w-full flex gap-[20px]">
         {children}
         <Typography
-          className="xl:!text-[16px]"
+          className="xl:!text-[12px] 2xl:!text-[16px] "
           colors={isActive ? 'secondary' : 'white'}
-          size="lg"
+          size="sm"
         >
           {text}
         </Typography>

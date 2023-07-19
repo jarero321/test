@@ -1,14 +1,16 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { NoProtectedRoute } from './components/NoProtectedRoute';
 import { Authentication } from './pages/Actual/Authentication';
+import Geolocation from './pages/Actual/Geolocalization/Geolocation';
+import { GeolocalizationWrapper } from './pages/Actual/Geolocalization/components/GeolocalizationWrapper/GeolocalizationWrapper';
 import { Home } from './pages/Actual/Home';
 import { OnBoarding } from './pages/Legacy/UserRegister/OnBoarding';
-import Dashboard from '@/pages/Actual/DashBoard/Dashboard';
 // import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute';
 import { useAuthStore } from './store/auth';
+import Dashboard from '@/pages/Actual/DashBoard/Dashboard';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { GeolocalizationWrapper } from './pages/Actual/Geolocalization/components/GeolocalizationWrapper/GeolocalizationWrapper';
-import Geolocation from './pages/Actual/Geolocalization/Geolocation';
+
 const Router = () => {
   const isAuth = useAuthStore((state) => state.isAuth);
   return (
@@ -28,7 +30,16 @@ const Router = () => {
           />
           <Route element={<Home />} path="/" />
           <Route element={<Geolocation />} path="/geolocalizacion/:step?" />
-          <Route element={<Authentication />} path="autenticacion/:step?" />
+
+          <Route
+            element={
+              <NoProtectedRoute isAllowed={isAuth}>
+                <Authentication />
+              </NoProtectedRoute>
+            }
+            path="autenticacion/:step?"
+          />
+
           <Route
             element={
               // <ProtectedRoute isAllowed={isAuth}>

@@ -20,6 +20,7 @@ const getTextColor = (color: string) => {
     'secondary-color': 'text-secondary-color',
     'primary-gray': 'text-primary-gray',
     'secondary-gray': 'text-secondary-gray',
+    'main-gray': 'text-main-gray',
     secondary: 'text-secondary',
     pending: 'text-pending',
     canceled: 'text-canceled',
