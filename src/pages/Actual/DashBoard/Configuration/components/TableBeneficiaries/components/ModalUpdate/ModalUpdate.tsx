@@ -18,6 +18,7 @@ const UploadModal: React.FC<UploadModalProps> = ({
       isOpen={isOpen}
       onClose={onClose}
       title="Editar Beneficiario"
+      textButton="Agregar Beneficiario"
       content={
         <>
           <Typography className="text-gray-600" colors="black" size="xs">

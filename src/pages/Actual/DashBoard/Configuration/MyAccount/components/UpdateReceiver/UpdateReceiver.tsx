@@ -13,7 +13,7 @@ function UpdateReceiver() {
     setIsModalOpen(false);
   };
   return (
-    <div className="w-auto h-[150px] bg-[#F8F8FA] rounded-[12px] px-[24px] py-[24px] flex justify-between">
+    <div className="w-auto h-[150px] m-auto bg-[#F8F8FA] rounded-[12px] px-[12px] py-[24px] flex justify-between">
       <div className="flex-shrink-0 whitespace-nowrap">
         <div className="font-bold mb-4">
           <Typography size="sm">

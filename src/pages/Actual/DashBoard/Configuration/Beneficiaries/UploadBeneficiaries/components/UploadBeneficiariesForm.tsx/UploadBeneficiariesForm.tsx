@@ -88,6 +88,7 @@ const UploadReceiversForm: React.FC = () => {
           isOpen={isModalOpen}
           onClose={closeModal}
           title="Alta Nuevo Beneficiario"
+          textButton="Agregar Beneficiario"
           content={
             <>
               <Typography className="text-gray-600" colors="black" size="xs">

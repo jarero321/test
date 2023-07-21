@@ -17,11 +17,11 @@ export const MyAccount = () => {
   };
   return (
     <div className="mt-5 w-full h-full bg-white shadow-lg rounded-[12px] px-[20px] py-[20px]">
-      <div className="relative">
+      <div className="relative top-2">
         <div className="absolute top-0 right-0 mt-1">
-          <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+          <div className="w-4 h-4 bg-secondary rounded-full"></div>
         </div>
-        <div className="text-end top-0 right-0 mr-10">
+        <div className="text-end top-0 right-0 mr-6">
           <Typography size="xs">Estatus</Typography>
         </div>
       </div>
@@ -32,7 +32,7 @@ export const MyAccount = () => {
         }}
       >
         <div className="w-full gap-[20px] grid grid-cols-1 items-center mb-6">
-          <div>
+          <div style={{ marginTop: '-33px' }}>
             <div className="font-bold">
               <Typography size="lg">
                 Luis Miguel Saavedra Hernández <br />
@@ -110,7 +110,7 @@ export const MyAccount = () => {
             </>
           }
         />
-        <div className="w-2/5 gap-[20px] grid grid-cols-1 items-center mt-1">
+        <div className="w-full gap-[20px] grid grid-cols-3 items-center mt-1">
           <UpdateReceiver />
         </div>
       </Form>
