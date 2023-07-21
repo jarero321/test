@@ -9,6 +9,7 @@ import { UploadBeneficiaries } from './Beneficiaries/UploadBeneficiaries';
 import { Security } from './Security/Security';
 import { MyAccount } from './MyAccount/MyAccount';
 import EditAddress from './MyAccount/EditAddress/EditAddress';
+import Profiles from './Profiles/Profiles';
 
 function Configuration() {
   const [selectedButton, setSelectedButton] = useState('Button 1');
@@ -27,6 +28,7 @@ function Configuration() {
         onButtonSelect={handleButtonSelect}
       />
       {selectedButton === 'Mi cuenta' && <MyAccount />}
+      {selectedButton === 'Perfiles' && <Profiles />}
       {selectedButton === 'Beneficiarios' && <Beneficiaries />}
       {selectedButton === 'Seguridad' && <Security />}
     </div>
