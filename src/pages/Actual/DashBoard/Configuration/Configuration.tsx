@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import { Header } from '../Configuration/components/Header';
 import ButtonGroup from './components/ButtonGroup/ButtonGroup';
-import { Button } from '@/components';
-import { TableReceivers } from '../Receivers/components/TableReceivers';
-import { useNavigate } from 'react-router-dom';
 import Beneficiaries from './Beneficiaries/Beneficiaries';
 import useStep from '@/hooks/useStep';
 
@@ -11,6 +8,7 @@ import SwitchedComponent from '@/components/UI/SwitchedComponent/SwitchedCompone
 import { UploadBeneficiaries } from './Beneficiaries/UploadBeneficiaries';
 import { Security } from './Security/Security';
 import { MyAccount } from './MyAccount/MyAccount';
+import EditAddress from './MyAccount/EditAddress/EditAddress';
 
 function Configuration() {
   const [selectedButton, setSelectedButton] = useState('Button 1');
@@ -18,7 +16,7 @@ function Configuration() {
   const handleButtonSelect = (button: string) => {
     setSelectedButton(button);
   };
-  const { step } = useStep('step', 'inicio');
+  const { step } = useStep('step');
 
   return (
     <div className="px-[40px]">
@@ -31,11 +29,6 @@ function Configuration() {
       {selectedButton === 'Mi cuenta' && <MyAccount />}
       {selectedButton === 'Beneficiarios' && <Beneficiaries />}
       {selectedButton === 'Seguridad' && <Security />}
-      <SwitchedComponent active={step} target="id">
-        <div className="w-full" id="alta-nuevo-benefiario">
-          <UploadBeneficiaries />
-        </div>
-      </SwitchedComponent>
     </div>
   );
 }

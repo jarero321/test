@@ -10,6 +10,7 @@ interface ModalTokenProps {
   title: string;
   content: React.ReactNode;
   contentNext?: React.ReactNode;
+  textButton?: string;
 }
 
 export const ModalToken: React.FC<ModalTokenProps> = ({
@@ -18,6 +19,7 @@ export const ModalToken: React.FC<ModalTokenProps> = ({
   title = '',
   content = null,
   contentNext = null,
+  textButton = '',
 }) => {
   const [showContent, setShowContent] = useState(false);
 
@@ -42,7 +44,10 @@ export const ModalToken: React.FC<ModalTokenProps> = ({
               </div>
               {/* Modal Body */}
               <div className="p-6">{content}</div>
-              <div className="p-6 space-y-6 text-center">
+              <div
+                className="p-6 space-y-6 text-center"
+                style={{ marginTop: '-55px' }}
+              >
                 <div className="flex flex-row mt-6 space-x-2 justify-evenly">
                   <Button
                     height="h-[60px]"
@@ -54,7 +59,7 @@ export const ModalToken: React.FC<ModalTokenProps> = ({
                   <Button
                     height="h-[60px]"
                     onClick={handleContinueClick}
-                    text="Agregar Beneficiario"
+                    text={textButton}
                     type="submit"
                     variant="secondary"
                   />

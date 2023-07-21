@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { Button, Form, InputForm, Typography } from '@/components';
-import { ModalBeneficier } from '../ModalBeneficier';
-import { UploadDocument } from '@/components/UI/UploadDocument';
+import { Button, InputForm, Typography, Form } from '@/components';
 import { ModalToken } from '@/components/UI/Modal/ModalToken';
+import { UploadDocument } from '@/components/UI/UploadDocument';
 import SuccessIcon from '@/resources/icons/SuccessIcon';
 
-const UploadReceiversForm: React.FC = () => {
+const EditAddressForm: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -15,7 +14,6 @@ const UploadReceiversForm: React.FC = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
   return (
     <div className="w-full h-full bg-white shadow-lg rounded-[12px] px-[20px] py-[20px]">
       <Form
@@ -24,48 +22,77 @@ const UploadReceiversForm: React.FC = () => {
           return data;
         }}
       >
+        <div className="w-full gap-[20px] grid grid-cols-1 items-center mb-6">
+          <div className="font-bold">
+            <Typography size="lg">Editar Dirección</Typography>
+          </div>
+        </div>
+
         <div className="w-full gap-[20px] grid grid-cols-2 items-center">
           <div>
             <Typography colors="secondary-gray" size="xs">
-              Nombre Completo
+              Código Postal
             </Typography>
-            <InputForm label="" name="name" placeholder="" />
+            <InputForm label="" name="zipcode" placeholder="03900" />
           </div>
-          <div></div>
           <div>
             <Typography colors="secondary-gray" size="xs">
-              Parentesco
+              Calle
             </Typography>
             <InputForm
               label=""
-              name="name"
-              placeholder="Madre, Padre, Hijo, Esposo..."
+              name="street"
+              placeholder="Avenida Manuel Ávila Camacho"
             />
           </div>
           <div>
             <Typography colors="secondary-gray" size="xs">
-              Porcentaje
+              Número exterior
+            </Typography>
+            <InputForm label="" name="externalNumber" placeholder="502" />
+          </div>
+          <div>
+            <Typography colors="secondary-gray" size="xs">
+              Número interior
+            </Typography>
+            <InputForm label="" name="internalNumber" placeholder="203" />
+          </div>
+          <div>
+            <Typography colors="secondary-gray" size="xs">
+              País
+            </Typography>
+            <InputForm label="" name="country" placeholder="México" />
+          </div>
+          <div>
+            <Typography colors="secondary-gray" size="xs">
+              Estado o Entidad Federativa
+            </Typography>
+            <InputForm label="" name="state" placeholder="Ciudad de México" />
+          </div>
+          <div>
+            <Typography colors="secondary-gray" size="xs">
+              Alcaldía o Municipio
+            </Typography>
+            <InputForm label="" name="delegation" placeholder="Benito Juárez" />
+          </div>
+          <div>
+            <Typography colors="secondary-gray" size="xs">
+              Colonia
             </Typography>
             <InputForm
               label=""
-              name="name"
-              placeholder="Define tu porcentaje"
+              name="neighborhood"
+              placeholder="San Pedro de los Pinos"
             />
           </div>
           <div>
             <UploadDocument
-              description="Identificación vigente (Solo INE)"
-              index={1}
-              title="Identificación oficial"
-            />
-          </div>
-          <div>
-            <UploadDocument
-              description="No mayor a 3 meses"
+              description="(No mayor a 3 meses)"
               index={2}
               title="Comprobante de domicilio"
             />
           </div>
+          <div></div>
         </div>
         <div className="w-full flex justify-end mt-[40px] ">
           <div className="w-[40%] flex gap-[50px] ">
@@ -78,7 +105,7 @@ const UploadReceiversForm: React.FC = () => {
             <Button
               height="h-[60px]"
               onClick={openModal}
-              text="Guardar"
+              text="Actualizar"
               type="submit"
               variant="secondary"
             />
@@ -88,11 +115,14 @@ const UploadReceiversForm: React.FC = () => {
           isOpen={isModalOpen}
           onClose={closeModal}
           title="Alta Nuevo Beneficiario"
+          textButton="Confirmar"
           content={
             <>
-              <Typography className="text-gray-600" colors="black" size="xs">
-                Ingrese tú 2FA para confirmar el alta del beneficiario:
-              </Typography>
+              <div className="text-center">
+                <Typography className="text-gray-600" colors="black" size="xs">
+                  Ingrese tú 2FA para confirmar el cambio de dirección:
+                </Typography>
+              </div>
               <div className="p-6 space-y-6 text-center">
                 <Typography className="text-center" size="lg">
                   Token 2fa
@@ -109,7 +139,8 @@ const UploadReceiversForm: React.FC = () => {
                 <SuccessIcon />
               </div>
               <Typography className="text-center" colors="black" size="sm">
-                El beneficiario ha sido dado de alta exitosamente
+                Tu solicitud ha sido enviada. <br /> En cuanto se apruebe te
+                llegará un correo de notificación.
               </Typography>
             </>
           }
@@ -119,4 +150,4 @@ const UploadReceiversForm: React.FC = () => {
   );
 };
 
-export default UploadReceiversForm;
+export default EditAddressForm;

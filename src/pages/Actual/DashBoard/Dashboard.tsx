@@ -6,6 +6,7 @@ import { Receivers } from './Receivers';
 import { UploadReceivers } from './UploadReceivers';
 import Configuration from './Configuration/Configuration';
 import { UploadBeneficiaries } from './Configuration/Beneficiaries/UploadBeneficiaries';
+import { EditAddress } from './Configuration/MyAccount/EditAddress';
 
 const Dashboard = () => {
   const { step } = useStep('step', 'inicio');
@@ -27,6 +28,9 @@ const Dashboard = () => {
           </div>
           <div className="w-full" id="alta-nuevo-beneficiario">
             <UploadBeneficiaries />
+          </div>
+          <div className="w-full" id="editar-direccion">
+            <EditAddress />
           </div>
           <div className="w-full" id="cerrar-sesion"></div>
         </SwitchedComponent>

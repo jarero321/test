@@ -1,5 +1,7 @@
-import { InputForm, Typography, Form, Button } from '@/components';
+import { InputForm, Typography, Form, Button, SelectForm } from '@/components';
 import React from 'react';
+import EditableAddress from './components/EditableAddress/EditableAddress';
+import UpdateReceiver from './components/UpdateReceiver/UpdateReceiver';
 
 export const MyAccount = () => {
   return (
@@ -15,27 +17,15 @@ export const MyAccount = () => {
             <Typography size="sm" className="bold">
               Luis Miguel Saavedra Hernández <br />
             </Typography>
-
-            <Typography size="sm" className="bold">
+            <Typography size="sm">
               Contrato: 1-COM 2345 <br />
             </Typography>
 
-            <Typography size="sm" className="bold">
-              Fecha de creación: 23/junio/2018
-            </Typography>
+            <Typography size="sm">Fecha de creación: 23/junio/2018</Typography>
           </div>
         </div>
-        <div className="w-full gap-[20px] grid grid-cols-3 items-center">
-          <div>
-            <Typography size="sm" className="bold">
-              Domicilio
-            </Typography>
-            <br />
-            <Typography size="sm" className="bold">
-              Avenida Paseo de la Reforma 255 Piso 14 A, Colonia Cuauhtémoc,
-              Alcaldía Colonia Cuauhtémoc CP 06500, Ciudad de México, CDMX
-            </Typography>
-          </div>
+        <div className="w-full gap-[20px] grid grid-cols-3 items-center mb-1">
+          <EditableAddress />
           <div>
             <Typography size="sm" colors="grey">
               Notificaciones
@@ -48,7 +38,13 @@ export const MyAccount = () => {
             </Typography>
             <InputForm label="Defina un monto" name="name" type="email" />
           </div>
-          <div className="w-[40%] flex gap-[50px] mt-8 align-right">
+
+          <div className="m-2"></div>
+        </div>
+        <div className="w-full gap-[20px] grid grid-cols-3 items-center mt-1">
+          <div></div>
+          <div></div>
+          <div>
             <Button
               height="h-[60px]"
               //   onClick={openModal}
@@ -57,9 +53,10 @@ export const MyAccount = () => {
               variant="secondary"
             />
           </div>
-          <div className="m-2"></div>
         </div>
-        <div className="w-full gap-[20px] grid grid-cols-3 items-center"></div>
+        <div className="w-2/5 gap-[20px] grid grid-cols-1 items-center mt-1">
+          <UpdateReceiver />
+        </div>
       </Form>
     </div>
   );
