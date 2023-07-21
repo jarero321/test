@@ -7,6 +7,7 @@ import { UploadReceivers } from './UploadReceivers';
 import Configuration from './Configuration/Configuration';
 import { UploadBeneficiaries } from './Configuration/Beneficiaries/UploadBeneficiaries';
 import { EditAddress } from './Configuration/MyAccount/EditAddress';
+import { UploadUserForm } from './Configuration/Profiles/components/UsersTable/components/UploadUserForm';
 
 const Dashboard = () => {
   const { step } = useStep('step', 'inicio');
@@ -28,6 +29,9 @@ const Dashboard = () => {
           </div>
           <div className="w-full" id="alta-nuevo-beneficiario">
             <UploadBeneficiaries />
+          </div>
+          <div className="w-full" id="alta-nuevo-usuario">
+            <UploadUserForm />
           </div>
           <div className="w-full" id="editar-direccion">
             <EditAddress />

@@ -2,6 +2,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import EditIcon from '@mui/icons-material/Edit';
 import { useState } from 'react';
 import { Button, Typography } from '@/components';
+import { useNavigate } from 'react-router-dom';
 
 const rows = [
   {
@@ -28,6 +29,7 @@ const rows = [
 
 function TableGrid() {
   const [openEdit, setOpenEdit] = useState(false);
+  const navigate = useNavigate();
 
   const columns = [
     {
@@ -104,6 +106,7 @@ function TableGrid() {
           <Typography size="sm">Usuarios</Typography>
         </div>
         <Button
+          onClick={() => navigate('/dashboard/alta-nuevo-usuario')}
           text="Agregar Nuevo Beneficiario +"
           type="button"
           variant="secondary"
