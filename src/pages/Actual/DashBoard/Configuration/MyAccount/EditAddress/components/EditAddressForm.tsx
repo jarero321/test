@@ -114,7 +114,7 @@ const EditAddressForm: React.FC = () => {
         <ModalToken
           isOpen={isModalOpen}
           onClose={closeModal}
-          title="Alta Nuevo Beneficiario"
+          title="Editar Dirección"
           textButton="Confirmar"
           content={
             <>

@@ -37,7 +37,8 @@ function UpdateReceiver() {
             <ModalToken
               isOpen={isModalOpen}
               onClose={closeModal}
-              title="Alta Nuevo Beneficiario"
+              title="Destinatario SPEI"
+              textButton="Aceptar"
               content={
                 <>
                   <Typography
@@ -47,7 +48,11 @@ function UpdateReceiver() {
                   >
                     Selecciona un nuevo destinatario para descueto SPEI
                   </Typography>
-                  <SelectForm name="jd" options={[]} />
+                  <SelectForm
+                    name="receiver"
+                    placeholder="Griselda Juárez López"
+                    options={[]}
+                  />
                   <div className="p-6 space-y-6 text-center">
                     <Typography className="text-center" size="lg">
                       Token 2fa
@@ -64,7 +69,8 @@ function UpdateReceiver() {
                     <SuccessIcon />
                   </div>
                   <Typography className="text-center" colors="black" size="sm">
-                    El beneficiario ha sido dado de alta exitosamente
+                    El destinatario SPEI ha sido realizado exitosamente. <br />{' '}
+                    Podrás usarlo a partir del siguiente día hábil.
                   </Typography>
                 </>
               }
