@@ -18,7 +18,7 @@ function EditableAddress() {
         Domicilio
       </Typography>
       <br />
-      <Typography size="xs" className="font-bold">
+      <Typography size="xs" colors="gray">
         Avenida Paseo de la Reforma 255 Piso 14 A, Colonia Cuauhtémoc, Alcaldía
         Colonia Cuauhtémoc CP 06500, Ciudad de México, CDMX
       </Typography>
