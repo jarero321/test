@@ -107,7 +107,7 @@ function TableGrid() {
         </div>
         <Button
           onClick={() => navigate('/dashboard/alta-nuevo-usuario')}
-          text="Agregar Nuevo Beneficiario +"
+          text="Agregar Nuevo Usuario +"
           type="button"
           variant="secondary"
           width="w-[250px]"
