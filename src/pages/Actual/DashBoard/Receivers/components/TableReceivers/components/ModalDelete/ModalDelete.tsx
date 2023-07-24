@@ -90,7 +90,10 @@ const ModalDelete: React.FC<ModalDeleteProps> = ({
                 <div className="flex flex-row mt-6 space-x-2 justify-evenly">
                   <Button
                     height="h-[60px]"
-                    onClick={onClose}
+                    onClick={() => {
+                      setShowContent(false);
+                      onClose();
+                    }}
                     text="Aceptar"
                     type="submit"
                     variant="secondary"

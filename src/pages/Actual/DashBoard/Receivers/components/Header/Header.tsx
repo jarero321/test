@@ -6,7 +6,7 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
   return (
     <div className="w-full flex justify-between items-center my-[20px]">
-      <Typography className="font-semibold" size="lg">
+      <Typography className="xl:!text-[20px] font-semibold" size="lg">
         Destinatarios
       </Typography>
       <div className="flex gap-[20px]">
