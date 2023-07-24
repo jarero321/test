@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { Typography } from '../Typography';
-import { MessageError } from '../InputForm/MessageError';
+import { MessageError } from '../InputForm/components/MessageError';
 import { RadioButton } from '../RadioButton';
 
 interface DocumentUploaderProps {

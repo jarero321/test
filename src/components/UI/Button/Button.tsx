@@ -28,24 +28,25 @@ const Button: React.FC<ButtonInterface> = ({
 }) => {
   const getVariant = (variant: string): string => {
     const options: TypeWithKey<string> = {
-      primary: 'w-full bg-primary-color text-white font-semibold rounded-[6px]',
+      primary:
+        'w-full xl:text-[13px] 2xl:text-[14px] bg-primary-color text-white font-semibold rounded-[6px]',
       secondary:
-        'w-full bg-secondary text-primary-color font-semibold rounded-[6px]',
-      grey: 'w-full !text-white bg-[#6B7280] hover:bg-gray-400 font-bold py-2 px-4 rounded flex justify-center items-center',
+        'w-full xl:text-[13px] 2xl:text-[14px] bg-secondary text-primary-color font-semibold rounded-[6px]',
+      grey: 'w-full xl:text-[13px] 2xl:text-[14px] !text-white bg-[#6B7280] hover:bg-gray-400 font-bold py-2 px-4 rounded flex justify-center items-center',
       default:
-        'w-full  flex items-center justify-center rounded-[6px] bg-primary-color px-6 pt-2.5 pb-2 font-semibold text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg',
+        'w-full xl:text-[13px] 2xl:text-[14px]  flex items-center justify-center rounded-[6px] bg-primary-color px-6 pt-2.5 pb-2 font-semibold text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg',
       green:
-        'w-full  flex items-center justify-center rounded-[6px] bg-secondary px-6 pt-2.5 pb-2 font-semibold text-primary-color shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg',
-      link: 'w-full  inline-block rounded-[6px] text-primary-color transition duration-150 ease-in-out  focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700',
+        'w-full xl:text-[13px] 2xl:text-[14px]  flex items-center justify-center rounded-[6px] bg-secondary px-6 pt-2.5 pb-2 font-semibold text-primary-color shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg',
+      link: 'w-full xl:text-[13px] 2xl:text-[14px]  inline-block rounded-[6px] text-primary-color transition duration-150 ease-in-out  focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700',
     };
 
     return options[variant] || options.primary;
   };
   return (
     <button
-      className={`${getVariant(variant)}  ${width ?? ''} ${
-        height ?? 'h-[40px]'
-      } ${className ?? ''} `}
+      className={`max-h-[40px] 2xl:max-h-[50px] ${getVariant(variant)}  ${
+        width ?? ''
+      } ${height ?? 'h-[40px]'} ${className ?? ''} `}
       disabled={loader}
       form={id ?? ''}
       onClick={() => (onClick ? onClick() : () => null)}

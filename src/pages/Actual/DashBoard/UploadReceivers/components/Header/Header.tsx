@@ -8,7 +8,7 @@ const Header: React.FC = () => {
         Alta Nuevo Destinatario
       </Typography>
       <div className="flex gap-[20px]">
-        <Button text="Regresar" type="button" width="w-[100px]" />
+        <Button text="Regresar" type="button" width="!w-[100px]" />
       </div>
     </div>
   );

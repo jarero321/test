@@ -161,15 +161,17 @@ function TableGridV2() {
         className="border-l border-r border-b"
         columns={columns}
         rowHeight={52}
-        rows={rows}
+        getRowClassName={(params) =>
+          params.indexRelativeToCurrentPage % 2 === 0 ? 'even' : 'bg-[#F5F6F8]'
+        }
         style={{
           borderLeft: 'none',
           borderRight: 'none',
           borderBottom: 'none',
           borderTop: 'none',
         }}
-        // Elimina los bordes de las row
         sx={{ '&, [class^=MuiDataGrid]': { border: 'none' } }}
+        rows={rows}
       />
       <ModalUpdate isOpen={openEdit} onClose={() => setOpenEdit(false)} />
       <ModalDelete isOpen={openDelete} onClose={() => setOpenDelete(false)} />

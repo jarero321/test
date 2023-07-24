@@ -1,6 +1,6 @@
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
-import { MessageError } from '../InputForm/MessageError';
+import { MessageError } from '../InputForm/components/MessageError';
 import Select from 'react-select';
 import styles from './styles.module.scss';
 

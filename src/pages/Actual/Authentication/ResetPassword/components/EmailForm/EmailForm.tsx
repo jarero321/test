@@ -1,7 +1,7 @@
 import { Button, InputForm, Typography } from '@/components';
 import { Form } from '@/components/UI/Form';
-import Logo from '@/resources/img/logo/logo.png';
 import BannerAuth from '../../../components/BannerAuth';
+import { LayoutAuth } from '../../../components/LayoutAuth';
 
 interface EmailProp {
   handleClick: () => void;
@@ -15,23 +15,22 @@ const EmailForm = ({ handleClick }: EmailProp) => {
   };
 
   return (
-    <div className="w-full h-screen">
-      <img
-        alt="logo paycode"
-        className="w-[185px] absolute top-[60px] left-[60px] "
-        src={Logo}
-      />
+    <LayoutAuth bannerAuth={<BannerAuth />}>
       <div className="w-full h-full flex xl:items-center xl:justify-center">
         <div className="w-full flex xl:items-center xl:justify-center lg:pt-[200px] xl:pt-0 lg:justify-center ">
-          <div className="2xl:w-[60%] lg:w-[90%] h-full px-[50px] pb-[50px] gap-[40px] ">
+          <div className="h-full px-[50px] pb-[50px] flex flex-col gap-[20px]">
             <Typography
-              className="head-primary py-[10px] font-semibold xl:!text-[40px] lg:!text-[32px]"
-              colors=""
+              className="xl:!text-[30px] 2xl:!text-[40px]"
+              colors="primary-color"
               size="base"
             >
               Recuperar Contraseña
             </Typography>
-            <Form className="flex flex-col gap-[20px]" onSubmit={onSubmit}>
+            <Form
+              className="flex flex-col gap-[30px]"
+              id="email_form"
+              onSubmit={onSubmit}
+            >
               <div className="pt-[15px]">
                 <InputForm
                   inputMode="email"
@@ -41,15 +40,16 @@ const EmailForm = ({ handleClick }: EmailProp) => {
                   type="email"
                 />
               </div>
-              <div className="mt-[30px] flex gap-[20px]">
+              <div className="flex gap-[20px]">
                 <Button
                   height="h-[60px]"
                   text="Cancelar"
-                  type="submit"
+                  type="button"
                   variant="grey"
                 />
                 <Button
                   height="h-[60px]"
+                  id="email_form"
                   text="Aceptar"
                   type="submit"
                   variant="secondary"
@@ -58,11 +58,8 @@ const EmailForm = ({ handleClick }: EmailProp) => {
             </Form>
           </div>
         </div>
-        <div className="w-full h-full">
-          <BannerAuth />
-        </div>
       </div>
-    </div>
+    </LayoutAuth>
   );
 };
 

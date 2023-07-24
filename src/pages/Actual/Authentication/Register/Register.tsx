@@ -1,18 +1,17 @@
-import CheckBox from '@/components/UI/CheckBox/CheckBox';
-import './styles.scss';
-import { Button, Form, InputForm, Typography } from '@/components';
-
-import Logo from '@/resources/img/logo/logo.png';
-import { useAuthStore } from '@/store/auth';
-import { Link, useNavigate } from 'react-router-dom';
 import BannerAuth from '../components/BannerAuth';
-
-import { createUser } from '@/api/Authentication/Authentication.api';
-import { useState } from 'react';
-import { toast } from 'react-toastify';
-import { FormDataRegister } from '@/models/authentication/forms/forms.models';
+import { LayoutAuth } from '../components/LayoutAuth';
+import './styles.scss';
 import { createUserAdapter } from '@/adapters';
+import { createUser } from '@/api/Authentication/Authentication.api';
+import { Button, Form, InputForm, Typography } from '@/components';
+import CheckBox from '@/components/UI/CheckBox/CheckBox';
+import { InputPassword } from '@/components/UI/InputPassword';
+import { FormDataRegister } from '@/models/authentication/forms/forms.models';
+import { useAuthStore } from '@/store/auth';
 import { geolocalizationStore } from '@/store/geolocalization';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Auth: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -37,86 +36,83 @@ const Auth: React.FC = () => {
   };
 
   return (
-    <div className="login">
-      <img alt="logo paycode" className="login__logo" src={Logo} />
-      <div className="login__box">
-        <div className="login__box-wrap">
-          <Form
-            className=" flex flex-col gap-[8px]"
-            id="register-form"
-            onSubmit={(data) => onSubmit(data as unknown as FormDataRegister)}
+    <LayoutAuth bannerAuth={<BannerAuth />}>
+      <div>
+        <Form
+          className="h-full w-full max-h-screen justify-center flex flex-col gap-[20px] max-w-[350px] 2xl:w-[450px] 2xl:max-w-[500px] "
+          id="register-form"
+          onSubmit={(data) => onSubmit(data as unknown as FormDataRegister)}
+        >
+          <Typography
+            className="xl:!text-[30px] 2xl:!text-[40px]"
+            colors="primary-color"
+            size="base"
           >
-            <Typography
-              className="font-semibold"
-              colors="primary-color"
-              size="base"
-            >
-              ¡Regístrate ahora!
-            </Typography>
-            <div className="xl:pt-[10px] 2xl:pt-[24px]">
-              <InputForm
-                inputMode="email"
-                label="Correo electrónico"
-                name="email"
-                required
-                type="email"
-              />
+            ¡Regístrate ahora!
+          </Typography>
+          <div>
+            <InputForm
+              inputMode="email"
+              label="Correo electrónico"
+              name="email"
+              required
+              type="email"
+            />
+          </div>
+          <div>
+            <InputPassword
+              inputMode="text"
+              label="Contraseña"
+              name="password"
+              required
+              type="password"
+            />
+          </div>
+          <div>
+            <InputPassword
+              inputMode="text"
+              label="Confirmar Contraseña"
+              name="confirmPassword"
+              required
+              type="password"
+            />
+          </div>
+          <div className="w-full flex items-center cursor-pointer">
+            <div className="pr-[15px] mt-[6px]">
+              <CheckBox />
             </div>
-            <div className="xl:pt-[10px] 2xl:pt-[24px]">
-              <InputForm
-                inputMode="text"
-                label="Contraseña"
-                name="password"
-                required
-                type="password"
-              />
-            </div>
-            <div className="xl:pt-[10px] 2xl:pt-[24px]">
-              <InputForm
-                inputMode="text"
-                label="Confirmar Contraseña"
-                name="confirmPassword"
-                required
-                type="password"
-              />
-            </div>
-            <div className="w-full h-full pt-[20px] flex items-center cursor-pointer">
-              <div className="pr-[15px]">
-                <CheckBox />
-              </div>
-              <span className="opacity-[0.8] text-[16px]">
-                Acepto los&nbsp; términos y condiciones
+            <span className="opacity-[0.8] mt-[6px] text-[13px]">
+              Acepto los&nbsp;
+              <span className="cursor-pointer underline">
+                términos y condiciones
               </span>
-            </div>
+            </span>
+          </div>
+          <div>
             <div>
-              <div className="mt-[12px]">
-                <Button
-                  height="h-[50px]"
-                  id="register-form"
-                  loader={loading}
-                  text="Ingresar cuenta"
-                  type="submit"
-                  variant="secondary"
-                />
-              </div>
+              <Button
+                height="h-[50px]"
+                id="register-form"
+                loader={loading}
+                text="Ingresar cuenta"
+                type="submit"
+                variant="secondary"
+              />
             </div>
-            <div className="flex w-full justify-between gap-[12px] mt-[12px] items-center">
-              <span className="text-[16px] opacity-[0.8]">
-                ¿Deseas continuar con tu registro?
+          </div>
+          <div className="flex w-full justify-between gap-[12px] items-center">
+            <span className="text-[13px] opacity-[0.8]">
+              ¿Deseas continuar con tu registro?
+            </span>
+            <Link to="/autenticacion/iniciar-sesion">
+              <span className="text-[13px] text-secondary cursor-pointer underline ">
+                Continuar ahora
               </span>
-              <Link to="/autenticacion/iniciar-sesion">
-                <span className="text-[14px] text-secondary cursor-pointer underline ">
-                  Continuar ahora
-                </span>
-              </Link>
-            </div>
-          </Form>
-        </div>
+            </Link>
+          </div>
+        </Form>
       </div>
-      <div className="login__banner">
-        <BannerAuth />
-      </div>
-    </div>
+    </LayoutAuth>
   );
 };
 

@@ -1,8 +1,9 @@
 import { MoralPerson } from './components/MoralPerson';
-import { PersonalStepper } from './components/PersonalStepper';
+
 import { PyshicPerson } from './components/PyshicPerson';
 import SwitchedComponent from '@/components/UI/SwitchedComponent/SwitchedComponent';
 import useStep from '@/hooks/useStep';
+import { PersonalStepper } from '@/pages/Actual/OnBoarding/PersonalStepper';
 import React from 'react';
 
 const OnBoarding: React.FC = () => {
