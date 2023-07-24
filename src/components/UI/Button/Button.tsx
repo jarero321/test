@@ -44,9 +44,9 @@ const Button: React.FC<ButtonInterface> = ({
   };
   return (
     <button
-      className={`max-h-[40px] 2xl:max-h-[50px] ${getVariant(variant)}  ${
-        width ?? ''
-      } ${height ?? 'h-[40px]'} ${className ?? ''} `}
+      className={`${height ? `max-h-[${height}]` : 'max-h-[40px]'} ${getVariant(
+        variant
+      )}  ${width ?? ''} ${height ?? 'h-[40px]'} ${className ?? ''} `}
       disabled={loader}
       form={id ?? ''}
       onClick={() => (onClick ? onClick() : () => null)}

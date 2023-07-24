@@ -4,10 +4,10 @@ import { TableReceivers } from './components/TableReceivers';
 
 const Receivers: React.FC = () => {
   return (
-    <div className="px-[40px]">
+    <section>
       <Header />
       <TableReceivers />
-    </div>
+    </section>
   );
 };
 

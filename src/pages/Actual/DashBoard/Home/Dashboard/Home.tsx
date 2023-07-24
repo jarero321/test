@@ -2,7 +2,6 @@ import React from 'react';
 import { BalanceMoney } from './components/BalanceMoney';
 import { Movements } from './components/Movements';
 import { Typography } from '@/components';
-import { ModalContainer } from '@/components/UI/Modal/ModalContainer';
 
 const Home: React.FC = () => {
   return (
@@ -16,7 +15,6 @@ const Home: React.FC = () => {
           <Movements />
         </div>
       </div>
-      <ModalContainer title="hare aguachhile" />
     </>
   );
 };

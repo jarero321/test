@@ -157,13 +157,13 @@ function TableGridV2() {
     >
       <DataGrid
         autoPageSize
-        checkboxSelection={false}
         className="border-l border-r border-b"
         columns={columns}
-        rowHeight={52}
         getRowClassName={(params) =>
           params.indexRelativeToCurrentPage % 2 === 0 ? 'even' : 'bg-[#F5F6F8]'
         }
+        rowHeight={52}
+        rows={rows}
         style={{
           borderLeft: 'none',
           borderRight: 'none',
@@ -171,7 +171,6 @@ function TableGridV2() {
           borderTop: 'none',
         }}
         sx={{ '&, [class^=MuiDataGrid]': { border: 'none' } }}
-        rows={rows}
       />
       <ModalUpdate isOpen={openEdit} onClose={() => setOpenEdit(false)} />
       <ModalDelete isOpen={openDelete} onClose={() => setOpenDelete(false)} />

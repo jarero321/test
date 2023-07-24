@@ -4,7 +4,7 @@ import { UploadReceiversForm } from './components/UploadReceiversForm';
 
 const UploadReceivers: React.FC = () => {
   return (
-    <div className="px-[40px]">
+    <div>
       <Header />
       <UploadReceiversForm />
     </div>

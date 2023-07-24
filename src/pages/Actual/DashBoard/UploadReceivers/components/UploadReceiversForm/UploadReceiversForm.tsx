@@ -1,95 +1,69 @@
-import { Button, Form, InputForm, SelectForm, Typography } from '@/components';
+import { Button, Form, InputForm, SelectForm } from '@/components';
 import React from 'react';
 import { UploadModal } from '../UploadModal';
 import { useNavigate } from 'react-router-dom';
+import { GridTextForm } from '@/components/UI/GridTextForm';
 
 const UploadReceiversForm: React.FC = () => {
   const [activeModal, setActiveModal] = React.useState(false);
   const navigate = useNavigate();
   return (
-    <div className="w-full h-full bg-white shadow-lg rounded-[12px] px-[20px] py-[20px]">
+    <div className="w-full h-full bg-white shadow-lg rounded-[12px] flex gap-[30px] px-[40px] py-[40px] !pt-[20px]">
       <Form
-        className="w-full mt-[20px]"
+        className="w-full"
         onSubmit={(data) => {
           return data;
         }}
       >
-        <div className="w-full gap-[20px] grid grid-cols-2 items-center">
-          <div>
-            <Typography colors="secondary-gray" size="xs">
-              Cuenta o Contrato
-            </Typography>
+        <div className="w-full gap-[40px] grid grid-cols-2 items-center">
+          <GridTextForm text="Cuenta o Contrato">
             <SelectForm label="" name="name" options={[]} placeholder="1-356" />
-          </div>
+          </GridTextForm>
           <div></div>
-          <div>
-            <Typography colors="secondary-gray" size="xs">
-              Nombre Completo
-            </Typography>
+          <GridTextForm text="Nombre Completo">
             <InputForm label="" name="name" placeholder="" />
-          </div>
-          <div>
-            <Typography colors="secondary-gray" size="xs">
-              Alias
-            </Typography>
+          </GridTextForm>
+          <GridTextForm text="Alias">
             <InputForm label="" name="name" placeholder="Alias" />
-          </div>
-          <div>
-            <Typography colors="secondary-gray" size="xs">
-              Tipo de cuenta
-            </Typography>
+          </GridTextForm>
+          <GridTextForm text="Tipo de cuenta">
             <SelectForm
               label=""
               name="name"
               options={[]}
               placeholder="Seleccione una opción"
             />
-          </div>
-          <div>
-            <Typography colors="secondary-gray" size="xs">
-              Cuenta
-            </Typography>
+          </GridTextForm>
+          <GridTextForm text="Cuenta">
             <InputForm
               label=""
               name="name"
               placeholder="CLABE, número de tarjeta o número de teléfono"
             />
-          </div>
-          <div>
-            <Typography colors="secondary-gray" size="xs">
-              Banco o Institución
-            </Typography>
+          </GridTextForm>
+          <GridTextForm text="Banco o Institución">
             <SelectForm
               label=""
               name="name"
               options={[]}
               placeholder="Seleccione una opción"
             />
-          </div>
-          <div>
-            <Typography colors="secondary-gray" size="xs">
-              Limite de operación
-            </Typography>
+          </GridTextForm>
+          <GridTextForm text="Limite de operación">
             <InputForm
               label=""
               name="name"
               placeholder="Define un monto límite de operación"
             />
-          </div>
-          <div>
-            <Typography colors="secondary-gray" size="xs">
-              RFC con homoclave (Opcional)
-            </Typography>
+          </GridTextForm>
+          <GridTextForm text="RFC con homoclave (Opcional)">
             <InputForm label="" name="name" placeholder="13 caracteres" />
-          </div>
-          <div>
-            <Typography colors="secondary-gray" size="xs">
-              Curp (Opcional)
-            </Typography>
+          </GridTextForm>
+          <GridTextForm text="Curp (Opcional)">
             <InputForm label="" name="name" placeholder="18 caracteres" />
-          </div>
+          </GridTextForm>
         </div>
-        <div className="w-full flex justify-end mt-[40px] ">
+        <div className="w-full flex justify-end mt-[50px]">
           <div className="w-[40%] flex gap-[50px] ">
             <Button
               height="h-[60px]"
