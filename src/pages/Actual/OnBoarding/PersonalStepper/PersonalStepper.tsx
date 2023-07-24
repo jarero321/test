@@ -6,11 +6,7 @@ import { Link } from 'react-router-dom';
 
 const PersonalStepper: React.FC = () => {
   return (
-    <div
-      className="w-screen h-screen flex flex-col bg-primary-color justify-ce
-    
-    nter items-center"
-    >
+    <div className="w-screen h-screen flex flex-col bg-primary-color justify-center items-center">
       <div className="py-[48px] px-[48px] bg-white border rounded-[20px] border-[2px] min-h-[500px] min-w-[1000px] text-left mt-[54px] flex flex-col items-center">
         <img height={250} src={Logo} width={250} />
         <Typography

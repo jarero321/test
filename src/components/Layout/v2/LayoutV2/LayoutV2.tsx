@@ -14,9 +14,12 @@ const LayoutV2: React.FC<LayoutV2Props> = ({ children }) => {
       <div className="w-[220px] min-h-screen max-h-screen fixed h-full shadow-2xl z-[10]">
         <SideBarV2 />
       </div>
-      <article className="w-full h-full shadow-xl flex flex-col items-end">
+      <article className="w-full h-full flex flex-col items-end">
         <HeaderV2 />
-        <div className=" h-full" style={{ width: 'calc(100% - 220px)' }}>
+        <div
+          className=" h-full flex items-center justify-center"
+          style={{ width: 'calc(100% - 220px)' }}
+        >
           {children}
         </div>
       </article>

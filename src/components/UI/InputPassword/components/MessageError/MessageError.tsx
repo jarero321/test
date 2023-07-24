@@ -7,7 +7,7 @@ export interface MessageErrorInterface {
 const MessageError: React.FC<MessageErrorInterface> = ({ message }) => {
   return (
     <div>
-      <span className="absolute text-red-500 text-xs pt-[2px] px-[4px]">
+      <span className=" text-red-500 relative text-xs pt-[2px] px-[4px]">
         {message}
       </span>
     </div>

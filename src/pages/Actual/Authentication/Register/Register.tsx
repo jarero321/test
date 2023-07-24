@@ -5,6 +5,7 @@ import { createUserAdapter } from '@/adapters';
 import { createUser } from '@/api/Authentication/Authentication.api';
 import { Button, Form, InputForm, Typography } from '@/components';
 import CheckBox from '@/components/UI/CheckBox/CheckBox';
+import { InputPassword } from '@/components/UI/InputPassword';
 import { FormDataRegister } from '@/models/authentication/forms/forms.models';
 import { useAuthStore } from '@/store/auth';
 import { geolocalizationStore } from '@/store/geolocalization';
@@ -36,20 +37,20 @@ const Auth: React.FC = () => {
 
   return (
     <LayoutAuth bannerAuth={<BannerAuth />}>
-      <div style={{ height: 'calc(100vh - 150px)' }}>
+      <div>
         <Form
-          className="h-full max-h-screen justify-center flex flex-col max-w-[350px] gap-[14px]"
+          className="h-full w-full max-h-screen justify-center flex flex-col gap-[20px] max-w-[350px] 2xl:w-[450px] 2xl:max-w-[500px] "
           id="register-form"
           onSubmit={(data) => onSubmit(data as unknown as FormDataRegister)}
         >
           <Typography
-            className="xl:!text-[30px]"
+            className="xl:!text-[30px] 2xl:!text-[40px]"
             colors="primary-color"
             size="base"
           >
             ¡Regístrate ahora!
           </Typography>
-          <div className="xl:pt-[10px] 2xl:pt-[24px]">
+          <div>
             <InputForm
               inputMode="email"
               label="Correo electrónico"
@@ -58,8 +59,8 @@ const Auth: React.FC = () => {
               type="email"
             />
           </div>
-          <div className="xl:pt-[10px] 2xl:pt-[24px]">
-            <InputForm
+          <div>
+            <InputPassword
               inputMode="text"
               label="Contraseña"
               name="password"
@@ -67,8 +68,8 @@ const Auth: React.FC = () => {
               type="password"
             />
           </div>
-          <div className="xl:pt-[10px] 2xl:pt-[24px]">
-            <InputForm
+          <div>
+            <InputPassword
               inputMode="text"
               label="Confirmar Contraseña"
               name="confirmPassword"

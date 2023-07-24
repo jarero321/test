@@ -1,7 +1,7 @@
 'use-client';
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
-import { MessageError } from '../InputForm/MessageError';
+import { MessageError } from '../InputForm/components/MessageError';
 
 interface RadioButtonProps {
   options: { value: string; label: string }[];

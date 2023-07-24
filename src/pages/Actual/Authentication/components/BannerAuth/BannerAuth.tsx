@@ -2,9 +2,9 @@ import { Typography } from '@/components';
 
 const BannerAuth = () => {
   return (
-    <div className="w-full max-h-screen h-screen flex flex-col items-center justify-center px-[128px] bg-primary-color">
+    <div className="w-full max-h-screen h-screen flex flex-col items-center justify-center px-[128px] 2xl:px-[180px] bg-primary-color">
       <Typography
-        className="text-left py-[20px] 2xl:!text-[72px] xl:!text-[50px] 2xl:!text-[60px] lg:!text-[42px]"
+        className="text-left py-[20px] 2xl:!text-[72px] xl:!text-[50px] 2xl:!text-[70px] lg:!text-[42px]"
         colors="text-white"
         size="xl"
       >

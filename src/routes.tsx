@@ -1,10 +1,8 @@
-import { NoProtectedRoute } from './components/NoProtectedRoute';
 import { Authentication } from './pages/Actual/Authentication';
 import Geolocation from './pages/Actual/Geolocalization/Geolocation';
 import { GeolocalizationWrapper } from './pages/Actual/Geolocalization/components/GeolocalizationWrapper/GeolocalizationWrapper';
 import { Home } from './pages/Actual/Home';
 import { OnBoarding } from './pages/Legacy/UserRegister/OnBoarding';
-// import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute';
 import { useAuthStore } from './store/auth';
 import Dashboard from '@/pages/Actual/DashBoard/Dashboard';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
@@ -31,14 +29,7 @@ const Router = () => {
           <Route element={<Home />} path="/" />
           <Route element={<Geolocation />} path="/geolocalizacion/:step?" />
 
-          <Route
-            element={
-              <NoProtectedRoute isAllowed={isAuth}>
-                <Authentication />
-              </NoProtectedRoute>
-            }
-            path="autenticacion/:step?"
-          />
+          <Route element={<Authentication />} path="autenticacion/:step?" />
 
           <Route
             element={

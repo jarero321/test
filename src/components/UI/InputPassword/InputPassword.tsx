@@ -1,10 +1,9 @@
 import { MessageError } from './components/MessageError';
 import styles from './styles.module.scss';
-import { inputValidation } from '@/utils';
 import IonIcon from '@reacticons/ionicons';
 import React, { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
-import { useForm } from 'react-hook-form';
+import { validationSchema } from './inputPassword.resolver';
 
 interface InputFormProps {
   name: string;
@@ -24,10 +23,8 @@ const InputForm: React.FC<InputFormProps> = ({
   label,
   placeholder,
   type = 'text',
-  required = false,
   inputMode = 'text',
   className = '',
-  rules = inputMode,
   min,
   max,
 }) => {
@@ -45,7 +42,7 @@ const InputForm: React.FC<InputFormProps> = ({
     register,
     formState: { errors },
     getValues,
-  } = useForm();
+  } = methods;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const isError = (errors: any): boolean => {
@@ -58,11 +55,9 @@ const InputForm: React.FC<InputFormProps> = ({
 
   return (
     <>
-      <label className={`${styles.container}`}>
+      <label className={`${styles.container} ${className}`}>
         <div
-          className={`${styles.wrapper} ${className} ${
-            isError(errors) ? styles.error : ''
-          }`}
+          className={`${styles.wrapper} ${isError(errors) ? styles.error : ''}`}
         >
           <span
             className={`${styles.inputTitle} ${
@@ -78,7 +73,18 @@ const InputForm: React.FC<InputFormProps> = ({
             minLength={min}
             placeholder={placeholder}
             type={type === 'password' ? validateTypePassword() : type}
-            {...register(name, inputValidation(rules, required))}
+            {...register(name, {
+              validate: async (value) => {
+                try {
+                  await validationSchema.validateAt('password', {
+                    password: value,
+                  });
+                  return true; // La validación pasó
+                } catch (error: any) {
+                  return error.message; // La validación falló, retornamos el mensaje de error
+                }
+              },
+            })}
             formNoValidate
           />
           {type === 'password' ? (

@@ -16,9 +16,9 @@ const Header: React.FC = () => {
           text="Agregar Nuevo Destinatario +"
           type="button"
           variant="secondary"
-          width="w-[270px]"
+          width="!w-[270px]"
         />
-        <Button text="Regresar" type="button" width="w-[100px]" />
+        <Button text="Regresar" type="button" width="!w-[100px]" />
       </div>
     </div>
   );
