@@ -10,7 +10,7 @@ import { Security } from './Security/Security';
 import { MyAccount } from './MyAccount/MyAccount';
 import EditAddress from './MyAccount/EditAddress/EditAddress';
 import Profiles from './Profiles/Profiles';
-import { UploadUserForm } from './Profiles/containers/UsersTable/components/UploadUserForm';
+import { UploadUserForm } from './Profiles/containers/UsersTable/components/UploadUser/pages/UploadUserForm';
 
 function Configuration() {
   const [selectedButton, setSelectedButton] = useState('Button 1');
