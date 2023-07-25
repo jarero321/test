@@ -7,7 +7,7 @@ import { UploadReceivers } from './UploadReceivers';
 import Configuration from './Configuration/Configuration';
 import { UploadBeneficiaries } from './Configuration/Beneficiaries/UploadBeneficiaries';
 import { EditAddress } from './Configuration/MyAccount/EditAddress';
-import UploadUser from './Configuration/Profiles/components/UsersTable/components/UploadUser/UploadUser';
+import UploadUser from './Configuration/Profiles/containers/UsersTable/components/UploadUser/UploadUser';
 
 const Dashboard = () => {
   const { step } = useStep('step', 'inicio');

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button, InputForm, Typography } from '@/components';
-import UpdateAmountModal from '../UpdateAmountModal/UpdateAmountModal';
+import { UpdateAmountModal } from './components/UpdateAmountModal';
 
 function LimitAmount() {
   const [openEdit, setOpenEdit] = useState(false);

@@ -1,7 +1,6 @@
 import { Typography, Form } from '@/components';
-import React from 'react';
-import LimitAmount from './components/LimitAmount/LimitAmount';
-import UsersTable from './components/UsersTable/UsersTable';
+import { LimitAmount } from './containers/LimitAmount';
+import { UsersTable } from './containers/UsersTable';
 
 const Profiles = () => {
   return (
