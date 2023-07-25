@@ -64,15 +64,15 @@ const UploadReceiversForm: React.FC = () => {
           </GridTextForm>
         </div>
         <div className="w-full flex justify-end mt-[50px]">
-          <div className="w-[40%] flex gap-[50px] ">
+          <div className="xl:w-[50%] 2xl:w-[40%] flex xl:gap-[30px] 2xl:gap-[50px] ">
             <Button
-              height="h-[60px]"
+              height="xl:h-[50px] 2xl:h-[60px]"
               text="Cancelar"
               type="submit"
               variant="grey"
             />
             <Button
-              height="h-[60px]"
+              height="xl:h-[50px] 2xl:h-[60px]"
               onClick={() => {
                 setActiveModal(true);
               }}

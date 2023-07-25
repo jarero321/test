@@ -8,8 +8,9 @@
   border: 1px solid transparent;
   border-radius: 8px;
   display: flex;
-  padding: 20px 14px;
+  padding: 15px 14px;
   position: relative;
+  height: 50px;
   transition: 0.2s ease all;
 
   &:focus-within {
@@ -87,4 +88,11 @@
   height: 100%;
   font-size: 16px;
   opacity: 0.6;
+}
+
+@media screen and (min-width: 1550px) {
+  .wrapper {
+    height: 60px;
+    padding: 20px 14px;
+  }
 }
