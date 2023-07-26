@@ -1,11 +1,9 @@
-import { useState } from 'react';
-import { Button, Form, InputForm, Typography } from '@/components';
-import { ModalBeneficier } from '../ModalBeneficier';
-import { UploadDocument } from '@/components/UI/UploadDocument';
+import { Button, InputForm, SelectForm, Typography, Form } from '@/components';
 import { ModalToken } from '@/components/UI/Modal/ModalToken';
 import SuccessIcon from '@/resources/icons/SuccessIcon';
+import { useState } from 'react';
 
-const UploadReceiversForm: React.FC = () => {
+const UploadUserForm: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -15,7 +13,6 @@ const UploadReceiversForm: React.FC = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
   return (
     <div className="w-full h-full bg-white shadow-lg rounded-[12px] px-[20px] py-[20px]">
       <Form
@@ -24,46 +21,48 @@ const UploadReceiversForm: React.FC = () => {
           return data;
         }}
       >
+        <div className="w-full gap-[20px] grid grid-cols-1 items-center mb-6">
+          <div className="font-bold">
+            <Typography size="lg">Alta de usuario</Typography>
+          </div>
+        </div>
         <div className="w-full gap-[20px] grid grid-cols-2 items-center">
           <div>
             <Typography colors="secondary-gray" size="xs">
-              Nombre Completo
+              Nombre (s)
             </Typography>
-            <InputForm label="" name="name" placeholder="" />
-          </div>
-          <div></div>
-          <div>
-            <Typography colors="secondary-gray" size="xs">
-              Parentesco
-            </Typography>
-            <InputForm
-              label=""
-              name="name"
-              placeholder="Madre, Padre, Hijo, Esposo..."
-            />
+            <InputForm label="" name="name" placeholder="Luis Miguel" />
           </div>
           <div>
             <Typography colors="secondary-gray" size="xs">
-              Porcentaje
+              Primer apellido
+            </Typography>
+            <InputForm label="" name="lastName" placeholder="Saaavedra" />
+          </div>
+          <div>
+            <Typography colors="secondary-gray" size="xs">
+              Segundo apellido (Opcional)
+            </Typography>
+            <InputForm label="" name="secondLastName" placeholder="Hernández" />
+          </div>
+          <div>
+            <Typography colors="secondary-gray" size="xs">
+              Email
             </Typography>
             <InputForm
               label=""
-              name="name"
-              placeholder="Define tu porcentaje"
+              name="email"
+              placeholder="luis.saavedra@kuspit.com"
             />
           </div>
           <div>
-            <UploadDocument
-              description="Identificación vigente (Solo INE)"
-              index={1}
-              title="Identificación oficial"
-            />
-          </div>
-          <div>
-            <UploadDocument
-              description="No mayor a 3 meses"
-              index={2}
-              title="Comprobante de domicilio"
+            <Typography colors="secondary-gray" size="xs">
+              Rol
+            </Typography>
+            <SelectForm
+              name="role"
+              options={[]}
+              placeholder="Selecciona un Rol"
             />
           </div>
         </div>
@@ -78,7 +77,7 @@ const UploadReceiversForm: React.FC = () => {
             <Button
               height="h-[60px]"
               onClick={openModal}
-              text="Guardar"
+              text="Actualizar"
               type="submit"
               variant="secondary"
             />
@@ -87,13 +86,15 @@ const UploadReceiversForm: React.FC = () => {
         <ModalToken
           isOpen={isModalOpen}
           onClose={closeModal}
-          title="Alta Nuevo Beneficiario"
-          textButton="Agregar Beneficiario"
+          title="Editar Dirección"
+          textButton="Guardar"
           content={
             <>
-              <Typography className="text-gray-600" colors="black" size="xs">
-                Ingrese tú 2FA para confirmar el alta del beneficiario:
-              </Typography>
+              <div className="text-center">
+                <Typography className="text-gray-600" colors="black" size="xs">
+                  Ingrese tú 2FA para confirmar el alta de Usuario:
+                </Typography>
+              </div>
               <div className="p-6 space-y-6 text-center">
                 <Typography className="text-center" size="lg">
                   Token 2fa
@@ -110,7 +111,7 @@ const UploadReceiversForm: React.FC = () => {
                 <SuccessIcon />
               </div>
               <Typography className="text-center" colors="black" size="sm">
-                El beneficiario ha sido dado de alta exitosamente
+                El usuario ha sido dado de alta exitosamente.
               </Typography>
             </>
           }
@@ -120,4 +121,4 @@ const UploadReceiversForm: React.FC = () => {
   );
 };
 
-export default UploadReceiversForm;
+export default UploadUserForm;
