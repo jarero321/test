@@ -49,14 +49,14 @@ const LoginUser = () => {
               </Link>
               <div className="mt-[20px] flex gap-[20px] ">
                 <Button
-                  height="h-[60px]"
+                  height="xl:h-[50px] 2xl:h-[60px]"
                   onClick={() => navigate('/autentication/iniciar-sesion')}
                   text="No soy yo"
                   type="submit"
                   variant="grey"
                 />
                 <Button
-                  height="h-[60px]"
+                  height="xl:h-[50px] 2xl:h-[60px]"
                   text="Iniciar sesion"
                   type="submit"
                   variant="secondary"
