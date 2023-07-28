@@ -1,12 +1,9 @@
 import { DataGrid } from '@mui/x-data-grid';
 import EditIcon from '@mui/icons-material/Edit';
 import CloseIcon from '@mui/icons-material/Close';
-import Switch from '@mui/material/Switch';
 import { useState } from 'react';
-import { ModalToken } from '@/components/UI/Modal/ModalToken';
-import { InputForm, Typography } from '@/components';
-import SuccessIcon from '@/resources/icons/SuccessIcon';
 import { ModalUpdate } from '../ModalUpdate';
+import { ModalDelete } from '../ModalDelete';
 
 const rows = [
   {
@@ -33,7 +30,6 @@ const rows = [
 function TableGrid() {
   const [openEdit, setOpenEdit] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
-  const [openInhabilite, setOpenInhabilite] = useState(false);
   const columns = [
     {
       headerClassName: 'text-[15px] text-primary-color',
@@ -122,6 +118,7 @@ function TableGrid() {
         sx={{ '&, [class^=MuiDataGrid]': { border: 'none' } }}
       />
       <ModalUpdate isOpen={openEdit} onClose={() => setOpenEdit(false)} />
+      <ModalDelete isOpen={openDelete} onClose={() => setOpenDelete(false)} />
     </div>
   );
 }

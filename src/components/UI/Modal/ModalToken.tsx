@@ -58,7 +58,9 @@ export const ModalToken: React.FC<ModalTokenProps> = ({
             <>
               {/* Modal Header */}
               <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-                <Typography>{title}</Typography>
+                <Typography size="xs" className="font-bold">
+                  {title}
+                </Typography>
               </div>
               {/* Modal Body */}
               <div className="p-6">{content}</div>

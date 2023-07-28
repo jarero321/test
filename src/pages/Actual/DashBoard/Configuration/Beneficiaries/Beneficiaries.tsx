@@ -1,6 +1,6 @@
 import { Button } from '@/components';
 import { useNavigate } from 'react-router-dom';
-import { TableBeneficiaries } from '../components/TableBeneficiaries';
+import { TableBeneficiaries } from './components/TableBeneficiaries';
 
 function Beneficiaries() {
   const navigate = useNavigate();
