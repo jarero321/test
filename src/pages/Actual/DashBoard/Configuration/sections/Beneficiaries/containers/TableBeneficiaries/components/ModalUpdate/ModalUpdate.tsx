@@ -20,6 +20,7 @@ const UploadModal: React.FC<UploadModalProps> = ({
       onClose={onClose}
       title="Editar Beneficiario"
       textButton="Actualizar"
+      navigate={onClose}
       content={
         <>
           <div>

@@ -1,6 +1,5 @@
 import { Button, Form, InputForm, Typography } from '@/components';
 import React, { useState } from 'react';
-import { ModalBeneficier } from '../Beneficiaries/UploadBeneficiaries/components/ModalBeneficier';
 import { useNavigate } from 'react-router-dom';
 import { ModalSecurity } from './components/ModalSecurity';
 

@@ -5,9 +5,9 @@ import { LayoutV2 } from '@/components';
 import { Receivers } from './Receivers';
 import { UploadReceivers } from './UploadReceivers';
 import Configuration from './Configuration/Configuration';
-import { UploadBeneficiaries } from './Configuration/Beneficiaries/UploadBeneficiaries';
 import { EditAddress } from './Configuration/MyAccount/EditAddress';
 import UploadUser from './Configuration/Profiles/containers/UsersTable/components/UploadUser/UploadUser';
+import { UploadBeneficiaries } from './Configuration/sections/Beneficiaries/containers/UploadBeneficiaries';
 
 const Dashboard = () => {
   const { step } = useStep('step', 'inicio');
