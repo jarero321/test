@@ -4,6 +4,7 @@ import { inputValidation } from '@/utils';
 import IonIcon from '@reacticons/ionicons';
 import React, { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 interface InputFormProps {
   name: string;
@@ -44,7 +45,7 @@ const InputForm: React.FC<InputFormProps> = ({
     register,
     formState: { errors },
     getValues,
-  } = methods;
+  } = useForm();
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const isError = (errors: any): boolean => {

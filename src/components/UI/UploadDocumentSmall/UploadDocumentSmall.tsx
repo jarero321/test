@@ -5,13 +5,13 @@ import { MessageError } from '../InputForm/MessageError';
 import { RadioButton } from '../RadioButton';
 import { useForm } from 'react-hook-form';
 
-interface DocumentUploaderProps {
+interface DocumentUploaderSmallProps {
   index: number;
   title?: string;
   description?: string;
 }
 
-const DocumentUploader: React.FC<DocumentUploaderProps> = ({
+const DocumentUploaderSmall: React.FC<DocumentUploaderSmallProps> = ({
   index,
   description,
   title,
@@ -35,11 +35,11 @@ const DocumentUploader: React.FC<DocumentUploaderProps> = ({
 
   return (
     <div
-      className={`w-full h-[150px] bg-[#F8F8FA] rounded-[12px] px-[24px] py-[24px] flex justify-between ${
+      className={`relative flex w-full bg-[#f2f2f2] h-12 rounded-[12px] justify-between ${
         isError(errors) && 'border border-red-300'
       } `}
     >
-      <div>
+      <div className="w-full h-full px-4 py-2 rounded-lg focus:outline-none">
         <Typography size="xs"> {title} </Typography>
         <Typography className="mt-[12px]" colors="black" size="xs">
           {description}
@@ -51,7 +51,7 @@ const DocumentUploader: React.FC<DocumentUploaderProps> = ({
         )}
       </div>
       <div>
-        <label className="inline-flex h-[35px] items-center px-4 py-2 bg-secondary text-primary-color rounded-md shadow-sm cursor-pointer">
+        <label className="inline-flex absolute top-0 right-0 h-full items-center px-4 py-2 bg-secondary text-primary-color rounded-md shadow-sm cursor-pointer">
           <span>Examinar</span>
           <input
             type="file"
@@ -67,4 +67,4 @@ const DocumentUploader: React.FC<DocumentUploaderProps> = ({
   );
 };
 
-export default DocumentUploader;
+export default DocumentUploaderSmall;
