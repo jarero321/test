@@ -116,6 +116,7 @@ const EditAddressForm: React.FC = () => {
           onClose={closeModal}
           title="Editar Dirección"
           textButton="Confirmar"
+          navigate={closeModal}
           content={
             <>
               <div className="text-center">

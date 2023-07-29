@@ -2,10 +2,9 @@ import { useState } from 'react';
 import { Header } from '../Configuration/components/Header';
 import ButtonGroup from './components/ButtonGroup/ButtonGroup';
 import { Beneficiaries } from './sections/Beneficiaries';
-import useStep from '@/hooks/useStep';
 import { Security } from './sections/Security/Security';
-import { MyAccount } from './MyAccount/MyAccount';
 import Profiles from './Profiles/Profiles';
+import { MyAccount } from './sections/MyAccount';
 
 function Configuration() {
   const [selectedButton, setSelectedButton] = useState('Button 1');
@@ -13,7 +12,6 @@ function Configuration() {
   const handleButtonSelect = (button: string) => {
     setSelectedButton(button);
   };
-  const { step } = useStep('step');
 
   return (
     <div className="px-[40px]">

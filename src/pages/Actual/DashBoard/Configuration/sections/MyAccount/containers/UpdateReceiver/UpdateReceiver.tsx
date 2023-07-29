@@ -39,6 +39,7 @@ function UpdateReceiver() {
               onClose={closeModal}
               title="Destinatario SPEI"
               textButton="Aceptar"
+              navigate={closeModal}
               content={
                 <>
                   <Typography
@@ -48,11 +49,13 @@ function UpdateReceiver() {
                   >
                     Selecciona un nuevo destinatario para descueto SPEI
                   </Typography>
-                  <SelectForm
-                    name="receiver"
-                    placeholder="Griselda Juárez López"
-                    options={[]}
-                  />
+                  <div className="mt-4">
+                    <SelectForm
+                      name="receiver"
+                      placeholder="Griselda Juárez López"
+                      options={[]}
+                    />
+                  </div>
                   <div className="p-6 space-y-6 text-center">
                     <Typography className="text-center" size="lg">
                       Token 2fa

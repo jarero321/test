@@ -5,7 +5,7 @@ import { LayoutV2 } from '@/components';
 import { Receivers } from './Receivers';
 import { UploadReceivers } from './UploadReceivers';
 import Configuration from './Configuration/Configuration';
-import { EditAddress } from './Configuration/MyAccount/EditAddress';
+import { EditAddress } from './Configuration/sections/MyAccount/sections/EditAddress';
 import UploadUser from './Configuration/Profiles/containers/UsersTable/components/UploadUser/UploadUser';
 import { UploadBeneficiaries } from './Configuration/sections/Beneficiaries/containers/UploadBeneficiaries';
 

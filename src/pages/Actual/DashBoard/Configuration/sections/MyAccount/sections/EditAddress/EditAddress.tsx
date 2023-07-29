@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form } from 'react-router-dom';
-import { Header } from '../../components/Header';
 import { EditAddressForm } from './components';
+import { Header } from '../../../../components/Header';
 
 const EditAddress: React.FC = () => {
   return (
