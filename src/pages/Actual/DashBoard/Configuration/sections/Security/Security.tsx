@@ -1,7 +1,7 @@
 import { Button, Form, InputForm, Typography } from '@/components';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ModalSecurity } from './components/ModalSecurity';
+import { ChangePasswordModal } from './components/ChangePasswordModal';
 
 export const Security = () => {
   const navigate = useNavigate();
@@ -43,8 +43,9 @@ export const Security = () => {
             <InputForm label="" name="name" type="password" />
           </div>
         </div>
-        <div className="w-full flex justify-end mt-[40px] ">
-          <div className="w-[40%] flex gap-[50px] ">
+        <div className="w-full gap-[20px] grid grid-cols-2 items-center mt-8">
+          <div></div>
+          <div className="w-1/3 justify-self-end">
             <Button
               height="h-[60px]"
               onClick={openModal}
@@ -54,7 +55,7 @@ export const Security = () => {
             />
           </div>
         </div>
-        <ModalSecurity isOpen={isModalOpen} onClose={closeModal} />
+        <ChangePasswordModal isOpen={isModalOpen} onClose={closeModal} />
       </Form>
     </div>
   );
