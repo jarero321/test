@@ -1,5 +1,5 @@
 import { Header } from '@/pages/Actual/DashBoard/Configuration/components/Header';
-import { UploadUserForm } from './pages/UploadUserForm';
+import { UploadUserForm } from './sections/UploadUserForm';
 
 const UploadUser: React.FC = () => {
   return (

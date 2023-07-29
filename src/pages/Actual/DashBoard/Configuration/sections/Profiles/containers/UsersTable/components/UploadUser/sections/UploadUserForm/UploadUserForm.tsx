@@ -88,11 +88,12 @@ const UploadUserForm: React.FC = () => {
           onClose={closeModal}
           title="Editar Dirección"
           textButton="Guardar"
+          navigate={closeModal}
           content={
             <>
               <div className="text-center">
                 <Typography className="text-gray-600" colors="black" size="xs">
-                  Ingrese tú 2FA para confirmar el alta de Usuario:
+                  Ingresa tú token para confirmar el alta de Usuario:
                 </Typography>
               </div>
               <div className="p-6 space-y-6 text-center">

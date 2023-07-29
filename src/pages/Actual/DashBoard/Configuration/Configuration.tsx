@@ -3,7 +3,7 @@ import { Header } from '../Configuration/components/Header';
 import ButtonGroup from './components/ButtonGroup/ButtonGroup';
 import { Beneficiaries } from './sections/Beneficiaries';
 import { Security } from './sections/Security/Security';
-import Profiles from './Profiles/Profiles';
+import Profiles from './sections/Profiles/Profiles';
 import { MyAccount } from './sections/MyAccount';
 
 function Configuration() {

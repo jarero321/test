@@ -18,10 +18,11 @@ const UpdateAmountModal: React.FC<UpdateAmountModalProps> = ({
         onClose={onClose}
         title="Monto límite"
         textButton="Actualizar"
+        navigate={onClose}
         content={
           <>
             <Typography className="text-gray-600" colors="black" size="xs">
-              Ingrese tú 2FA para confirmar la actualización del monto límite:
+              Ingresa tú token para confirmar la actualización del monto límite:
             </Typography>
             <div className="p-6 space-y-6 text-center">
               <Typography className="text-center" size="lg">

@@ -6,7 +6,7 @@ import { Receivers } from './Receivers';
 import { UploadReceivers } from './UploadReceivers';
 import Configuration from './Configuration/Configuration';
 import { EditAddress } from './Configuration/sections/MyAccount/sections/EditAddress';
-import UploadUser from './Configuration/Profiles/containers/UsersTable/components/UploadUser/UploadUser';
+import UploadUser from './Configuration/sections/Profiles/containers/UsersTable/components/UploadUser/UploadUser';
 import { UploadBeneficiaries } from './Configuration/sections/Beneficiaries/containers/UploadBeneficiaries';
 
 const Dashboard = () => {
