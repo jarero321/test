@@ -13,14 +13,14 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    text: 'Iniciar sesión',
+    text: 'Aceptar',
     width: 'w-[150px]',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    text: 'Boton',
+    text: 'Inicio',
     variant: 'secondary',
     width: 'w-[150px]',
   },

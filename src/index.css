@@ -3,9 +3,9 @@
 @tailwind utilities;
 @font-face {
     font-family: "Helvetica Regular";
-    src: url('../src/fonts/Helvetica-Regular/Helvetica\ Neue\ Regular.otf');
+    src: url('../src/fonts/Helvetica-Regular/Helvetica.otf');
 }
 @font-face {
     font-family: "Helvetica Bold";
-    src: url('../src/fonts/Helvetica-Bold/Helvetica\ Neue\ Condensed\ Bold.ttf');
+    src: url('../src/fonts/Helvetica-Bold/HelveticaBold.ttf');
 }
