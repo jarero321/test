@@ -19,7 +19,7 @@ module.exports = {
       fontFamily: {
         helvetica: ['Helvetica Regular'],
         helveticaBold: ['Helvetica Bold'],
-      }
+      },
     },
   },
   plugins: [],
