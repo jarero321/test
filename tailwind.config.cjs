@@ -16,6 +16,10 @@ module.exports = {
         canceled: '#DA6662',
         complete: '#AFD1B8',
       },
+      fontFamily: {
+        helvetica: ['Helvetica Regular'],
+        helveticaBold: ['Helvetica Bold'],
+      }
     },
   },
   plugins: [],

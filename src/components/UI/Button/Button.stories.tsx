@@ -13,7 +13,31 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
+    text: 'Iniciar sesión',
+    width: 'w-[150px]',
+  },
+};
+
+export const Secondary: Story = {
+  args: {
     text: 'Boton',
-    width: 'w-[100px]',
+    variant: 'secondary',
+    width: 'w-[150px]',
+  },
+};
+
+export const Grey: Story = {
+  args: {
+    text: 'Boton',
+    variant: 'grey',
+    width: 'w-[150px]',
+  },
+};
+
+export const Link: Story = {
+  args: {
+    text: 'Link',
+    variant: 'link',
+    width: 'w-[150px]',
   },
 };
