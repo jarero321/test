@@ -53,7 +53,7 @@ function TableGridV2() {
       field: 'alias',
       headerName: 'Alias',
       flex: 1,
-      minWidth: 60,
+      minWidth: 40,
       type: 'string',
     },
     {
@@ -117,10 +117,10 @@ function TableGridV2() {
       field: 'edition',
       headerName: 'Edición',
       flex: 1,
-      minWidth: 60,
+      minWidth: 150,
       type: 'string',
       renderCell: (params: any) => (
-        <div className="W-full flex gap-[10px] items-center">
+        <div className="W-full min-w-[80px] flex gap-[10px] items-center">
           <div onClick={() => setOpenEdit(true)}>
             <EditIcon
               style={{ cursor: 'pointer', color: '#3D1152', opacity: '0.7' }}

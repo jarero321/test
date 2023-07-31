@@ -27,7 +27,7 @@ const ModalContainer: React.FC<ModalContainerProps> = ({
         >
           <motion.div
             animate={{ scale: [0.5, 1.2, 1], opacity: 1 }}
-            className="py-[24px] min-w-[700px] min-h-[400px] max-h-[700px] px-[24px] bg-white rounded-xl"
+            className="py-[24px] min-w-[700px] min-h-[400px] xl:max-h-[500px] max-h-[700px] px-[24px] bg-white rounded-xl"
             exit={{ opacity: 0, scale: [1.2, 1, 0.5] }}
             initial={{ opacity: 0 }}
           >

@@ -42,8 +42,8 @@ const SelectForm: React.FC<SelectFormProps> = ({
     control: (provided: any, state: any) => ({
       ...provided,
       borderRadius: '8px',
-      backgroundColor: state.isFocused ? 'white' : ' rgba(0, 0, 0, 0.05)',
-      height: '65px',
+      backgroundColor: state.isFocused ? '#F3F4F6' : '#F3F4F6',
+      height: '50px',
       boxShadow: state.isFocused
         ? '0 0 0 2px #fff, 0 0 0 0px #38144f'
         : provided.boxShadow,

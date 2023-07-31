@@ -38,7 +38,7 @@ const LoginUser = ({ setState }: LoginProps) => {
               </div>
               <div className="mt-[25px]">
                 <Button
-                  height="h-[60px]"
+                  height="xl:h-[50px] 2xl:h-[60px]"
                   id="form-email"
                   text="Iniciar sesion"
                   type="submit"

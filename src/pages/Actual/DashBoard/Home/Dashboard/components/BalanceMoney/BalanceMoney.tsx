@@ -51,7 +51,6 @@ const BalanceMoney: React.FC = () => {
             </div>
             <Typography
               className="w-full flex justify-end xl:!text-[18px] "
-              colors="main-gray"
               size="sm"
             >
               $743,000.00
@@ -70,7 +69,6 @@ const BalanceMoney: React.FC = () => {
             </div>
             <Typography
               className="w-full flex justify-end xl:!text-[18px] "
-              colors="main-gray"
               size="sm"
             >
               $423,000.00
@@ -89,7 +87,6 @@ const BalanceMoney: React.FC = () => {
             </div>
             <Typography
               className="w-full flex justify-end xl:!text-[18px] "
-              colors="main-gray"
               size="sm"
             >
               $423,000.00
@@ -108,7 +105,6 @@ const BalanceMoney: React.FC = () => {
             </div>
             <Typography
               className="w-full flex justify-end xl:!text-[18px] "
-              colors="main-gray"
               size="sm"
             >
               $423,000.00

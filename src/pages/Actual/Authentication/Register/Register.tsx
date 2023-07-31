@@ -91,7 +91,7 @@ const Auth: React.FC = () => {
           <div>
             <div>
               <Button
-                height="h-[50px]"
+                height="xl:h-[50px] 2xl:h-[60px]"
                 id="register-form"
                 loader={loading}
                 text="Ingresar cuenta"
