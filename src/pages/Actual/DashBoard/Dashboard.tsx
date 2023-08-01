@@ -8,6 +8,7 @@ import Configuration from './Configuration/Configuration';
 import { EditAddress } from './Configuration/sections/MyAccount/sections/EditAddress';
 import UploadUser from './Configuration/sections/Profiles/containers/UsersTable/components/UploadUser/UploadUser';
 import { UploadBeneficiaries } from './Configuration/sections/Beneficiaries/containers/UploadBeneficiaries';
+import SpeiPayments from './SpeiPayments/Spei';
 
 const Dashboard = () => {
   const { step } = useStep('step', 'inicio');
@@ -17,6 +18,9 @@ const Dashboard = () => {
         <SwitchedComponent active={step} target="id">
           <div className="w-full" id="inicio">
             <Home />
+          </div>
+          <div className="w-full" id="spei">
+            <SpeiPayments />
           </div>
           <div className="w-full" id="destinatarios">
             <Receivers />
