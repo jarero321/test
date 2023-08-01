@@ -8,7 +8,7 @@ import Configuration from './Configuration/Configuration';
 import { EditAddress } from './Configuration/sections/MyAccount/sections/EditAddress';
 import UploadUser from './Configuration/sections/Profiles/containers/UsersTable/components/UploadUser/UploadUser';
 import { UploadBeneficiaries } from './Configuration/sections/Beneficiaries/containers/UploadBeneficiaries';
-import SpeiPayments from './SpeiPayments/Spei';
+import SpeiPayments from './SpeiPayments/SpeiPayments';
 
 const Dashboard = () => {
   const { step } = useStep('step', 'inicio');

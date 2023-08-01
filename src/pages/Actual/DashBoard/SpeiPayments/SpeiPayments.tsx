@@ -3,7 +3,7 @@ import { SpeiPaymentsForm } from './containers/SpeiPaymentsForm';
 
 const SpeiPayments = () => {
   return (
-    <div>
+    <div className="px-[40px]">
       <SpeiPaymentsHeader />
       <SpeiPaymentsForm />
     </div>

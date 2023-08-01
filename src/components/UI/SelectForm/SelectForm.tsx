@@ -1,5 +1,6 @@
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { MessageError } from '../InputForm/MessageError';
 import Select from 'react-select';
 import styles from './styles.module.scss';
@@ -30,7 +31,7 @@ const SelectForm: React.FC<SelectFormProps> = ({
   const {
     control,
     formState: { errors },
-  } = methods;
+  } = useForm();
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const isError = (errors: any): boolean => {
