@@ -17,7 +17,7 @@ interface Sizes {
   /**
    *  Estos son los tamaños definidos para este proyecto
    */
-  size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl';
+  size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4x;';
 }
 
 export type { Colors, Sizes };

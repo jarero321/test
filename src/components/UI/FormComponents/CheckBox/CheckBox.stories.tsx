@@ -4,7 +4,7 @@ import CheckBox from './CheckBox';
 
 const meta: Meta<typeof CheckBox> = {
   component: CheckBox,
-  title: 'Dyp/UI/CheckBox',
+  title: 'Dyp/Form Components/CheckBox',
 };
 
 export default meta;

@@ -1,6 +1,6 @@
 import '../../styles.scss';
 import { Button, InputForm, Typography } from '@/components';
-import { Form } from '@/components/UI/Form';
+import { Form } from '@/components/UI/FormComponents/Form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '@/store/auth';
 import { LayoutAuth } from '../../../components/LayoutAuth';

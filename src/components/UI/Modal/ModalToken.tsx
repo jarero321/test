@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import { Typography } from '../Typography';
-import { InputForm } from '../InputForm';
 import { Button } from '../Button';
-import SuccessIcon from '@/resources/icons/SuccessIcon';
+import { Typography } from '../Texts/Typography';
 
 interface ModalTokenProps {
   isOpen: boolean;
@@ -45,14 +43,14 @@ export const ModalToken: React.FC<ModalTokenProps> = ({
             <svg
               className="h-5 w-5"
               fill="none"
-              viewBox="0 0 24 24"
               stroke="currentColor"
+              viewBox="0 0 24 24"
             >
               <path
+                d="M6 18L18 6M6 6l12 12"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
               />
             </svg>
           </button>
@@ -60,7 +58,7 @@ export const ModalToken: React.FC<ModalTokenProps> = ({
             <>
               {/* Modal Header */}
               <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-                <Typography size="xs" className="font-bold">
+                <Typography className="font-bold" size="xs">
                   {title}
                 </Typography>
               </div>

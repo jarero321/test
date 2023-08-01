@@ -1,9 +1,9 @@
 import { MessageError } from './components/MessageError';
 import styles from './styles.module.scss';
 import { inputValidation } from '@/utils';
+import { Typography } from '@/components';
 import IonIcon from '@reacticons/ionicons';
 import React, { useState } from 'react';
-import { useFormContext } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 
 interface InputFormProps {
@@ -31,7 +31,6 @@ const InputForm: React.FC<InputFormProps> = ({
   min,
   max,
 }) => {
-  const methods = useFormContext();
   const [showVisibility, setShowVisibility] = useState(true);
 
   const toggleVisibility = () => {
@@ -64,13 +63,15 @@ const InputForm: React.FC<InputFormProps> = ({
             isError(errors) ? styles.error : ''
           }`}
         >
-          <span
-            className={`${styles.inputTitle} ${
+          <Typography
+            className={`font-helveticaBold ${styles.inputTitle} ${
               valueInput(name) ? styles.withValue : ''
             }`}
+            colors="black"
+            size="text-sm"
           >
             {label}
-          </span>
+          </Typography>
           <input
             className={styles.input}
             inputMode={inputMode}

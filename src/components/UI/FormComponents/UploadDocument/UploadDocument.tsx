@@ -1,15 +1,15 @@
 import React, { ChangeEvent } from 'react';
-import { Typography } from '../Typography';
-import { useForm } from 'react-hook-form';
 import { MessageError } from '../InputForm/components/MessageError';
+import { useForm } from 'react-hook-form';
+import { Typography } from '@/components';
 
-interface DocumentUploaderSmallProps {
+interface DocumentUploaderProps {
   index: number;
   title?: string;
   description?: string;
 }
 
-const DocumentUploaderSmall: React.FC<DocumentUploaderSmallProps> = ({
+const DocumentUploader: React.FC<DocumentUploaderProps> = ({
   index,
   description,
   title,
@@ -33,11 +33,11 @@ const DocumentUploaderSmall: React.FC<DocumentUploaderSmallProps> = ({
 
   return (
     <div
-      className={`relative flex w-full bg-[#f2f2f2] h-12 rounded-[12px] justify-between ${
+      className={`w-full h-[150px] bg-[#F8F8FA] rounded-[12px] px-[24px] py-[24px] flex justify-between ${
         isError(errors) && 'border border-red-300'
       } `}
     >
-      <div className="w-full h-full px-4 py-2 rounded-lg focus:outline-none">
+      <div>
         <Typography size="xs"> {title} </Typography>
         <Typography className="mt-[12px]" colors="black" size="xs">
           {description}
@@ -49,7 +49,7 @@ const DocumentUploaderSmall: React.FC<DocumentUploaderSmallProps> = ({
         )}
       </div>
       <div>
-        <label className="inline-flex absolute top-0 right-0 h-full items-center px-4 py-2 bg-secondary text-primary-color rounded-md shadow-sm cursor-pointer">
+        <label className="inline-flex h-[35px] items-center px-4 py-2 bg-secondary text-primary-color rounded-md shadow-sm cursor-pointer">
           <span>Examinar</span>
           <input
             type="file"
@@ -65,4 +65,4 @@ const DocumentUploaderSmall: React.FC<DocumentUploaderSmallProps> = ({
   );
 };
 
-export default DocumentUploaderSmall;
+export default DocumentUploader;

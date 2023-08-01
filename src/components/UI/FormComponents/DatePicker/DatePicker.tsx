@@ -7,7 +7,6 @@ interface Props {
   selectedDate: Date;
   // eslint-disable-next-line no-unused-vars
   handleDateChange: (date: Date) => void;
-  withPortal: boolean;
 }
 
 const DatePickerComponent: React.FC<Props> = ({
@@ -16,7 +15,10 @@ const DatePickerComponent: React.FC<Props> = ({
 }) => {
   const CustomDatePickerInput = React.forwardRef<HTMLInputElement, any>(
     ({ value, onClick }) => (
-      <button className={`${styles.input}`} onClick={onClick}>
+      <button
+        className={`${styles.input} font-helveticaBold`}
+        onClick={onClick}
+      >
         {value}
       </button>
     )

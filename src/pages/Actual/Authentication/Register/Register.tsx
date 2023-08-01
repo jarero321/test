@@ -1,11 +1,12 @@
-import BannerAuth from '../components/BannerAuth';
-import { LayoutAuth } from '../components/LayoutAuth';
 import './styles.scss';
 import { createUserAdapter } from '@/adapters';
 import { createUser } from '@/api/Authentication/Authentication.api';
-import { Button, Form, InputForm, Typography } from '@/components';
-import CheckBox from '@/components/UI/CheckBox/CheckBox';
-import { InputPassword } from '@/components/UI/InputPassword';
+import { Form } from '@/components';
+import { Button } from '@/components/UI/Button';
+import CheckBox from '@/components/UI/FormComponents/CheckBox/CheckBox';
+import { InputForm } from '@/components/UI/FormComponents/InputForm';
+import { InputPassword } from '@/components/UI/FormComponents/InputPassword';
+import { Typography } from '@/components/UI/Texts/Typography';
 import { FormDataRegister } from '@/models/authentication/forms/forms.models';
 import { useAuthStore } from '@/store/auth';
 import { geolocalizationStore } from '@/store/geolocalization';
@@ -36,18 +37,14 @@ const Auth: React.FC = () => {
   };
 
   return (
-    <LayoutAuth bannerAuth={<BannerAuth />}>
-      <div>
+    <>
+      <div className="w-full">
         <Form
           className="h-full w-full max-h-screen justify-center flex flex-col gap-[20px] max-w-[350px] 2xl:w-[450px] 2xl:max-w-[500px] "
           id="register-form"
           onSubmit={(data) => onSubmit(data as unknown as FormDataRegister)}
         >
-          <Typography
-            className="xl:!text-[30px] 2xl:!text-[40px]"
-            colors="primary-color"
-            size="base"
-          >
+          <Typography colors="primary-color" size="text-3xl 2xl:text-4xl ">
             ¡Regístrate ahora!
           </Typography>
           <div>
@@ -101,9 +98,13 @@ const Auth: React.FC = () => {
             </div>
           </div>
           <div className="flex w-full justify-between gap-[12px] items-center">
-            <span className="text-[13px] opacity-[0.8]">
+            <Typography
+              className="opacity-[0.8]"
+              colors="secondary-gray"
+              size="text-xs"
+            >
               ¿Deseas continuar con tu registro?
-            </span>
+            </Typography>
             <Link to="/autenticacion/iniciar-sesion">
               <span className="text-[13px] text-secondary cursor-pointer underline ">
                 Continuar ahora
@@ -112,7 +113,7 @@ const Auth: React.FC = () => {
           </div>
         </Form>
       </div>
-    </LayoutAuth>
+    </>
   );
 };
 

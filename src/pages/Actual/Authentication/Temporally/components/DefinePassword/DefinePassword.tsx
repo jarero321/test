@@ -1,5 +1,5 @@
 import { Button, Form, Typography } from '@/components';
-import { InputPassword } from '@/components/UI/InputPassword';
+import { InputPassword } from '@/components';
 import React from 'react';
 
 interface setStep {

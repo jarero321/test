@@ -7,6 +7,7 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
+    'storybook-dark-mode',
   ],
   name: '@storybook/addon-styling',
   options: {
@@ -14,6 +15,10 @@ const config: StorybookConfig = {
     // For more details on this addon's options.
     postCss: {
       implementation: require.resolve('postcss'),
+    },
+    sass: {
+      // Require your Sass preprocessor here
+      implementation: require('sass'),
     },
   },
   framework: {

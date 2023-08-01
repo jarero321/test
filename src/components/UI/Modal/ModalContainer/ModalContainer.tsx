@@ -1,7 +1,7 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Typography } from '../../Typography';
 import { Close } from '@mui/icons-material';
+import { Typography } from '../../Texts/Typography';
 
 export type ModalContainerProps = {
   title: string;

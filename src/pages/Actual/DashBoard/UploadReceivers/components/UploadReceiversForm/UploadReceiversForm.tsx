@@ -2,7 +2,7 @@ import { Button, Form, InputForm, SelectForm } from '@/components';
 import React from 'react';
 import { UploadModal } from '../UploadModal';
 import { useNavigate } from 'react-router-dom';
-import { GridTextForm } from '@/components/UI/GridTextForm';
+import { GridTextForm } from '@/components/UI/FormComponents/GridTextForm';
 
 const UploadReceiversForm: React.FC = () => {
   const [activeModal, setActiveModal] = React.useState(false);

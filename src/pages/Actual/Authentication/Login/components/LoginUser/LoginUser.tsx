@@ -1,7 +1,7 @@
 import BannerAuth from '../../../components/BannerAuth';
 import { LayoutAuth } from '../../../components/LayoutAuth';
 import { Button, InputForm, Typography } from '@/components';
-import { Form } from '@/components/UI/Form';
+import { Form } from '@/components/UI/FormComponents/Form';
 import { Link } from 'react-router-dom';
 
 interface LoginProps {

@@ -1,5 +1,5 @@
 import { Button, Form, Typography } from '@/components';
-import { UploadDocument } from '@/components/UI/UploadDocument';
+import { UploadDocument } from '@/components';
 import React from 'react';
 
 const OtherPersonDataForm: React.FC = () => {

@@ -1,5 +1,5 @@
+import { Typography } from '@/components';
 import React from 'react';
-import { Typography } from '../Typography';
 
 export type GridTextFormProps = {
   text?: string;

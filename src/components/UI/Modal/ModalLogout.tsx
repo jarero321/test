@@ -1,6 +1,6 @@
 import { Button } from '../Button';
-import { Typography } from '../Typography';
 import React from 'react';
+import Typography from '../Texts/Typography/Typography';
 
 const ModalLogout: React.FC = () => {
   return (

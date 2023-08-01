@@ -1,7 +1,7 @@
 import { Button } from '../Button';
-import { Typography } from '../Typography';
 import maps from '@/resources/img/coordenadas.jpg';
 import React from 'react';
+import { Typography } from '../Texts/Typography';
 
 const ModalGeolocalizacion: React.FC = () => {
   return (

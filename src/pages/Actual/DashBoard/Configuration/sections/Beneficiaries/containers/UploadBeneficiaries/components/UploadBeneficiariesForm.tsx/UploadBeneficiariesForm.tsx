@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import { Button, Form, InputForm, Typography } from '@/components';
-import { ModalBeneficier } from './components/ModalBeneficier';
-import { UploadDocument } from '@/components/UI/UploadDocument';
-import { ModalToken } from '@/components/UI/Modal/ModalToken';
-import SuccessIcon from '@/resources/icons/SuccessIcon';
+import { UploadDocument } from '@/components';
 import SaveBeneficierModal from './components/ModalBeneficier/SaveBeneficierModal';
 
 const UploadReceiversForm: React.FC = () => {
@@ -12,12 +9,6 @@ const UploadReceiversForm: React.FC = () => {
   const openModal = () => {
     setIsModalOpen(true);
   };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const [openEdit, setOpenEdit] = useState(false);
 
   return (
     <div className="w-full h-full bg-white shadow-lg rounded-[12px] px-[20px] py-[20px]">

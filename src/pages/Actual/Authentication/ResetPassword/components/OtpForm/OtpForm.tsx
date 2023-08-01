@@ -1,5 +1,5 @@
 import { Button, Typography } from '@/components';
-import { Form } from '@/components/UI/Form';
+import { Form } from '@/components/UI/FormComponents/Form';
 import Logo from '@/resources/img/logo/logo.png';
 import { useState } from 'react';
 import OtpInput from 'react-otp-input';

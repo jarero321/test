@@ -1,6 +1,6 @@
 import { Button, DatePicker, Form, InputForm, Typography } from '@/components';
-import { GridTextForm } from '@/components/UI/GridTextForm';
-import { SelectForm } from '@/components/UI/SelectForm';
+import { GridTextForm } from '@/components/UI/FormComponents/GridTextForm';
+import { SelectForm } from '@/components';
 import React, { useState } from 'react';
 
 interface FormValues {
@@ -18,8 +18,6 @@ const OtherPersonDataForm: React.FC = () => {
       birthDate: date,
     });
   };
-
-  const [selectedDate, setSelectedDate] = React.useState(new Date());
 
   return (
     <div className="w-full h-full py-[50px] px-[50px]">
@@ -67,7 +65,6 @@ const OtherPersonDataForm: React.FC = () => {
               <DatePicker
                 handleDateChange={handleDateChange}
                 selectedDate={formValues.birthDate}
-                withPortal
               />
             </GridTextForm>
             <GridTextForm text="País de nacimiento">

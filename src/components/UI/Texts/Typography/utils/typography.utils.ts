@@ -1,7 +1,7 @@
 import { TypeWithKey } from '@/models';
 
 const getResponsiveText = (target: string): string => {
-  return `font-helveticaBold text-${target}`;
+  return `font-helveticaBold ${target}`;
 };
 
 const getTextColor = (color: string) => {

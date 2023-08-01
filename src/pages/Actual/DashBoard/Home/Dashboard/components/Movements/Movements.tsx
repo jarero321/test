@@ -1,4 +1,4 @@
-import { Typography } from '@/components/UI/Typography';
+import { Typography } from '@/components';
 import React from 'react';
 import { MovementsTable } from './MovementsTable';
 
