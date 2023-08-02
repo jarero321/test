@@ -36,40 +36,40 @@ export const PrimaryGray: Story = {
 export const TitleAuthSize: Story = {
   args: {
     children: 'Texto de prueba',
-    size: 'text-6xl',
+    size: 'auth-size',
   },
 };
 
 export const TitleOnboardingSize: Story = {
   args: {
     children: 'Texto de prueba',
-    size: 'text-3xl',
+    size: 'onboarding-size',
   },
 };
 export const TitleSize: Story = {
   args: {
     children: 'Texto de prueba',
-    size: 'text-2xl',
+    size: 'title-size',
   },
 };
 export const ExtraSize: Story = {
   args: {
     children: 'Texto de prueba',
-    size: 'text-xl',
+    size: 'extra-size',
   },
 };
 export const TextSize: Story = {
   args: {
     children: 'Texto de prueba',
-    size: 'text-lg',
-    colors: 'secondary-gray',
+    size: 'text-size',
+    colors: 'text-size',
   },
 };
 
 export const SmallSize: Story = {
   args: {
     children: 'Texto de prueba',
-    size: 'text-base',
+    size: 'small-size',
     colors: 'secondary-gray',
   },
 };

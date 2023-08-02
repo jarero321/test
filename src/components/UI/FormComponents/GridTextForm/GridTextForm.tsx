@@ -9,7 +9,11 @@ export type GridTextFormProps = {
 const GridTextForm: React.FC<GridTextFormProps> = ({ text, children }) => {
   return (
     <div className="h-[70px]">
-      <Typography className="pb-[5px]" colors="secondary-gray" size="xs">
+      <Typography
+        className="pb-[5px]"
+        colors="secondary-gray"
+        size="extraSmall-size"
+      >
         {text ?? ''}
       </Typography>
       {children && children}

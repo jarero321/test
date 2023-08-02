@@ -16,3 +16,10 @@ export const WithoutText: Story = {
     name: 'Iniciar sesión',
   },
 };
+
+export const withText: Story = {
+  args: {
+    name: 'Iniciar sesión',
+    label: 'Texto de prueba',
+  },
+};

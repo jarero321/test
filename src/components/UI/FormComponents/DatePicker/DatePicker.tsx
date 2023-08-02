@@ -2,6 +2,7 @@ import styles from './styles.module.scss';
 import React from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { Typography } from '../../Texts/Typography';
 
 interface Props {
   selectedDate: Date;
@@ -19,7 +20,9 @@ const DatePickerComponent: React.FC<Props> = ({
         className={`${styles.input} font-helveticaBold`}
         onClick={onClick}
       >
-        {value}
+        <Typography colors="black" size="extraSmall-size">
+          {value}
+        </Typography>
       </button>
     )
   );

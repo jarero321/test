@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import GridTextForm from './GridTextForm';
-import { InputForm } from '../../InputForm';
+import { InputForm } from '@/components';
 import { WithRHF } from '@/components/storybook/WithRHF';
 
 const meta: Meta<typeof GridTextForm> = {

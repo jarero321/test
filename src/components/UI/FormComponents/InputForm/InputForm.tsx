@@ -63,15 +63,17 @@ const InputForm: React.FC<InputFormProps> = ({
             isError(errors) ? styles.error : ''
           }`}
         >
-          <Typography
-            className={`font-helveticaBold ${styles.inputTitle} ${
-              valueInput(name) ? styles.withValue : ''
-            }`}
-            colors="black"
-            size="text-sm"
-          >
-            {label}
-          </Typography>
+          {label !== '' && (
+            <Typography
+              className={`font-helveticaBold ${styles.inputTitle} ${
+                valueInput(name) ? styles.withValue : ''
+              }`}
+              colors="black"
+              size="text-sm"
+            >
+              {label}
+            </Typography>
+          )}
           <input
             className={styles.input}
             inputMode={inputMode}

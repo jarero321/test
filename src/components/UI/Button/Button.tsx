@@ -39,7 +39,7 @@ const Button: React.FC<ButtonInterface> = ({
       whileHover={{ scale: 1.05 }}
     >
       {loader ? (
-        <div className="w-full h-full flex items-center justify-center">
+        <div className="w-full h-full flex items-center text-lg justify-center">
           <Loader />
         </div>
       ) : (

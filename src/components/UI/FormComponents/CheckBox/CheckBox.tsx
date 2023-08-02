@@ -1,11 +1,13 @@
 import styles from './checkbox.module.scss';
 import IonIcon from '@reacticons/ionicons';
 import { useEffect, useState } from 'react';
+import { Typography } from '../../Texts/Typography';
 
 export type Props = {
   name?: string;
   checked?: boolean;
   className?: string;
+  label?: string;
   bubbleClickToParent?: boolean;
   // eslint-disable-next-line no-unused-vars
   onChange?: (name: string, checked: boolean) => void;
@@ -15,6 +17,7 @@ const CheckBox = ({
   name,
   checked,
   className,
+  label,
   bubbleClickToParent,
   onChange,
 }: Props) => {
@@ -36,30 +39,43 @@ const CheckBox = ({
   }, [checked]);
 
   return !bubbleClickToParent ? (
-    <button
-      className={`${styles.container} ${className} ${
-        _checked ? styles.checked : ''
-      }`}
-      onClick={handleClick}
-      type="button"
-    >
-      <div className={`${styles.inner} ${_checked ? styles.checked : ''}`} />
-      <IonIcon
-        className={`${styles.icon} ${_checked ? styles.checked : ''}`}
-        name="checkmark"
-      />
-    </button>
+    <div onClick={handleClick}>
+      <div className="cursor-pointer min-w-[24px] flex items-center justify-center gap-[20px]">
+        <button
+          className={`${styles.container} ${className} ${
+            _checked ? styles.checked : ''
+          }`}
+          type="button"
+        >
+          <div
+            className={`${styles.inner} ${_checked ? styles.checked : ''}`}
+          />
+          <IonIcon
+            className={`${styles.icon} ${_checked ? styles.checked : ''}`}
+            name="checkmark"
+          />
+        </button>
+        <Typography size="extraSmall-size"> {label} </Typography>
+      </div>
+    </div>
   ) : (
-    <div
-      className={`${styles.container} ${className} ${
-        _checked ? styles.checked : ''
-      }`}
-    >
-      <div className={`${styles.inner} ${_checked ? styles.checked : ''}`} />
-      <IonIcon
-        className={`${styles.icon} ${_checked ? styles.checked : ''}`}
-        name="checkmark"
-      />
+    <div>
+      <div className="min-w-[24px] flex items-center justify-center gap-[20px]">
+        <div
+          className={`${styles.container} ${className} ${
+            _checked ? styles.checked : ''
+          }`}
+        >
+          <div
+            className={`${styles.inner} ${_checked ? styles.checked : ''}`}
+          />
+          <IonIcon
+            className={`${styles.icon} ${_checked ? styles.checked : ''}`}
+            name="checkmark"
+          />
+        </div>
+        <Typography size="extraSmall-size"> {label} </Typography>
+      </div>
     </div>
   );
 };

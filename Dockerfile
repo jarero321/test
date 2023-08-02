@@ -1,4 +1,4 @@
-# Define la imagen base
+# Utilizar la imagen oficial de Node.js
 FROM node:16.14.0-alpine3.14
 
 # Establece el directorio de trabajo
@@ -16,8 +16,14 @@ RUN pnpm install
 # Compila la aplicación
 RUN npm run build
 
-# Exponer el puerto 3000
-EXPOSE 3000
+# Instala Nginx
+RUN apk add --update nginx
 
-# Iniciar la aplicación
-CMD ["npm", "start"]
+# Copia la configuración de Nginx al contenedor
+COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+
+# Exponer el puerto 80 para Nginx
+EXPOSE 80
+
+# Iniciar Nginx y la aplicación
+CMD ["sh", "-c", "nginx && npm start"]
