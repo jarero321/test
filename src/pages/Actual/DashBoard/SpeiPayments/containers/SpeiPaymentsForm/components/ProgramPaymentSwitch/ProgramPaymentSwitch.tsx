@@ -1,21 +1,18 @@
 import { InputForm, Typography } from '@/components';
 import { useState, ChangeEvent } from 'react';
-const ProgramPaymentSwitch = () => {
-  const [isSwitchOn, setIsSwitchOn] = useState(false);
+
+interface ProgramPaymentSwitchProps {
+  isSwitchOn: boolean;
+  handleSwitchChange: () => void;
+}
+
+const ProgramPaymentSwitch: React.FC<ProgramPaymentSwitchProps> = ({
+  isSwitchOn,
+  handleSwitchChange,
+}) => {
   const [input1Value, setInput1Value] = useState('');
   const [input2Value, setInput2Value] = useState('');
 
-  const handleSwitchChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setIsSwitchOn(event.target.checked);
-  };
-
-  const handleInput1Change = (event: ChangeEvent<HTMLInputElement>) => {
-    setInput1Value(event.target.value);
-  };
-
-  const handleInput2Change = (event: ChangeEvent<HTMLInputElement>) => {
-    setInput2Value(event.target.value);
-  };
   return (
     <div>
       <div className="flex justify-end mt-4">
@@ -32,30 +29,6 @@ const ProgramPaymentSwitch = () => {
           </label>
         </div>
       </div>
-
-      {isSwitchOn && (
-        <>
-          <div className="w-full gap-[20px] grid grid-cols-1 items-center mb-4 mt-4">
-            <div className="font-bold">
-              <Typography size="lg">Pago programado</Typography>
-            </div>
-          </div>
-          <div className="w-full gap-[20px] grid grid-cols-3 items-center mt-2 justify-end">
-            <div>
-              <Typography colors="secondary-gray" size="xs">
-                Nombre (s)
-              </Typography>
-              <InputForm label="" name="name" placeholder="Luis Miguel" />
-            </div>
-            <div>
-              <Typography colors="secondary-gray" size="xs">
-                Primer apellido
-              </Typography>
-              <InputForm label="" name="lastName" placeholder="Saaavedra" />
-            </div>
-          </div>
-        </>
-      )}
     </div>
   );
 };
