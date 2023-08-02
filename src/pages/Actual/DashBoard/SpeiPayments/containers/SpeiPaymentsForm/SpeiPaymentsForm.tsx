@@ -1,4 +1,5 @@
-import { Form, InputForm, Typography } from '@/components';
+import { Button, Form, InputForm, Typography } from '@/components';
+import { ProgramPaymentSwitch } from './components/ProgramPaymentSwitch';
 
 const SpeiPaymentsForm = () => {
   return (
@@ -72,6 +73,26 @@ const SpeiPaymentsForm = () => {
                 Notificaciones
               </Typography>
               <InputForm label="correo@dominio.com" name="name" type="email" />
+            </div>
+          </div>
+          <div className="">
+            <ProgramPaymentSwitch />
+          </div>
+          <div className="w-full flex justify-end mt-[40px] ">
+            <div className="w-[40%] flex gap-[50px] ">
+              <Button
+                height="h-[60px]"
+                text="Cancelar"
+                type="submit"
+                variant="grey"
+              />
+              <Button
+                height="h-[60px]"
+                // onClick={openModal}
+                text="Continuar"
+                type="submit"
+                variant="secondary"
+              />
             </div>
           </div>
         </div>
