@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Button, Form, InputForm, Typography } from '@/components';
 import { ProgramPaymentSwitch } from './components/ProgramPaymentSwitch';
-import { ConfirmPaymentModal } from './components/ConfirmPaymentModal';
 import { ProgramPaymentModal } from './components/ProgramPaymentModal';
 
 const SpeiPaymentsForm = () => {
@@ -48,42 +47,42 @@ const SpeiPaymentsForm = () => {
         >
           <div className="w-full gap-[20px] grid grid-cols-3 items-center mt-8 mb-6">
             <div>
-              <Typography size="sm" colors="grey">
-                Notificaciones
+              <Typography size="xs" colors="grey">
+                Destinatario
               </Typography>
-              <InputForm label="correo@dominio.com" name="name" type="email" />
+              <InputForm name="receiver" type="text" />
             </div>
             <div>
-              <Typography size="sm" colors="grey">
-                Notificaciones
+              <Typography size="xs" colors="secondary-gray">
+                Cuenta
               </Typography>
-              <InputForm label="correo@dominio.com" name="name" type="email" />
+              <InputForm name="account" type="text" />
             </div>
             <div>
-              <Typography size="sm" colors="grey">
-                Notificaciones
+              <Typography size="xs" colors="secondary-gray">
+                Institución
               </Typography>
-              <InputForm label="correo@dominio.com" name="name" type="email" />
+              <InputForm name="institution" type="text" />
             </div>
           </div>
           <div className="w-full gap-[20px] grid grid-cols-3 items-center mb-1">
             <div>
-              <Typography size="sm" colors="grey">
-                Notificaciones
+              <Typography size="xs" colors="secondary-gray">
+                Monto a retirar
               </Typography>
-              <InputForm label="correo@dominio.com" name="name" type="email" />
+              <InputForm label="$" name="amount" type="text" />
             </div>
             <div>
-              <Typography size="sm" colors="grey">
-                Notificaciones
+              <Typography size="xs" colors="secondary-gray">
+                Concepto
               </Typography>
-              <InputForm label="correo@dominio.com" name="name" type="email" />
+              <InputForm name="concept" type="text" />
             </div>
             <div>
-              <Typography size="sm" colors="grey">
-                Notificaciones
+              <Typography size="xs" colors="secondary-gray">
+                Referencia numérica
               </Typography>
-              <InputForm label="correo@dominio.com" name="name" type="email" />
+              <InputForm name="referenceNumber" type="text" />
             </div>
           </div>
           <div className="">
@@ -103,15 +102,22 @@ const SpeiPaymentsForm = () => {
               <div className="w-full gap-[20px] grid grid-cols-3 items-center mt-2 justify-end">
                 <div>
                   <Typography colors="secondary-gray" size="xs">
-                    Nombre (s)
+                    Fecha de pago
                   </Typography>
-                  <InputForm label="" name="name" placeholder="Luis Miguel" />
+                  <InputForm
+                    label=""
+                    name="paymentDate"
+                    placeholder="Define una fecha"
+                  />
                 </div>
                 <div>
                   <Typography colors="secondary-gray" size="xs">
-                    Primer apellido
+                    Hora de Pago
                   </Typography>
-                  <InputForm label="" name="lastName" placeholder="Saaavedra" />
+                  <InputForm
+                    name="paymentHour"
+                    placeholder="Selecciona una opción"
+                  />
                 </div>
               </div>
             </>

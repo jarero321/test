@@ -16,7 +16,9 @@ const ProgramPaymentSwitch: React.FC<ProgramPaymentSwitchProps> = ({
   return (
     <div>
       <div className="flex justify-end mt-4">
-        <div className="mr-4">Programar pago</div>
+        <Typography colors="secondary-gray" size="xs" className="mr-4">
+          Programar pago
+        </Typography>
         <div>
           <label className="relative inline-flex items-center cursor-pointer">
             <input
@@ -25,7 +27,7 @@ const ProgramPaymentSwitch: React.FC<ProgramPaymentSwitchProps> = ({
               onChange={handleSwitchChange}
               className="sr-only peer"
             />
-            <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+            <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none dark:peer-focus:bg-secondary rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-secondary"></div>
           </label>
         </div>
       </div>
