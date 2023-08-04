@@ -139,17 +139,11 @@ const SpeiPaymentsForm = () => {
               />
             </div>
           </div>
-
           <ProgramPaymentModal
             isOpen={openEdit}
             switchOn={isSwitchOn}
             onClose={() => setOpenProgramPaymentModal(false)}
           />
-
-          {/* <ConfirmPaymentModal
-            isOpen={openConfirm}
-            onClose={() => setOpenEdit(false)}
-          /> */}
         </div>
       </Form>
     </div>

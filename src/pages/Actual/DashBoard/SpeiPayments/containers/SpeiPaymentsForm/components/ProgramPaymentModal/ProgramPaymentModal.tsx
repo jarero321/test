@@ -30,6 +30,9 @@ const ProgramPaymentModal: React.FC<ProgramPaymentModalProps> = ({
       active={isOpen}
       secondaryContent={
         <>
+          <div onClickCapture={onClose} className="text-end">
+            <Close className="color-primary-color cursor-pointer" />
+          </div>
           <div className="m-auto w-40 h-40">
             <SuccessIcon />
           </div>
@@ -60,7 +63,7 @@ const ProgramPaymentModal: React.FC<ProgramPaymentModalProps> = ({
           <div className="flex flex-row mt-4 space-x-2 justify-evenly">
             <Button
               height="h-[60px]"
-              // onClick={navigate}
+              onClick={onClose}
               text="Aceptar"
               type="submit"
               variant="secondary"
@@ -128,6 +131,9 @@ const ProgramPaymentModal: React.FC<ProgramPaymentModalProps> = ({
       active={isOpen}
       secondaryContent={
         <>
+          <div onClickCapture={onClose} className="text-end">
+            <Close className="color-primary-color cursor-pointer" />
+          </div>
           <div className="m-auto w-40 h-40">
             <SuccessIcon />
           </div>
@@ -156,7 +162,7 @@ const ProgramPaymentModal: React.FC<ProgramPaymentModalProps> = ({
           <div className="flex flex-row mt-4 space-x-2 justify-evenly">
             <Button
               height="h-[60px]"
-              // onClick={navigate}
+              onClick={onClose}
               text="Aceptar"
               type="submit"
               variant="secondary"
