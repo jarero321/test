@@ -100,11 +100,12 @@ const SpeiPaymentsForm = () => {
                 </div>
               </div>
               <div className="w-full gap-[20px] grid grid-cols-3 items-center mt-2 justify-end">
-                <div>
+                <div className="relative">
                   <Typography colors="secondary-gray" size="xs">
                     Fecha de pago
                   </Typography>
                   <InputForm
+                    type="calendar"
                     label=""
                     name="paymentDate"
                     placeholder="Define una fecha"
@@ -115,6 +116,7 @@ const SpeiPaymentsForm = () => {
                     Hora de Pago
                   </Typography>
                   <InputForm
+                    type="clock"
                     name="paymentHour"
                     placeholder="Selecciona una opción"
                   />

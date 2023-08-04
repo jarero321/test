@@ -1,3 +1,4 @@
+import CalendarIcon from '@/resources/icons/CalendarIcon';
 import { MessageError } from './MessageError';
 import styles from './styles.module.scss';
 import { inputValidation } from '@/utils';
@@ -5,13 +6,14 @@ import IonIcon from '@reacticons/ionicons';
 import React, { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
+import ClockIcon from '@/resources/icons/ClockIcon';
 
 interface InputFormProps {
   name: string;
   className?: string;
   placeholder?: string;
   label?: string;
-  type?: 'text' | 'password' | 'email';
+  type?: 'text' | 'password' | 'email' | 'calendar' | 'clock';
   required?: boolean;
   inputMode?: 'email' | 'text';
   rules?: string;
@@ -92,6 +94,8 @@ const InputForm: React.FC<InputFormProps> = ({
               )}
             </button>
           ) : null}
+          {type === 'calendar' ? <CalendarIcon className="w-6 h-6" /> : null}
+          {type === 'clock' ? <ClockIcon className="w-6 h-6" /> : null}
         </div>
       </label>
       {isError(errors) && (
