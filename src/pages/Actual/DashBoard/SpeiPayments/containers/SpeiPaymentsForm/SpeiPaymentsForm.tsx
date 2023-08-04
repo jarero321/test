@@ -47,7 +47,7 @@ const SpeiPaymentsForm = () => {
         >
           <div className="w-full gap-[20px] grid grid-cols-3 items-center mt-8 mb-6">
             <div>
-              <Typography size="xs" colors="grey">
+              <Typography size="xs" colors="secondary-gray">
                 Destinatario
               </Typography>
               <InputForm name="receiver" type="text" />

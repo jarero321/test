@@ -8,6 +8,8 @@ export type ModalContainerProps = {
   handleClose: () => void;
   active: boolean;
   children?: JSX.Element;
+  showContent?: boolean;
+  secondaryContent?: React.ReactNode;
 };
 
 const ModalContainer: React.FC<ModalContainerProps> = ({
@@ -15,6 +17,8 @@ const ModalContainer: React.FC<ModalContainerProps> = ({
   handleClose,
   active,
   children,
+  showContent = false,
+  secondaryContent = null,
 }) => {
   return (
     <AnimatePresence>
@@ -31,15 +35,7 @@ const ModalContainer: React.FC<ModalContainerProps> = ({
             exit={{ opacity: 0, scale: [1.5, 0.5, 0] }}
             initial={{ opacity: 0 }}
           >
-            <div className="flex w-full justify-between items-center">
-              <Typography className="font-semibold" size="lg">
-                {title}
-              </Typography>
-              <div onClickCapture={handleClose}>
-                <Close className="color-primary-color cursor-pointer" />
-              </div>
-            </div>
-            <div>{children}</div>
+            {!showContent ? <div>{children}</div> : secondaryContent}
           </motion.div>
         </motion.div>
       )}
