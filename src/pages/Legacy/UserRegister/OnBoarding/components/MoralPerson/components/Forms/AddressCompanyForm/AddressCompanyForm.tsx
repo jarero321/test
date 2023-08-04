@@ -1,5 +1,5 @@
 import { Button, Form, InputForm, Typography } from '@/components';
-import { GridTextForm } from '@/components/UI/GridTextForm';
+import { GridTextForm } from '@/components/UI/FormComponents/GridTextForm';
 import { SelectForm } from '@/components/UI/SelectForm';
 import React from 'react';
 

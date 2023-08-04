@@ -1,7 +1,7 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Typography } from '../../Typography';
 import { Close } from '@mui/icons-material';
+import { Typography } from '../../Texts/Typography';
 
 export type ModalContainerProps = {
   title: string;
@@ -30,9 +30,9 @@ const ModalContainer: React.FC<ModalContainerProps> = ({
           initial={{ opacity: 0 }}
         >
           <motion.div
-            animate={{ scale: [0, 0.5, 0.5, 1.2, 1], opacity: 1 }}
-            className="py-[24px] min-w-[500px] min-h-[400px] px-[24px] bg-white rounded-xl"
-            exit={{ opacity: 0, scale: [1.5, 0.5, 0] }}
+            animate={{ scale: [0.5, 1.2, 1], opacity: 1 }}
+            className="py-[24px] min-w-[700px] min-h-[400px] xl:max-h-[500px] max-h-[700px] px-[24px] bg-white rounded-xl"
+            exit={{ opacity: 0, scale: [1.2, 1, 0.5] }}
             initial={{ opacity: 0 }}
           >
             {!showContent ? <div>{children}</div> : secondaryContent}

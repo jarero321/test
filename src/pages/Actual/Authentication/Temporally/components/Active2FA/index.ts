@@ -1,0 +1,1 @@
+export { default as Active2FA } from './Active2FA';

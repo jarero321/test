@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Button, InputForm, Typography, Form } from '@/components';
+import { Button, Form, InputForm, Typography } from '@/components';
 import { ModalToken } from '@/components/UI/Modal/ModalToken';
-import { UploadDocument } from '@/components/UI/UploadDocument';
+import { UploadDocument } from '@/components';
 import SuccessIcon from '@/resources/icons/SuccessIcon';
 
 const EditAddressForm: React.FC = () => {
@@ -112,11 +112,6 @@ const EditAddressForm: React.FC = () => {
           </div>
         </div>
         <ModalToken
-          isOpen={isModalOpen}
-          onClose={closeModal}
-          title="Editar Dirección"
-          textButton="Confirmar"
-          navigate={closeModal}
           content={
             <>
               <div className="text-center">
@@ -145,6 +140,11 @@ const EditAddressForm: React.FC = () => {
               </Typography>
             </>
           }
+          isOpen={isModalOpen}
+          navigate={closeModal}
+          onClose={closeModal}
+          textButton="Confirmar"
+          title="Editar Dirección"
         />
       </Form>
     </div>

@@ -53,7 +53,7 @@ function TableGridV2() {
       field: 'alias',
       headerName: 'Alias',
       flex: 1,
-      minWidth: 60,
+      minWidth: 40,
       type: 'string',
     },
     {
@@ -117,10 +117,10 @@ function TableGridV2() {
       field: 'edition',
       headerName: 'Edición',
       flex: 1,
-      minWidth: 60,
+      minWidth: 150,
       type: 'string',
       renderCell: (params: any) => (
-        <div className="W-full flex gap-[10px] items-center">
+        <div className="W-full min-w-[80px] flex gap-[10px] items-center">
           <div onClick={() => setOpenEdit(true)}>
             <EditIcon
               style={{ cursor: 'pointer', color: '#3D1152', opacity: '0.7' }}
@@ -157,9 +157,11 @@ function TableGridV2() {
     >
       <DataGrid
         autoPageSize
-        checkboxSelection={false}
         className="border-l border-r border-b"
         columns={columns}
+        getRowClassName={(params) =>
+          params.indexRelativeToCurrentPage % 2 === 0 ? 'even' : 'bg-[#F5F6F8]'
+        }
         rowHeight={52}
         rows={rows}
         style={{
@@ -168,7 +170,6 @@ function TableGridV2() {
           borderBottom: 'none',
           borderTop: 'none',
         }}
-        // Elimina los bordes de las row
         sx={{ '&, [class^=MuiDataGrid]': { border: 'none' } }}
       />
       <ModalUpdate isOpen={openEdit} onClose={() => setOpenEdit(false)} />

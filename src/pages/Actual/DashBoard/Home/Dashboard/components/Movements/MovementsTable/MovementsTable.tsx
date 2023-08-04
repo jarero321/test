@@ -155,6 +155,9 @@ export default function MovementsTable() {
         checkboxSelection={false}
         className="border-l border-r border-b"
         columns={columns}
+        getRowClassName={(params) =>
+          params.indexRelativeToCurrentPage % 2 === 0 ? 'even' : 'bg-[#F5F6F8]'
+        }
         rowHeight={52}
         rows={rows}
         style={{

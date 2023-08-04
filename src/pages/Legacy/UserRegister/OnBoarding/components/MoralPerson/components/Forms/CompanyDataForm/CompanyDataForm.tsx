@@ -1,6 +1,6 @@
 import { Button, DatePicker, Form, InputForm, Typography } from '@/components';
-import { GridTextForm } from '@/components/UI/GridTextForm';
-import { SelectForm } from '@/components/UI/SelectForm';
+import { GridTextForm } from '@/components/UI/FormComponents/GridTextForm';
+import { SelectForm } from '@/components';
 import React, { useState } from 'react';
 
 const CompanyDataForm: React.FC = () => {
@@ -42,8 +42,8 @@ const CompanyDataForm: React.FC = () => {
           <div className="w-full gap-[40px] grid grid-cols-2 items-center">
             <GridTextForm text="Denominación o Razón social">
               <InputForm
-                label=""
                 className="mt-[20px]"
+                label=""
                 name="businessName"
                 placeholder="XPIDR SAPI de CV"
                 required
@@ -82,7 +82,6 @@ const CompanyDataForm: React.FC = () => {
               <DatePicker
                 handleDateChange={handleDateChange}
                 selectedDate={formValues.birthDate}
-                withPortal
               />
             </GridTextForm>
             <GridTextForm text="Número de teléfono">

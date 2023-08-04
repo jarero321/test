@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
 import { InputForm, Typography } from '@/components';
 import { ModalToken } from '@/components/UI/Modal/ModalToken';
-import { UploadDocument } from '@/components/UI/UploadDocument';
-import { UploadDocumentSmall } from '@/components/UI/UploadDocumentSmall';
+import { UploadDocumentSmall } from '@/components';
 import SuccessIcon from '@/resources/icons/SuccessIcon';
 
 interface UploadModalProps {
@@ -16,11 +15,6 @@ const UploadModal: React.FC<UploadModalProps> = ({
 }) => {
   return (
     <ModalToken
-      isOpen={isOpen}
-      onClose={onClose}
-      title="Editar Beneficiario"
-      textButton="Actualizar"
-      navigate={onClose}
       content={
         <>
           <div>
@@ -28,10 +22,10 @@ const UploadModal: React.FC<UploadModalProps> = ({
               Nombre completo
             </Typography>
             <InputForm
-              type="text"
               label=""
-              placeholder="Luis Miguel Saavedra Hernánez"
               name="name"
+              placeholder="Luis Miguel Saavedra Hernánez"
+              type="text"
             />
           </div>
           <div className="mt-4">
@@ -39,10 +33,10 @@ const UploadModal: React.FC<UploadModalProps> = ({
               Parentesco
             </Typography>
             <InputForm
-              type="text"
               label=""
-              placeholder="Madre, Padre, Hijo, Esposa ..."
               name="relationship"
+              placeholder="Madre, Padre, Hijo, Esposa ..."
+              type="text"
             />
           </div>
           <div className="mt-4">
@@ -50,10 +44,10 @@ const UploadModal: React.FC<UploadModalProps> = ({
               Porcentaje
             </Typography>
             <InputForm
-              type="text"
               label=""
-              placeholder="Defina un porcentaje"
               name="percentage"
+              placeholder="Defina un porcentaje"
+              type="text"
             />
           </div>
           <div className="mt-4">
@@ -76,10 +70,10 @@ const UploadModal: React.FC<UploadModalProps> = ({
             </Typography>
             <div>
               <InputForm
-                type="text"
                 label=""
                 name="name"
                 placeholder="000000"
+                type="text"
               />
             </div>
           </div>
@@ -95,6 +89,11 @@ const UploadModal: React.FC<UploadModalProps> = ({
           </Typography>
         </>
       }
+      isOpen={isOpen}
+      navigate={onClose}
+      onClose={onClose}
+      textButton="Actualizar"
+      title="Editar Beneficiario"
     />
   );
 };

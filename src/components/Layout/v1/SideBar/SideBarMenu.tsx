@@ -1,7 +1,7 @@
+import { Typography } from '@/components';
 import { NavButton } from './NavButton';
 import styles from './index.module.scss';
 import { Button } from '@/components/UI/Button';
-import { Typography } from '@/components/UI/Typography';
 import LogoDyP from '@/resources/img/logo/logo.png';
 import IonIcon from '@reacticons/ionicons';
 import React, { useState } from 'react';

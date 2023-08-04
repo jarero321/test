@@ -1,6 +1,6 @@
 import { Button, Form, InputForm, Typography } from '@/components';
-import { GridTextForm } from '@/components/UI/GridTextForm';
-import { SelectForm } from '@/components/UI/SelectForm';
+import { GridTextForm } from '@/components/UI/FormComponents/GridTextForm';
+import { SelectForm } from '@/components';
 import React from 'react';
 
 const TransactionalPerfil: React.FC = () => {

@@ -10,14 +10,11 @@ export const GeolocalizationWrapper: React.FC<FCWC> = ({ children }) => {
   const { setPosition } = geolocalizationStore();
   useEffect(() => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setPosition([position.coords.latitude, position.coords.longitude]);
-        },
-        () => {
-          navigate('/geolocalizacion/como-implementarlo');
-        }
-      );
+      navigator.geolocation.getCurrentPosition((position) => {
+        setPosition([position.coords.latitude, position.coords.longitude]);
+      });
+    } else {
+      navigate('/geolocalizacion/como-implementarlo');
     }
   }, [location.pathname]);
 

@@ -1,7 +1,8 @@
 import { FCWC } from '../react';
-import { Colors, Sizes } from './ui';
+import { Colors } from './ui';
 
-interface TypographyInterface extends FCWC, Colors, Sizes {
+interface TypographyInterface extends FCWC, Colors {
+  size?: string;
   /**
    *  ¿El texto es un titulo o un texto de pagina?
    */
