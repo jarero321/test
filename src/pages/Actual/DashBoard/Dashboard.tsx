@@ -9,6 +9,7 @@ import { EditAddress } from './Configuration/sections/MyAccount/sections/EditAdd
 import UploadUser from './Configuration/sections/Profiles/containers/UsersTable/components/UploadUser/UploadUser';
 import { UploadBeneficiaries } from './Configuration/sections/Beneficiaries/containers/UploadBeneficiaries';
 import SpeiPayments from './SpeiPayments/SpeiPayments';
+import { Reports } from './Reports';
 
 const Dashboard = () => {
   const { step } = useStep('step', 'inicio');
@@ -24,6 +25,9 @@ const Dashboard = () => {
           </div>
           <div className="w-full" id="destinatarios">
             <Receivers />
+          </div>
+          <div className="w-full" id="reportes">
+            <Reports />
           </div>
           <div className="w-full" id="alta-nuevo-destinatario">
             <UploadReceivers />
