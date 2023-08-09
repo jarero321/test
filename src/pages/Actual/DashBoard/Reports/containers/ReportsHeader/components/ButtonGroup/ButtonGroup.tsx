@@ -13,7 +13,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
   onButtonSelect,
 }) => {
   return (
-    <div className="flex gap-[20px]">
+    <div className="flex gap-[20px] whitespace-nowrap">
       {buttons.map((button) => (
         <Button
           className={
