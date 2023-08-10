@@ -10,6 +10,7 @@ import UploadUser from './Configuration/sections/Profiles/containers/UsersTable/
 import { UploadBeneficiaries } from './Configuration/sections/Beneficiaries/containers/UploadBeneficiaries';
 import SpeiPayments from './SpeiPayments/SpeiPayments';
 import { Reports } from './Reports';
+import { Help } from './Help';
 
 const Dashboard = () => {
   const { step } = useStep('step', 'inicio');
@@ -34,6 +35,9 @@ const Dashboard = () => {
           </div>
           <div className="w-full" id="configuracion">
             <Configuration />
+          </div>
+          <div className="w-full" id="ayuda">
+            <Help />
           </div>
           <div className="w-full" id="alta-nuevo-beneficiario">
             <UploadBeneficiaries />
