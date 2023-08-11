@@ -13,7 +13,7 @@ const SpeiPaymentsForm = () => {
   };
 
   return (
-    <div className="w-full h-full bg-white shadow-lg rounded-[12px] px-[20px] py-[20px]">
+    <div className="w-full h-full bg-white shadow-lg rounded-[12px] px-[20px] py-[60px]">
       <Form
         className="w-full mt-[20px]"
         onSubmit={(data) => {

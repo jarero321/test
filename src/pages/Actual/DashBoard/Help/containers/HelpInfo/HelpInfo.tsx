@@ -1,5 +1,7 @@
 import { InputForm, Typography } from '@/components';
-import React from 'react';
+import { IconButton } from '@/components/UI/IconButton';
+import MailIcon from '@/resources/icons/MailIcon';
+import TelAtentionIcon from '@/resources/icons/TelAtentionIcon';
 
 const HelpInfo = () => {
   return (
@@ -25,13 +27,31 @@ const HelpInfo = () => {
           <Typography size="xs" colors="secondary-gray">
             Atención telefónica
           </Typography>
-          <InputForm name="receiver" type="text" />
+          <div className="flex gap-4">
+            <TelAtentionIcon className="h-16 w-16" />
+            <div className="w-full">
+              <InputForm
+                name="receiver"
+                type="text"
+                placeholder="800 110 90 90"
+              />
+            </div>
+          </div>
         </div>
         <div>
           <Typography size="xs" colors="secondary-gray">
             O escribe a:
           </Typography>
-          <InputForm name="receiver" type="text" />
+          <div className="flex gap-4">
+            <MailIcon className="h-16 w-16" />
+            <div className="w-full">
+              <InputForm
+                name="receiver"
+                type="text"
+                placeholder="clientes@depositosypagos.com"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div className="w-full gap-20 grid grid-cols-2 items-center mb-6">

@@ -46,6 +46,7 @@ import User from './User';
 import Whatsapp from './Whatsapp';
 import Xmark from './Xmark';
 import SuccessIcon from './SuccessIcon';
+import TelAtentionIcon from './TelAtentionIcon';
 
 export {
   AngleLeft,
@@ -96,4 +97,5 @@ export {
   Whatsapp,
   Xmark,
   SuccessIcon,
+  TelAtentionIcon,
 };

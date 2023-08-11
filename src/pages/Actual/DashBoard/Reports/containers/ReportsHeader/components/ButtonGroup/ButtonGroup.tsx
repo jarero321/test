@@ -24,7 +24,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
           onClick={() => onButtonSelect(button)}
           text={button}
           type="button"
-          width="w-[150px]"
+          width="w-60"
         >
           <>{button}</>
         </Button>

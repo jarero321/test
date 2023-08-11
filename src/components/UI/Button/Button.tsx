@@ -1,10 +1,10 @@
 import { Loader } from '../Loader';
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import getVariant from './Button.styles';
 
 export interface ButtonInterface {
-  text: string;
+  text: string | ReactNode;
   type: 'submit' | 'button';
   onClick?(): void;
   width?: string;

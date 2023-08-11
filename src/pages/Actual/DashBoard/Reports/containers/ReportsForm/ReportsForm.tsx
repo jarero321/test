@@ -1,4 +1,7 @@
-import { Form, SelectForm, Typography } from '@/components';
+import { Button, Form, SelectForm, Typography } from '@/components';
+import DownloadIcon from '@/resources/icons/DownloadIcon';
+import { IconButton } from '@/components/UI/IconButton';
+import ClockIcon from '@/resources/icons/ClockIcon';
 
 const ReportsForm = () => {
   return (
@@ -19,12 +22,19 @@ const ReportsForm = () => {
             </div>
           </div>
         </div>
-        <div className="w-full gap-20 grid grid-cols-3 items-center mb-6">
+        <div className="w-full gap-20 grid grid-cols-2 items-center mb-6">
           <div>
             <Typography size="xs" colors="secondary-gray">
               Elige un periodo
             </Typography>
-            <SelectForm name="month" options={[]} placeholder="Mes - año" />
+            <div className="flex gap-4">
+              <div className="w-full">
+                <SelectForm name="month" options={[]} placeholder="Mes - año" />
+              </div>
+              <div>
+                <DownloadIcon className="h-18 w-20" />
+              </div>
+            </div>
           </div>
         </div>
         <div className="w-full gap-20 grid grid-cols-1 items-center mb-6">
