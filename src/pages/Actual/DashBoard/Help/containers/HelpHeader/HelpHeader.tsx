@@ -6,7 +6,7 @@ const ReportsHeader = () => {
     <>
       <div className="w-full flex justify-between items-center my-[20px]">
         <Typography className="font-semibold" size="lg">
-          Reportes
+          Ayuda
         </Typography>
         <div className="flex gap-[20px]">
           <Button text="Regresar" type="button" width="!w-[100px]" />
