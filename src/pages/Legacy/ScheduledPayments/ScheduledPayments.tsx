@@ -1,6 +1,5 @@
 import React from 'react';
-import { Typography } from '@/components/UI/Typography';
-import { Layout } from '@/components';
+import { Layout, Typography } from '@/components';
 import SideBarDashboard from '../DashboardMoral/components/SideBar/SideBarMenu';
 
 const ScheduledPayments: React.FC = () => {
