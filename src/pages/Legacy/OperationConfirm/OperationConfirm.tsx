@@ -1,7 +1,6 @@
 import React from 'react';
-import { Typography } from '@/components/UI/Typography';
 import { OperationInfo } from './components/OperationInfo';
-import { Button, Layout } from '@/components';
+import { Button, Layout, Typography } from '@/components';
 import SideBarDashboard from '../DashboardMoral/components/SideBar/SideBarMenu';
 
 const OperationConfirm: React.FC = () => {

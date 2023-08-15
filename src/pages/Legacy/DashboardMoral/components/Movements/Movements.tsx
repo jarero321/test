@@ -1,6 +1,6 @@
-import { Typography } from '@/components/UI/Typography';
 import React from 'react';
 import { MovementsTable } from './MovementsTable';
+import { Typography } from '@/components';
 
 const Movements: React.FC = () => {
   return (
