@@ -7,6 +7,8 @@ WORKDIR /app
 # Copia los archivos de la aplicación
 COPY . .
 
+COPY package.json /app/
+COPY . /app/
 # Instala pnpm
 RUN npm install -g pnpm
 
